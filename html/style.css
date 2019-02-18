@@ -1,0 +1,287 @@
+.banner .banner-center .banner-nav2{
+    position: absolute;
+    top:433px;
+    left: 0;
+    height: 41px;
+    width: 90px;
+    border: solid 1px #c2c7cc;
+}
+.banner .banner-center .banner-nav2 .banner-nav-text{
+    display: block;
+    color:#000;
+    width: 90px;
+    height: 41px;
+    line-height: 41px;
+    text-indent: 16px;
+    font-size: 20px;
+}
+.banner .banner-center .banner-nav2 .banner-nav-text:hover{
+    background-color: #5ad0dc;
+    color: white;
+}
+.banner .banner-center .banner-img{
+    height: 274px;
+    width: 1200px;
+    float: left;
+    margin-top: 77px;
+}
+.banner .banner-center .banner-img .active{
+    margin-left: 116px;
+}
+.banner .banner-center .banner-img li{
+    position: relative;
+    top:0;
+    margin-top: 0;
+    float: left;
+    width: 325px;
+    height: 100%;
+    margin-left: 54px;
+    border-bottom: solid 1px #666;
+}
+.banner .banner-center .banner-img li .pic-border{
+    position: absolute;
+    top: 32px;
+    left: 36px;
+    width: 250px;
+    height: 130px;
+    border: solid 1px red;
+    display: none;
+}
+.banner .banner-center .banner-img li:hover .pic-border{
+    display: block;
+}
+.banner .banner-center .banner-img .banner-pic-text{
+    width: 100%;
+    height: 56px;
+    margin-top: 10px;
+}
+.banner .banner-center .banner-img .banner-pic-text .p1{
+    font-weight: bolder;
+    font-size: 16px;
+}
+.banner .banner-center .banner-img .banner-pic-text .p2{
+    font-size: 12px;
+}
+.banner .banner-center .banner-nav3{
+    position: absolute;
+    top:784px;
+    left: 0;
+    height: 41px;
+    width: 90px;
+    border: solid 1px #c2c7cc;
+}
+.banner .banner-center .banner-nav3 .banner-nav-text{
+    display: block;
+    color:#000;
+    width: 90px;
+    height: 41px;
+    line-height: 41px;
+    text-indent: 16px;
+    font-size: 20px;
+}
+.banner .banner-center .banner-nav3 .banner-nav-text:hover{
+    background-color: #5ad0dc;
+    color: white;
+}
+.banner .banner-center .banner-imgs{
+    height: 274px;
+    width: 1200px;
+    float: left;
+    margin-top: 77px;
+}
+.banner .banner-center .banner-imgs .active{
+    margin-left: 116px;
+}
+.banner .banner-center .banner-imgs li{
+    position: relative;
+    top:0;
+    margin-top: 0;
+    float: left;
+    width: 325px;
+    height: 100%;
+    margin-left: 54px;
+    border-bottom: solid 1px #666;
+}
+.banner .banner-center .banner-imgs li .pic-border{
+    position: absolute;
+    top: 32px;
+    left: 36px;
+    width: 250px;
+    height: 130px;
+    border: solid 1px red;
+    display: none;
+}
+.banner .banner-center .banner-imgs li:hover .pic-border{
+    display: block;
+}
+.banner .banner-center .banner-imgs .banner-pic-text{
+    width: 100%;
+    height: 56px;
+    margin-top: 10px;
+}
+.banner .banner-center .banner-imgs .banner-pic-text .p1{
+    font-weight: bolder;
+    font-size: 16px;
+}
+.banner .banner-center .banner-imgs .banner-pic-text .p2{
+    font-size: 12px;
+}
+.banner .banner-center .switch{
+    position: relative;
+    width: 1200px;
+    height: 195px;
+    /* background-color: #000; */
+    margin-top: 980px;
+
+}
+.banner .banner-center .switch .switch-num{
+    position: absolute;
+    top: 64px;
+    left: 50%;
+    margin-left: -95px;
+    height: 38px;
+    width: 160px;
+    /* background-color: #000; */
+}
+.banner .banner-center .switch .switch-num li{
+    height: 100%;
+    width: 14px;
+    float: left;
+    line-height: 38px;
+}
+.banner .banner-center .switch .switch-num li a{
+    color: #666;
+}
+.banner .banner-center .switch .switch-num li:hover a{
+    color: #6cebf9;
+}
+.banner .banner-center .switch .switch-num .symbol{
+    margin-left: 5px;
+}
+.banner .banner-center .more{
+    position: absolute;
+    top: 64px;
+    right: 450px;
+    width: 90px;
+    height: 43px;
+    border: solid 1px #666;
+}
+.banner .banner-center .more a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #434545;
+    line-height: 43px;
+    text-align: center;
+}
+.banner .banner-center .more:hover a{
+    color: #6cebf9;
+}
+.fotter{
+    height: 395px;
+    width: 100%;
+    background-color: #f2f2f2;
+}
+.fotter .fotter-center{
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+.fotter .fotter-center .fotter-left{
+    width: 600px;
+    height: 100%;
+    float: left;
+    /* background-color: #e5e5e5; */
+}
+.fotter .fotter-center .fotter-left .studio{
+    height: 121px;
+    width: 100%;
+}
+.fotter .fotter-center .fotter-left .studio p{
+    height: 100%;
+    width: 100%;
+    line-height: 121px;
+    color: #292828;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.fotter .fotter-center .fotter-left .contact li{
+    width: 100%;
+    height: 26px;
+    margin-top: 10px;
+}
+.fotter .fotter-center .fotter-left .contact .zx{
+    height: 26px;
+    width: 100%;
+    float: left;
+}
+.fotter .fotter-center .fotter-left .contact .zx li{
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-left: 20px;
+    line-height: 2px;
+    margin-bottom: 10px;
+}
+.fotter .fotter-center .fotter-left .contact .zx .qq{
+    margin-left: 0;
+}
+.fotter .fotter-center .fotter-left .contact .zx-pic{
+    margin-top: 5px;
+}
+.fotter .fotter-center .fotter-left .contact li p{
+    color: #747474;
+    font-size: 14px;
+}
+.fotter .fotter-center .fotter-right{
+    position: relative;
+    width: 600px;
+    height: 100%;
+    float: left;
+    /* background-color: #e9e9e9; */
+}
+.fotter .fotter-center .fotter-right .butten{
+    position: absolute;
+    left: 108px;
+    bottom: 78px;
+    border: solid 1px #747474; 
+    background-color: #656565;
+    width: 61px;
+    height: 24px;
+    outline: none;
+}
+.fotter .fotter-center .fotter-right .fotter-input li{
+    position: relative;
+    width: 134px;
+    height: 66px;
+    float: left;
+    margin-top: 84px;
+    margin-left: 45px;
+    border-bottom: solid 1px #e3e3e3;
+
+}
+.fotter .fotter-center .fotter-right .fotter-input .user-name{
+    margin-left: 108px;
+}
+.fotter .fotter-center .fotter-right .fotter-input li .name-text{
+    position: absolute;
+    bottom: 0;
+    outline: none;
+    border: none;
+    background-color: #f2f2f2;
+}
+.fotter .fotter-center .fotter-right .content{
+    position: relative;
+    width: 492px;
+    height: 66px;
+    border-bottom: solid 1px #e3e3e3;
+    margin-top: 184px;
+    margin-left: 108px;
+}
+.fotter .fotter-center .fotter-right .content .content-text{
+    position: absolute;
+    bottom: 0;
+    outline: none;
+    border: none;
+    background-color: #f2f2f2;
+}

@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		body{
+			font: 16px/1.2 '微软雅黑';
+		}
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		a{
+			text-decoration: none;
+		}
+		ul, ol{
+			list-style: none;
+		}
+		.header{
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 77px;
+			background-color: #020202;
+			z-index: 999;
+		}
+		.header .header-center{
+			width: 1200px;
+			height: 100%;
+			/*background-color: green;*/
+			margin: 0 auto;
+		}
+		.header .header-center .header-veil{
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-color: #030303;
+			opacity: 0.3;
+		}
+		.header .header-center .logo{
+			width: 145px;
+			height: 100%;
+		}
+		.header .header-center .header-veil .nave{
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 620px;
+			height: 77px;
+			/*background-color: yellow;*/
+		}
+		.header .header-veil .nave li{
+			height: 100%;
+			width: 65px;
+			float: left;
+			display: inline-block;
+			text-align: right;
+			margin-left: 42px;
+			/*background-color: red;*/
+			border
+
+		}
+		.header .header-veil .nave li a{
+			display: block;
+			height: 80%;
+			width: 100%;
+			font-size: 16px;
+			color: #fff;
+			line-height: 77px;
+		}
+		.header .header-veil .nave .contect{
+			width: 100px;
+			height: 30px;
+			background-color: yellow;
+		}
+		.header .header-veil .nave li a:hover{
+			color: red;
+			border-bottom: 1px solid red;
+		}
+		.header .header-veil .nave .homepage{
+			width: 32px;
+			height: 100%;
+		}
+		.banner{
+			width: 100%;
+			background-color: #000;
+			height: 800px;
+			margin-top: 77px; 
+		}
+		.banner .banner-center{
+			position: relative;
+			width: 1200px;
+			height: 728px;
+			margin: 0 auto;
+			background-image: url(img/banner.png);
+			background-repeat: no-repeat;
+		}
+		.banner .banner-center .switch-butten{
+			position: absolute;
+			bottom: 28px;
+			left: 50%;
+			margin-left: -30px;
+			width: 60px;
+			height: 14px;
+			/*background-color: blue;*/
+		}
+		.banner .banner-center .switch-butten li{
+			height: 100%;
+			width: 12px;
+			/*background-color: yellow;*/
+			float: left;
+			margin-left: 15px;
+			border-radius: 50%;
+			border: 1px solid #fff;
+		}
+		.banner .banner-center .switch-butten li:hover{
+			border: 1px solid red;
+		}
+		.banner .banner-center .switch-butten li a{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		.banner .banner-center .switch{
+			position: absolute;
+			top: 50%;
+			margin-top: -35px;
+			display: block;
+			width: 40px;
+			height: 70px;
+			text-align: center;
+			line-height: 70px;
+			color: white;
+			font-size: 24px;
+			text-decoration: none;
+			background-color: rgba(0, 0, 0, 0);
+		}
+		.banner .banner-center .switch:hover{
+			color: red;
+		}
+		.banner .banner-center .switch.switch-right{
+			right: 0;
+		}
+		.banner .banner-center .switch.switch-left{
+			left: 0;
+		}
+		.content{
+			width: 100%;
+			height: 2750px;
+			background-color: #000;
+		}
+		.content .content-center{
+			position: relative;
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.content .content-center .about-us{
+			position: absolute;
+			top: 2170px;
+			width: 1800px;
+			height: 540px;
+			/*background-color: yellow;*/
+			margin-left: -300px;
+			background-image: url(img/about-us.jpg);
+			background-repeat: no-repeat;
+		}
+		.content .content-center .about-us .about-us-center{
+			position: relative;
+			width: 1200px;
+			height: 100px;
+			margin: 0 auto;
+
+		}
+			.content .content-center .about-us .about-us-center .round-logo{
+				width: 150px;
+				height: 100px;
+				/*background-color: yellow;*/
+				margin: 0 auto;
+				background: url(img/round-logo.jpg) no-repeat center;
+			}
+		.content .content-center .about-us .about-us-center .introduce{
+			width: 100%;
+			height: 150px;
+			/*background-color: yellow;*/
+			float: left;
+			margin-top: 30px;
+		}
+		.content .content-center .about-us .about-us-center .introduce .camera{
+			margin-left: 0;
+		}
+		.content .content-center .about-us .about-us-center .introduce-logo{
+			margin-left: 10px;
+		}
+		.content .content-center .about-us .introduce li{
+			height: 100%;
+			width: 210px;
+			float: left;
+			margin-left: 105px;
+			line-height: 25px;
+		}
+		.content .content-center .about-us .introduce li a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			color: #fff;
+			text-align: center;
+			font-size: 16px;
+		}
+		.content .content-center .about-us .introduce li a:hover{
+			color: red;
+		}
+		.content .content-center .welfer-perform{
+			position: absolute;
+			top: 1200px;
+			width: 100%;
+			height: 874px;
+			/*background-color: green;*/
+		}
+		.content .content-center .welfer-perform .middle-switch{
+			position: relative;
+			width: 2px;
+			height: 850px;
+			background-color: #1a1a1a;
+			margin: 0 auto;
+		}
+		.content .content-center .welfer-perform .middle-switch .switch-butten{
+			position: absolute;
+			top: 143px;
+			left: -5px;
+			width: 12px;
+			height: 586px;
+			/*background-color: red;*/
+		}
+		.content .content-center .welfer-perform .middle-switch .switch-butten .active{
+			border: 1px solid red;
+		}
+		.content .content-center .welfer-perform .middle-switch .switch-butten li{
+			width: 100%;
+			height: 12px;
+			/*background-color: white;*/
+			margin-top: 170px;
+			border-radius: 50%;
+			border: 1px solid #2e2e2e;
+		}
+		.content .content-center .welfer-perform .middle-switch .switch-butten li:hover{
+			border: 1px solid red;
+		}
+		.content .content-center .welfer-perform .middle-switch .switch-butten li a{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		.content .content-center .welfer-perform .middle-switch .switch-butten .butten-top{
+			margin-top: 0;
+		}
+		.content .content-center .welfer-perform .perform-left{
+			width: 514px;
+			height: 718px;
+			/*background-color: yellow;*/
+			float: left;
+		}
+		.content .content-center .welfer-perform .perform-left li:hover{
+			border: 1px solid red;
+		}
+		.content .content-center .welfer-perform .perform-left li:hover .price{
+			background-color: red;
+		}
+		.content .content-center .welfer-perform .perform-left.perform-right{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			margin-left: 170px;
+		}
+		.content .content-center .welfer-perform .perform-left .price p{
+			display: inline-block;
+			color: #fff;
+			height: 100%;
+			width: 215px;
+			font-size: 18px;
+			line-height: 50px;
+		}
+		.content .content-center .welfer-perform .perform-left .left-up{
+			margin-top: 86px;
+		}
+		.content .content-center .perform-left li{
+			position: relative;
+			width: 518px;
+			height: 310px;
+			margin-top: 2px;
+			/*background-color: red;*/
+		}
+		.content .content-center .perform-left li a{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		.content .content-center .perform-left .price{
+			position: absolute;
+			bottom: 0;
+			height: 50px;
+			width: 100%;
+			background-color: #212121;
+		}
+		.content .content-center .text-block, .fotter .fotter-center .text-block{
+			position: absolute;
+			bottom: 25px;
+			left: 460px;
+			width: 260px;
+			height: 104px;
+			background-color: #000;
+		}
+		.content .content-center .text-block.about-us-text{
+			position: absolute;
+			top: 14px;
+			left: 760px;
+			background-color: #2e2e2e;
+		}
+		.content .content-center .text-block p{
+			color: red;
+			font-size: 24px;
+			text-align: center;
+			margin-top: 40px; 
+		}
+		.fotter .fotter-center .text-block p{
+			color: red;
+			font-size: 24px;
+			text-align: center;
+			margin-top: 40px; 
+		}
+		.content .content-center .text-block .p2, .fotter .fotter-center .text-block .p2{
+			color: white;
+			font-size: 16px;
+			margin-top: 10px;
+		}
+		.content .content-center .top-title, .fotter .fotter-center .top-title{
+			height: 148px;
+			width: 1200px;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		.content .content-center .middle-title.top-title{
+			position: relative;
+			margin-top: 800px;
+		}
+		.content .content-center .text-block.middle-text-block{
+			position: absolute;
+			bottom: 25px;
+			left: 460px;
+			margin-top: 800px;
+		}
+		.content .content-center .middle-line, .fotter .fotter-center .middle-line{
+			width: 516px;
+			height: 74px;
+			/*background-color: green;*/
+			margin: 0 auto;
+			margin-top: 73px;
+			border-top: 1px solid red;
+		}
+		.content .content-center .perform{
+			position: relative;
+			width: 1800px;
+			height: 800px;
+			margin-left: -300px;
+			background-color: #000;
+			margin-top: 20px;
+			float: left;	
+
+		}
+		.content .content-center .perform .viel-more{
+			position: absolute;
+			bottom: 30px;
+			left: 0;
+			height: 100px;
+			width: 100%;
+			background-color: red;
+		}
+		.content .content-center .perform .viel-more-butten{
+			height: 100%;
+			width: 400px;
+			margin: 0 auto;
+
+		}
+			.content .content-center .perform .viel-more-butten a{
+				display: block;
+				width: 100%;
+				height: 100%;	
+				text-align: center;
+				color: white;
+				line-height: 100px;
+				font-size: 18px;
+			}
+			.content .content-center .perform .viel-more-butten a:hover{
+				border: 1px solid white;
+			}
+		.content .content-center .perform li{
+			width: 444px;
+			height: 300px;
+			float: left;
+			margin: 3px;
+		}
+		.content .content-center .perform li a,
+		.content .content-center .perform li img{
+			position: relative;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		.content .content-center .perform .fram{
+			position: absolute;
+			top: 13px;
+			left: 13px;
+			width: 410px;
+			height: 248px;
+			background-color: rgba(0, 0, 0, .3)
+		}
+		.content .content-center .perform .fram .fram-text{
+			width: 410px;
+			height: 270px;
+			overflow: hidden;
+			border: 1px solid red;
+			display: none;
+		}
+		.content .content-center .perform .fram-text p{
+			text-align: center;
+		}
+		.content .content-center .perform .fram-text .p1{
+			color: red;
+			margin-top: 120px;
+		}
+		.content .content-center .perform .fram-text .p2{
+			color: white;
+		}
+		.content .content-center .perform .fram:hover .fram-text{
+			display: block;
+		}
+		.fotter{
+			width: 100%;
+			height: 940px;
+			background-color: #000;
+		}
+		.fotter .fotter-center{
+			position: relative;
+			width: 1200px;
+			height: 100%;
+			margin: 0 auto;
+		}
+		.fotter .fotter-center .water-text{
+			width: 1142px;
+			height: 146px;
+			margin-top: 62px;
+			margin-left: 58px;
+			float: left;
+		}
+		.fotter .fotter-center .water-text li{
+			float: left;
+			width: 170px;
+			height: 100%;
+			margin-left: 38px;
+			background: url(img/hk.jpg) no-repeat center;
+		}
+		.fotter .fotter-center .water-text li .p1{
+			margin-top: 30px;
+			text-align: center;
+			font-size: 16px;
+		}
+		.fotter .fotter-center .water-text li:hover{
+			background-image: url(img/hhk.jpg);
+			background-repeat: no-repeat;
+		}
+		.fotter .fotter-center .water-text li .p2{
+			text-align: center;
+			font-size: 12px;
+			color: #8c8c8c;
+		}
+		.fotter .fotter-center .water-text li a{
+			display: block;
+			color: #fff;
+			width: 100%;
+			height: 100%;
+			line-height: 24px;
+
+		}
+		.fotter .fotter-center .water{
+			width: 100%;
+			height: 84px;
+		}
+		.fotter .fotter-center .water-pic{
+			width: 100%;
+			height: 100%;
+			margin: 0 auto;
+			float: left;
+		}
+		.fotter .fotter-center .water-pic li{
+			height: 100%;
+			width: 60px;
+			float: left;
+			margin-left: 150px;
+			margin-top: 56px;
+			background: url(img/sdb.jpg) no-repeat center;
+		}
+		.fotter .fotter-center .water-pic li a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			color: red;
+			font-size: 24px;
+			text-align: center;
+			line-height: 60px;
+		}
+		.fotter .fotter-center .water-pic li:hover{
+			background: url(img/sd.jpg) no-repeat center;
+		}
+		.fotter .fotter-center .water-pic li:hover a{
+			color: white;
+		}
+		.fotter .fotter-center .text-block{
+			position: absolute;
+			top: -785px;
+			left: 460px;
+			margin-top: 800px;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="header-center">
+			<div class="header-veil">
+				<div class="logo">
+					<a href="#"><img src="img/logo.jpg" alt=""></a>
+				</div>
+					<ul class="nave">
+						<li class="homepage"><a href="#">首页</a></li>
+						<li><a href="#">旅拍城市 </a></li>
+						<li><a href="#">旅拍城市 </a></li>
+						<li><a href="#">旅拍城市 </a></li>
+						<li><a href="#">旅拍城市 </a></li>
+						<li><a href="#">联系我们 </a></li>
+					</ul>
+			</div>
+		</div>
+	</div>
+	<div class="banner">
+		<div class="banner-center">
+			<ul class="switch-butten">
+				<li class="active"><a href="#"></a></li>
+				<li><a href="#"></a></li>
+			</ul>
+			<a class="switch switch-left" href="#"><</a>
+			<a class="switch switch-right" href="#">>
+			</a>
+	
+		</div>
+	</div>
+	<div class="content">
+		<div class="content-center">
+			<div class="top-title">
+				<div class="middle-line">
+				</div>
+				<div class="text-block">
+					<p class="p1">Exhibittion of works</p>
+					<p class="p2">作品展示</p>
+				</div>
+			</div>
+			<div class="content-pic">
+				<ul class="perform">
+					<li>
+						<a href="#"><img src="img/pic2.7.png" alt="">
+							<div class="fram">
+								<div class="fram-text">
+									<p class="p1">Xiao Ru & Grady</p>
+									<p class="p2">2018.6.25</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#"><img src="img/pic2.7.png" alt="">
+							<div class="fram">
+								<div class="fram-text">
+									<p class="p1">Xiao Ru & Grady</p>
+									<p class="p2">2018.6.25</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#"><img src="img/pic2.7.png" alt="">
+							<div class="fram">
+								<div class="fram-text">
+									<p class="p1">Xiao Ru & Grady</p>
+									<p class="p2">2018.6.25</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#"><img src="img/pic2.7.png" alt="">
+							<div class="fram">
+								<div class="fram-text">
+									<p class="p1">Xiao Ru & Grady</p>
+									<p class="p2">2018.6.25</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#"><img src="img/pic2.7.png" alt="">
+							<div class="fram">
+								<div class="fram-text">
+									<p class="p1">Xiao Ru & Grady</p>
+									<p class="p2">2018.6.25</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#"><img src="img/pic2.7.png" alt="">
+							<div class="fram">
+								<div class="fram-text">
+									<p class="p1">Xiao Ru & Grady</p>
+									<p class="p2">2018.6.25</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#"><img src="img/pic2.7.png" alt="">
+							<div class="fram">
+								<div class="fram-text">
+									<p class="p1">Xiao Ru & Grady</p>
+									<p class="p2">2018.6.25</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#"><img src="img/pic2.7.png" alt="">
+							<div class="fram">
+								<div class="fram-text">
+									<p class="p1">Xiao Ru & Grady</p>
+									<p class="p2">2018.6.25</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<div class="viel-more">
+					<div class="viel-more-butten">
+						<a href="#">VIEW MORE</a>
+					</div>
+				</div>
+					<div class="top-title middle-title">
+				<div class="middle-line ">
+				</div>
+				<div class="text-block middle-text-block">
+					<p class="p1">WELFER</p>
+					<p class="p2">优惠福利</p>
+				</div>
+			</div>
+				</ul>
+			</div>
+			<div class="welfer-perform">
+				<ul class="perform-left">
+					<li>
+						<a href="#">
+							<img src="img/youhui.jpg" alt="">
+							<div class="price">
+								<p>国庆特惠</p>
+								<p>7288元/套</p>
+							</div>
+						</a>
+					</li>
+					<li class="left-up">
+						<a href="#">
+							<img src="img/youhui.jpg" alt="">
+							<div class="price">	
+								<p>国庆特惠</p>
+								<p>7288元/套</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="perform-left perform-right">
+					<li>
+						<a href="#">
+							<img src="img/youhui.jpg" alt="">
+							<div class="price">
+								<p>国庆特惠</p>
+								<p>7288元/套</p>
+							</div>
+						</a>
+					</li>
+					<li class="left-up">
+						<a href="#">
+							<img src="img/youhui.jpg" alt="">
+							<div class="price">	
+								<p>国庆特惠</p>
+								<p>7288元/套</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<div class="middle-switch">
+					<ul class="switch-butten">
+						<li class="butten-top"><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li class="active"><a href="#"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="about-us">
+				<div class="top-title">
+				<div class="middle-line">
+				</div>
+				<div class="about-us-text text-block">
+					<p class="p1">Exhibittion of works</p>
+					<p class="p2">作品展示</p>
+				</div>
+			</div>
+			<div class="about-us-center">
+				<div class="round-logo">
+					
+				</div>
+				<ul class="introduce">
+					<li class="camera">
+						<a href="#">
+							<img class="introduce-logo" src="img/camera.jpg" alt=""><br>2014 年 成 立 于 郑 州，是 郑 州 知 名 一 线 品 牌 旅 拍 摄 影 工 作。
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="introduce-logo" src="img/camera.jpg" alt=""><br>2014 年 成 立 于 郑 州，是 郑 州 知 名 一 线 品 牌 旅 拍 摄 影 工 作。
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="introduce-logo" src="img/camera.jpg" alt=""><br>2014 年 成 立 于 郑 州，是 郑 州 知 名 一 线 品 牌 旅 拍 摄 影 工 作。
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="introduce-logo" src="img/camera.jpg" alt=""><br>2014 年 成 立 于 郑 州，是 郑 州 知 名 一 线 品 牌 旅 拍 摄 影 工 作。
+						</a>
+					</li>
+				</ul>
+				
+			</div>
+			</div>
+		</div>
+	</div>
+	<div class="fotter">
+		<div class="fotter-center">
+				<div class="top-title">
+				<div class="middle-line">
+				</div>
+				<div class="about-us-text text-block">
+					<p class="p1">Exhibittion of works</p>
+					<p class="p2">作品展示</p>
+				</div>
+			</div>
+			<div class="water">
+				<ul class="water-pic">
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+				</ul>
+			</div>
+							<ul class="water-text">
+					<li>
+						<a href="#"><p class="p1">前期沟通</p><p class="p2">确定时间地点及相关事项</p></a>
+</li><li>
+						<a href="#"><p class="p1">前期沟通</p><p class="p2">确定时间地点及相关事项</p>
+</a>
+</li><li>
+						<a href="#"><p class="p1">前期沟通</p><p class="p2">确定时间地点及相关事项</p></a>
+</li><li>
+						<a href="#"><p class="p1">前期沟通</p><p class="p2">确定时间地点及相关事项</p></a>
+</li><li>
+						<a href="#"><p class="p1">前期沟通</p><p class="p2">确定时间地点及相关事项</p></a>
+</li>
+				</ul>
+				<div class="consu">
+						<div class="zx">
+					<p>郑州镜界摄影服务工作室</p>
+					<ul class="QQ">
+						<li><a href="#"><img src="img/pic36.png" alt=""></a></li>
+						<li><a href="#"><img src="img/pic37.png" alt=""></a></li>
+						<li><a href="#"><img src="img/pic38.png" alt=""></a></li>
+						<li><a href="#"><img src="img/pic39.png" alt=""></a></li>
+				</ul>
+				</div>
+				<div class="place">
+					<ul class="phone">
+						<li><p>地址：郑州市郑东新区绿地中心6号楼</p></li>
+						<li><p>地址：郑州市郑东新区绿地中心6号楼</p></li>
+						<li><p>地址：郑州市郑东新区绿地中心6号楼</p></li>
+					</ul>
+				</div>
+				<div class="email">
+					<ul class="wx">
+						<li><p>手机：18236988754</p></li>
+						<li><p>手机：18236988754</p></li>
+						<li><p>手机：18236988754</p></li>
+					</ul>
+				</div>
+	</div>
+		</div>
+	</div>
+	<div class="foot">
+			<div class="foot-center">
+				<p>Copyright ©2010 ls1001.com, All rights reserved. 镜界传媒艺术有限公司 <a href="#">豫ICP备11028596号</a></p>
+			</div>
+		</div>
+</body>
+</html>

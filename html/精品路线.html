@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    .header{
+        position: fixed;
+        width: 100%;
+        height: 77px;
+        z-index: 999;
+        border-bottom: solid 5px #eceeee;
+    }
+    .header .header-center{
+        width: 1200px;
+        height: 100%;
+        background-color: #fdfcfc;
+        margin: 0 auto;
+    }
+    .header .header-center .logo{
+        position: relative;
+        width: 600px;
+        height: 100%;
+        float: left;
+
+    }
+    .header .header-center .logo .logo-img{
+        position: absolute;
+        top: 50%;
+        margin-top: -28.5px
+    }
+    .header .header-center .logo .logo-text{
+        position: absolute;
+        top: 50%;
+        left: 60px;
+        margin-top: -14px;
+        height: 28px;
+        width: 52px;
+        display: block;
+        color: #666;
+        font-size: 24px;
+        font-family: '微软雅黑';
+        line-height: 28px;
+
+    }
+    .header .header-center .header-nav{
+        width: 600px;
+        height: 100%;
+        float: left;
+    }
+    .header .header-center .header-nav li{
+        width: 70px;
+        height: 100%;
+        float: left;
+        margin-left: 70px;
+        /* overflow: hidden; */
+    }
+    .header .header-center .header-nav li a{
+        display: block;
+        width: 70px;
+        height: 40px;
+        color: #666;
+        font-size: 16px;
+        line-height: 40px;
+        margin-top: 20px;
+    }
+    .header .header-center .header-nav li a:hover{
+        border-bottom: solid 1px #04e4f8;
+        color: #04e4f8;
+    }
+    .header .header-center .header-nav .homepage{
+        width: 38px;
+        margin-left: 0;
+    }
+    .header .header-center .header-nav .homepage a{
+        display: block;
+        width: 38px;
+    }
+    .header .header-center .header-nav .active .contect{
+        width: 84px;
+        height: 60px;
+        background-color: #f3f2f2;
+        margin-left: -10px;
+        display: none;
+    }
+    .header .header-center .header-nav .active:hover .contect{
+        display: block;
+    }
+    .header .header-center .header-nav .active .contect:hover a{
+        border: none;
+    }
+    .header .header-center .header-nav .active .contect a{
+        display: block;
+        width: 100%;
+        height: 50%;
+        font-size: 14px;
+        /* color: #666; */
+        line-height: 30px;
+        text-indent: 6px;
+        margin-top: 0;
+    }
+    .banner{
+        width: 100%;
+        height: 1342px;
+        overflow: hidden;
+    }
+    .banner .banner-center{
+        overflow: hidden;
+        position: relative;
+        width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+        margin-top: 160px;
+        /* background-color: #e5e5e5; */
+    }
+    .banner .banner-center .banner-nav{
+        position: absolute;
+        top:85px;
+        left: 0;
+        height: 41px;
+        width: 90px;
+        border: solid 1px #c2c7cc;
+    }
+    .banner .banner-center .banner-nav .banner-nav-text{
+        display: block;
+        color:#000;
+        width: 90px;
+        height: 41px;
+        line-height: 41px;
+        text-indent: 16px;
+        font-size: 20px;
+    }
+    .banner .banner-center .banner-nav .banner-nav-text:hover{
+        background-color: #5ad0dc;
+        color: white;
+    }
+    .banner .banner-center .banner-pic{
+        height: 274px;
+        width: 1200px;
+        float: left;
+    }
+    .banner .banner-center .banner-pic .active{
+        margin-left: 116px;
+    }
+    .banner .banner-center .banner-pic li{
+        position: relative;
+        top:0;
+        margin-top: 0;
+        float: left;
+        width: 325px;
+        height: 100%;
+        margin-left: 54px;
+        border-bottom: solid 1px #666;
+    }
+    .banner .banner-center .banner-pic li .pic-border{
+        position: absolute;
+        top: 32px;
+        left: 36px;
+        width: 250px;
+        height: 130px;
+        border: solid 1px red;
+        display: none;
+    }
+    .banner .banner-center .banner-pic li:hover .pic-border{
+        display: block;
+    }
+    .banner .banner-center .banner-pic .banner-pic-text{
+        width: 100%;
+        height: 56px;
+        margin-top: 10px;
+    }
+    .banner .banner-center .banner-pic .banner-pic-text .p1{
+        font-weight: bolder;
+        font-size: 16px;
+    }
+    .banner .banner-center .banner-pic .banner-pic-text .p2{
+        font-size: 12px;
+    }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-center">
+            <div class="logo">
+                <a href="#"><img class="logo-img" src="img/pic1.png" alt=""></a>
+                <a href="#"><span class="logo-text">慢旅</span></a>
+            </div>
+            <ul class="header-nav">
+                <li class="homepage"><a href="#">首页</a></li>
+                <li><a href="#">特别策划</a></li>
+                <li class="active"><a href="#">特别策划</a>
+                <div class="contect">
+                    <a href="#">定制团体游</a>
+                    <a href="#">定制团体游</a>
+                </div>
+            </li>
+                <li><a href="#">特别策划</a></li>
+                <li><a href="#">特别策划</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="banner-center">
+            <div class="banner-nav">
+                <span class="banner-nav-text">境外游</span>
+            </div>
+            <ul class="banner-pic">
+                <li class="active">
+                    <div class="pic-border"></div>
+                 <a href="#"><img src="img/flower.jpg" alt=""></a>
+                <div class="banner-pic-text">
+                    <p class="p1">京都岚山深度 一日游</p>
+                    <p class="p2">寻找我们的风花雪月</p>
+                </div>
+                </li>
+                <li><a href="#">
+                        <div class="pic-border"></div>
+                    <img src="img/water.jpg" alt=""></a>
+                    <div class="banner-pic-text">
+                            <p class="p1">京都岚山深度 一日游</p>
+                            <p class="p2">寻找我们的风花雪月</p>
+                        </div>
+                </li>
+                <li>
+                        <div class="pic-border"></div>
+                    <a href="#"><img src="img/sun.jpg" alt=""></a>
+                    <div class="banner-pic-text">
+                            <p class="p1">京都岚山深度 一日游</p>
+                            <p class="p2">寻找我们的风花雪月</p>
+                        </div>
+                </li>
+            </ul>
+            <div class="banner-nav2">
+                    <span class="banner-nav-text">国内游</span>
+                </div>
+                <ul class="banner-img">
+                    <li class="active">
+                        <div class="pic-border"></div>
+                     <a href="#"><img src="img/cload.jpg" alt=""></a>
+                    <div class="banner-pic-text">
+                        <p class="p1">京都岚山深度 一日游</p>
+                        <p class="p2">寻找我们的风花雪月</p>
+                    </div>
+                    </li>
+                    <li><a href="#">
+                            <div class="pic-border"></div>
+                        <img src="img/snow.jpg" alt=""></a>
+                        <div class="banner-pic-text">
+                                <p class="p1">京都岚山深度 一日游</p>
+                                <p class="p2">寻找我们的风花雪月</p>
+                            </div>
+                    </li>
+                    <li>
+                            <div class="pic-border"></div>
+                        <a href="#"><img src="img/sea.jpg" alt=""></a>
+                        <div class="banner-pic-text">
+                                <p class="p1">京都岚山深度 一日游</p>
+                                <p class="p2">寻找我们的风花雪月</p>
+                            </div>
+                    </li>
+                </ul>
+                <div class="banner-nav3">
+                        <span class="banner-nav-text">省内游</span>
+                    </div>
+                    <ul class="banner-imgs">
+                        <li class="active">
+                            <div class="pic-border"></div>
+                         <a href="#"><img src="img/house.jpg" alt=""></a>
+                        <div class="banner-pic-text">
+                            <p class="p1">京都岚山深度 一日游</p>
+                            <p class="p2">寻找我们的风花雪月</p>
+                        </div>
+                        </li>
+                        <li><a href="#">
+                                <div class="pic-border"></div>
+                            <img src="img/forest.jpg" alt=""></a>
+                            <div class="banner-pic-text">
+                                    <p class="p1">京都岚山深度 一日游</p>
+                                    <p class="p2">寻找我们的风花雪月</p>
+                                </div>
+                        </li>
+                        <li>
+                                <div class="pic-border"></div>
+                            <a href="#"><img src="img/lamp.jpg" alt=""></a>
+                            <div class="banner-pic-text">
+                                    <p class="p1">京都岚山深度 一日游</p>
+                                    <p class="p2">寻找我们的风花雪月</p>
+                                </div>
+                        </li>
+                    </ul>
+                    <div class="switch">
+                            <ul class="switch-num">
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">6</a></li>
+                                    <li><a href="#">7</a></li>
+                                    <li><a href="#">8</a></li>
+                                    <li class="symbol"><a href="#">...</a></li>
+                                </ul>
+                                <div class="more">
+                                       <a href="#">MORE</a>
+                                </div>
+                    </div>       
+        </div>
+    </div>
+    <div class="fotter">
+        <div class="fotter-center">
+            <div class="fotter-left">
+                <div class="studio">
+                    <p>慢旅Slow Travle工作室</p>
+                </div>
+                <ul class="contact">
+                    <li><p>地点：中国河南省郑州市绿地新都汇
+                        </p></li>
+                        <li><p>邮编：1000000
+                            </p></li>
+                            <li><p>电话：0392-23656504
+                                </p></li>
+                                <li><p>邮箱：manlv@qq.com
+                                    </p></li>
+                                    <li class="zx-pic">
+                                        <ul class="zx">
+                                            <li class="qq"><a href="#"><img src="img/qq.png" alt=""></a></li>  
+                                            <li><a href="#">  <img src="img/wx.png" alt=""></a></li>
+                                            <li><a href="#"><img src="img/wb.png" alt=""></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><p>COPYRIGHT (©) 2018 mo004_2551 - 生活方式旅游类网站.</p></li>
+                </ul>
+
+            </div>
+            <div class="fotter-right">
+                <ul class="fotter-input">
+                    <li class="user-name"><p>姓名</p>
+                    <input class="name-text" type="text" name="user-name">
+                    </li>
+                    <li><p>邮箱</p>
+                        <input class="name-text" type="text" name="user-name">
+                    </li>
+                    <li><p>电话</p>
+                        <input class="name-text" type="text" name="user-name">
+                    </li>
+                </ul>
+                <div class="content">
+                    <p>内容</p>
+               <textarea class="content-text" id="d1" cols="60" rows="1"></textarea>
+                </div>
+                <input class="butten" type="submit" value="提交">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

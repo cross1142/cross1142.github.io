@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Dom dom -document object model 页面中所有的标签都是dom元素 负责页面的增删改查 CURD 事件的三要素： 事件源 事件 事件驱动程序node节点 页面中所有的标签都是node节点，标签的文本内容也是node节点，标签的换行，回车也是节点，标签的属性也是节点，标签的注释也是节点 DOM元素和节点的区别 获取元素1. document.getElementById(&amp;">
+<meta name="description" content="js基础js组成 内嵌式（测试时用的比较多） 外链式（开发时使用）  基本输出语句 alert（） 弹窗，括号里面输入的是字符串类型的所以必须加引号，可以是单引号也可以是双引号，每一行语句结束必须写分号 字符串内部的双引号必须用转义字符来转义，‘document.write(‘欢迎来到\”中国\”河南！’);‘ confirm 返回是布尔类型的数据 true/false console.log 打">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2019/02/21/dom笔记/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/02/21/笔记/JS基础笔记/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Dom dom -document object model 页面中所有的标签都是dom元素 负责页面的增删改查 CURD 事件的三要素： 事件源 事件 事件驱动程序node节点 页面中所有的标签都是node节点，标签的文本内容也是node节点，标签的换行，回车也是节点，标签的属性也是节点，标签的注释也是节点 DOM元素和节点的区别 获取元素1. document.getElementById(&amp;">
+<meta property="og:description" content="js基础js组成 内嵌式（测试时用的比较多） 外链式（开发时使用）  基本输出语句 alert（） 弹窗，括号里面输入的是字符串类型的所以必须加引号，可以是单引号也可以是双引号，每一行语句结束必须写分号 字符串内部的双引号必须用转义字符来转义，‘document.write(‘欢迎来到\”中国\”河南！’);‘ confirm 返回是布尔类型的数据 true/false console.log 打">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-20T05:42:04.619Z">
+<meta property="og:updated_time" content="2019-02-20T05:42:26.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="Dom dom -document object model 页面中所有的标签都是dom元素 负责页面的增删改查 CURD 事件的三要素： 事件源 事件 事件驱动程序node节点 页面中所有的标签都是node节点，标签的文本内容也是node节点，标签的换行，回车也是节点，标签的属性也是节点，标签的注释也是节点 DOM元素和节点的区别 获取元素1. document.getElementById(&amp;">
+<meta name="twitter:description" content="js基础js组成 内嵌式（测试时用的比较多） 外链式（开发时使用）  基本输出语句 alert（） 弹窗，括号里面输入的是字符串类型的所以必须加引号，可以是单引号也可以是双引号，每一行语句结束必须写分号 字符串内部的双引号必须用转义字符来转义，‘document.write(‘欢迎来到\”中国\”河南！’);‘ confirm 返回是布尔类型的数据 true/false console.log 打">
 
 
 
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/21/dom笔记/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/21/笔记/JS基础笔记/">
 
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/dom笔记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/笔记/JS基础笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -299,76 +299,32 @@
       
 
       
-        <h2 id="Dom"><a href="#Dom" class="headerlink" title="Dom"></a>Dom</h2><ul>
-<li>dom -document object model</li>
-<li>页面中所有的标签都是dom元素</li>
-<li>负责页面的增删改查 CURD</li>
-<li>事件的三要素： 事件源 事件 事件驱动程序<h2 id="node节点"><a href="#node节点" class="headerlink" title="node节点"></a>node节点</h2></li>
-<li>页面中所有的标签都是node节点，标签的文本内容也是node节点，标签的换行，回车也是节点，标签的属性也是节点，标签的注释也是节点</li>
-<li>DOM元素和节点的区别</li>
-<li>获取元素<pre><code>1. document.getElementById(&apos;&apos;);根据id获取，用的不是很多
-2. document.getElementByClassName(&apos;&apos;);根据class名称获取
-3. document..getElementByTagName(&apos;&apos;);根据标签名获取
-</code></pre><h2 id="calss选择器的问题"><a href="#calss选择器的问题" class="headerlink" title="calss选择器的问题"></a>calss选择器的问题</h2></li>
-<li>一般在ie-8中存在很多兼容问题，需要做兼容处理</li>
-<li>在ie-8不支持通过class名获取节点的方法：不支持getElementsByClassName();</li>
-<li>在ie-8不支持consoel这个对象<h2 id="节点之间的关系"><a href="#节点之间的关系" class="headerlink" title="节点之间的关系"></a>节点之间的关系</h2></li>
-<li>父类节点 ：获取父类节点的方法parentNode;他是一个属性，不是方法。</li>
-<li>调用父节点直接 .parentNode</li>
-<li>兄弟节点 :nextSibling在ie6,7,8中指下一个元素节点（标签，注释），在其他浏览器中指下一个节点（包括空文档和换行节点），在高级浏览器里下一个节点可以用nextElementSibling</li>
-<li>兄弟节点的上一个节点priviousSibling和priviousElementSibling</li>
-<li>兼容写法 var li5 = li4.nextElementSibling || li4.nextSibling;而且顺序不能颠倒。</li>
-<li>单个子节点 ：第一个子节点firstChild:在ie6,7,8中指第一个子元素节点，在火狐谷歌和ie-9以后的版本指第一个节点（也包括空文档和换行节点），同理可以用firstElementChild在该机浏览器里面指第一个元素节点</li>
-<li>兼容写法 var li1 = ulEl.firstElementChild || ulEl.firstChild;顺序不能颠倒</li>
-<li>单个子节点 ：最后一个子节点 lastElementChild || lastChild;</li>
-<li>所有的子节点 ：childNodes;</li>
-<li>判断节点的类型 ： nodeType;例如（console.log(lis[i].nodeType);）<ol>
-<li>nodeType ==1;元素节点</li>
-<li>nodeType == 3;文本节点/回车，换行</li>
-<li>nodeType == 8; 注释</li>
-</ol>
-</li>
-<li>childNodes是标准属性，嫡出，它返回指定元素的子元素集合，包括HTML节点，所有属性，文本节点</li>
-<li><p>children 非标准属性，它返回指定元素的子元素集合；在ie6,7,8中包含注释节点的，可以用包装好多的匿名函数筛选出来元素节点，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function myChildren (pNode) &#123;</span><br><span class="line">			var children = pNode.children;</span><br><span class="line">			var rs = [];</span><br><span class="line">			for(var i = 0 ; i &lt; children.length ; i++)&#123;</span><br><span class="line">				//过滤元素节点</span><br><span class="line">				if(children[i].nodeType == 1)&#123;</span><br><span class="line">					rs.push(children[i]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			return rs;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>给节点绑定事件 ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pNode.onclick = function()&#123;</span><br><span class="line">    样式的操作 例如：</span><br><span class="line">    pNode.style.backgroundColor = &apos;red&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建子节点</p>
-<ol>
-<li>创建子节点： 使用的方法是document.creatElement();</li>
-<li>通过api创建一个元素，注意：元素创建后必须插入才能显示</li>
-</ol>
-<ul>
-<li>插入方式<ol>
-<li>父节点.appendChild();</li>
-<li>父节点.insertBefore(要插入的节点，参考节点);例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d1El.insertBefore(img, d1El.firstElementChild || d1El.firstChild);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
+        <h1 id="js基础"><a href="#js基础" class="headerlink" title="js基础"></a>js基础</h1><h2 id="js组成"><a href="#js组成" class="headerlink" title="js组成"></a>js组成</h2><ul>
+<li>内嵌式（测试时用的比较多）</li>
+<li>外链式（开发时使用）</li>
 </ul>
-</li>
-<li><p>删除节点</p>
-</li>
-<li>删除操作必须通过父节点执行</li>
-<li>父节点.removeChild(子节点);</li>
-<li>复制节点</li>
-<li>用法： oldNode.cloneNode();</li>
-<li>默认是浅克隆，深克隆需要增加额外的参数<h2 id="属性的设置"><a href="#属性的设置" class="headerlink" title="属性的设置"></a>属性的设置</h2></li>
-<li>添加属性： setAttribute 是用于添加属性的不是用于操作class内容的</li>
-<li>getAttribute 获取属性</li>
-<li>removeAttribute 删除属性</li>
-<li>在body里面为空的时候，如果想让内容铺满，用html,body{</li>
+<h2 id="基本输出语句"><a href="#基本输出语句" class="headerlink" title="基本输出语句"></a>基本输出语句</h2><ul>
+<li>alert（） 弹窗，括号里面输入的是字符串类型的所以必须加引号，可以是单引号也可以是<br>双引号，每一行语句结束必须写分号</li>
+<li>字符串内部的双引号必须用转义字符来转义，<br>‘<br>document.write(‘欢迎来到\”中国\”河南！’);<br>‘</li>
+<li>confirm 返回是布尔类型的数据 true/false</li>
+<li>console.log 打印 调试代码用的，开发时用得比较多</li>
+<li>prompt 文本输入的语句</li>
+<li>document.write 浏览器输出</li>
 </ul>
-<p>}</p>
-<ul>
-<li>忽略边框的宽度，挤压内容属性：box-sizing：border-box;属于c3的属性</li>
-<li>如果希望a标签被当作按钮触发事件，用href=javascript:;<h2 id="内容处理"><a href="#内容处理" class="headerlink" title="内容处理"></a>内容处理</h2></li>
-<li>给p标签插入或者替换内容 用innerText=</li>
-<li>给input设置value 用xxxx.value=</li>
-<li>给ul动态添加xxx.innerHTML = </li>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
+<li>变量是用var声明的，赋值符号用=，严格区分大小写</li>
 </ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li>String 字符串</li>
+<li>Number 数字</li>
+<li>Boolean 布尔类型</li>
+<li>Undefined 未定义-(声明了变量但是没有赋值)</li>
+<li>Null  Null</li>
+</ul>
+<h2 id="判断数据类型"><a href="#判断数据类型" class="headerlink" title="判断数据类型"></a>判断数据类型</h2><ul>
+<li>typeof可以判断基本数据类型</li>
+</ul>
+<p><code>console.log(typeof 变量)</code></p>
 
       
     </div>
@@ -393,7 +349,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/21/函数笔记/" rel="next" title>
+              <a href="/2019/02/21/笔记/JS内置对象/" rel="next" title>
                 <i class="fa fa-chevron-left"></i> 
               </a>
             
@@ -402,6 +358,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/21/笔记/函数笔记/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -515,7 +475,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dom"><span class="nav-number">1.</span> <span class="nav-text">Dom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node节点"><span class="nav-number">2.</span> <span class="nav-text">node节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#calss选择器的问题"><span class="nav-number">3.</span> <span class="nav-text">calss选择器的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#节点之间的关系"><span class="nav-number">4.</span> <span class="nav-text">节点之间的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性的设置"><span class="nav-number">5.</span> <span class="nav-text">属性的设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容处理"><span class="nav-number">6.</span> <span class="nav-text">内容处理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js基础"><span class="nav-number">1.</span> <span class="nav-text">js基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#js组成"><span class="nav-number">1.1.</span> <span class="nav-text">js组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本输出语句"><span class="nav-number">1.2.</span> <span class="nav-text">基本输出语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">1.3.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.4.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断数据类型"><span class="nav-number">1.5.</span> <span class="nav-text">判断数据类型</span></a></li></ol></li></ol></div>
             
 
           </div>

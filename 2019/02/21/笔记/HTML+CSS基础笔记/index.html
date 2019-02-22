@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Html CSS知识点总结html 基础知识 Head                                                 面的标签不会在页面中显示，只是辅助浏览器解析使用。 Mate 用于设置网页的元数据 Title 用于设置页面显示的标题，在浏览器的选项卡头部显     示，可能对seo有帮助 H1~h6标签为标题标签，且每个程序只允许出现一个h1标签 .h标签不能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/02/21/笔记/HTML+CSS基础笔记/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Html CSS知识点总结html 基础知识 Head                                                 面的标签不会在页面中显示，只是辅助浏览器解析使用。 Mate 用于设置网页的元数据 Title 用于设置页面显示的标题，在浏览器的选项卡头部显     示，可能对seo有帮助 H1~h6标签为标题标签，且每个程序只允许出现一个h1标签 .h标签不能">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-20T05:40:31.851Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="Html CSS知识点总结html 基础知识 Head                                                 面的标签不会在页面中显示，只是辅助浏览器解析使用。 Mate 用于设置网页的元数据 Title 用于设置页面显示的标题，在浏览器的选项卡头部显     示，可能对seo有帮助 H1~h6标签为标题标签，且每个程序只允许出现一个h1标签 .h标签不能">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/02/21/笔记/HTML+CSS基础笔记/">
+
+
+
+
+
+  <title> | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/笔记/HTML+CSS基础笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-21T10:01:52+08:00">
+                2019-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Html-CSS知识点总结"><a href="#Html-CSS知识点总结" class="headerlink" title="Html CSS知识点总结"></a>Html CSS知识点总结</h1><h2 id="html-基础知识"><a href="#html-基础知识" class="headerlink" title="html 基础知识"></a>html 基础知识</h2><ul>
+<li>Head                                                 面的标签不会在页面中显示，只是辅助浏览器解析使用。</li>
+<li>Mate 用于设置网页的元数据</li>
+<li>Title 用于设置页面显示的标题，在浏览器的选项卡头部显     示，可能对seo有帮助</li>
+<li>H1~h6标签为标题标签，且每个程序只允许出现一个h1标签 .h标签不能嵌套。</li>
+<li>P标签为段落标签，注意p 标签不能嵌套p标签和h标签，</li>
+<li>a标签为超链接标签：target=self(默认) blank top parent  a 标签不会继承父类的颜色。</li>
+<li>清除a标签下面的下划线 text-decoration:none;</li>
+<li>文本居中方式：text-align;center</li>
+<li>iframe 画中画src 内容的链接 widht heigth - 显示的宽和高 frameborder=0去掉默认边框。</li>
+<li>img插入图片的标签：路径分为网络绝对路径，本地绝对路径 同级路径 上级路径wigth height 分别为图片的长和宽，单位是像素</li>
+<li>列表标签:ul li 无序列表 ol li 有序列表 dl dt dd 自定义列表</li>
+<li>清除列表的默认边框 list-style:none;</li>
+<li>段落标签：br 换行 hr下划线换行 </li>
+<li>字体标签：em 字体倾斜 strong 字体加粗 i字体倾斜 b 字体加粗 sup上标 sub 下标</li>
+</ul>
+<h2 id="列表内容"><a href="#列表内容" class="headerlink" title="列表内容"></a>列表内容</h2><ul>
+<li>列表的使用:列表内容必须放在form内， name 是表单特有的属性：<ul>
+<li>input: 单行文本输入框，输入类型由type决定，input属性还有name value id 其中比特殊的标签有readonly(只读)  disabled(不可用)  hidden(用户看不见但是后台需要获取的内容)</li>
+<li>输入文字以及数字type类型为text,</li>
+<li>单项选择type类型为radio，</li>
+<li>多选时type类型为checkbox,</li>
+<li>下拉框用标签：select option</li>
+<li>文本框标签用textaera   cols rows :设置文本框几行几列</li>
+<li>fieldset  legend 可以实现表单的分组。</li>
+<li>Type=file 上传，当选中时实际文件并没有被选上来。</li>
+<li>提交方式属性为sumbit</li>
+<li>重置属性为reset</li>
+<li>border: none; 去掉默认边框</li>
+<li>outline: none;去掉input输入框获取焦点默认边框</li>
+<li>Label 用于包括输入框的头部和输入框，使之成为一体，多用于单选和多选。<br>这几标签都要有name属性和value 属性，方便反馈后台的内容。</li>
+</ul>
+</li>
+</ul>
+<h2 id="表格标签："><a href="#表格标签：" class="headerlink" title="表格标签："></a>表格标签：</h2><ul>
+<li>Table 它里面的属性有 bgcolor（背景颜色） cellspacing（单元格间距） - cellpadding（字体和单元格之间的间距） align（表格位置）border(边框加粗)</li>
+<li>Rowspan用于合并行类单元格</li>
+<li>Colspan 用于合并列单元格</li>
+<li>Tr表示表格的一行，属性有bgcolor </li>
+<li>Th表示表头</li>
+<li>Td表示表内数据</li>
+</ul>
+<h2 id="CSS书写样式"><a href="#CSS书写样式" class="headerlink" title="CSS书写样式"></a>CSS书写样式</h2><ul>
+<li>行内样式<br><code>{ &lt;p &gt; style=” color=red”}</code><br>严重耦合，用的非常少。<ul>
+<li>内部样式<br><code>style p{ color=”red” }/style</code>测试时使用，</li>
+<li>引入样式<code>&lt;link rel=stylesheet href=” style.css”&gt;</code>开发使用</li>
+</ul>
+</li>
+</ul>
+<h3 id="选择器："><a href="#选择器：" class="headerlink" title="选择器："></a>选择器：</h3><pre><code>- 标签选择器：p { color
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Font-size=””</span><br><span class="line">&#125;</span><br><span class="line">	Class选择器 .h2&#123;</span><br><span class="line">				Color:</span><br><span class="line">&#125;</span><br><span class="line">	Id选择器：#h2&#123;</span><br><span class="line">				Color:</span><br><span class="line">&#125;</span><br><span class="line">交集选择器 .p1 .p2&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">并集选择器 .p1 , .p2&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">后代选择器 .p1 a&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="css的单位"><a href="#css的单位" class="headerlink" title="css的单位"></a>css的单位</h2><ul>
+<li>Px 像素单位</li>
+<li>Em 相当于当前字体的倍数  text-indent 缩进几个字体</li>
+<li>背景颜色：bgc rgb( 0, 0, 255 )十六进制，三位分别表示红 绿 蓝<pre><code>bgc rgba( 0, 0, 255 .5)最后一位表示透明度区间为0~1，不会改变内容的透明度
+opacity:0.5; 单独使用，也表示透明度，改变整体盒子的透明度。
+</code></pre></li>
+</ul>
+<h2 id="常用属性："><a href="#常用属性：" class="headerlink" title="常用属性："></a>常用属性：</h2><ul>
+<li>widht /height 块状元素的宽和高；<ul>
+<li>Background-color:背景颜色<ul>
+<li>Color:字体颜色</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Font-size:字体大小</li>
+<li>Text-aligen :文字对齐方式</li>
+<li>Text-indent：首行缩进</li>
+<li>Font-family:字体</li>
+<li>Font-weight:字体加粗区间为100-900（bolder lighter normal）</li>
+<li>Font-style: ltalic 斜体/normal 正常</li>
+<li>Line-hight：行高 单位px /倍数/百分比 设置文字的行间距<ul>
+<li>单行文字垂直居中：行高=父类盒子高度</li>
+</ul>
+</li>
+<li>Font：缩写 font: italic bolder 20px/1.2 arial</li>
+</ul>
+<h2 id="背景图片："><a href="#背景图片：" class="headerlink" title="背景图片："></a>背景图片：</h2><ul>
+<li>background-color: 背景图片颜色</li>
+<li>background-image: 背景图片 url(‘1.png’);</li>
+<li>background-repeat: 平铺方式 repeat | no-repeat | repeat-x | repeat-y</li>
+<li>background-position: 图片位置 left | right | top | bottom | center</li>
+<li>background-attachment: 背景滚动 scroll/fixed (注意：基于body的定位）background ：简写 background: green url(1.jpg) no-repeat center fixed;</li>
+<li>background-size: 100% auto;用于控制背景图片的宽和高</li>
+<li>html,body{<pre><code>    width: 100%;
+    height: 100%;
+}   这种写法能使body占据整个屏幕
+</code></pre></li>
+</ul>
+<h2 id="标签的表现形式"><a href="#标签的表现形式" class="headerlink" title="标签的表现形式"></a>标签的表现形式</h2><ul>
+<li>块状标签：宽高有效，不可以在同一行显示，比如：diiv ul ol li dl dt dd p h1-h6 form table hr br </li>
+<li>行内块标签：宽高有效，可以在同一行显示 比如：input select img button </li>
+<li>行内标签：同一行显示，宽高无效 比如：a 以及字体标签。<br>##盒子模型</li>
+<li>一个盒子由四部分组成，：padding 内边距 border 边框 margin盒子与盒子之间的距离 ，外边距 content 内容</li>
+<li>Padding:</li>
+<li>Padding: 10px 20px 30px 40px ,这样会设置元素的上 右下 左 四个方向的内边距</li>
+<li>Padding 10px 23px 30px 分别指上 左右 和下，四个边距</li>
+<li>Padding 10px 20px 分别指上下 和左右四个边距</li>
+<li>Padding 10px 分别指上下左右四个边距</li>
+<li>同时还有padding-top padding-leftpadding-right padding-bottom 表示四个边距</li>
+<li>Marign 用法和padding相同</li>
+<li>Marign :xxx auto; 可以使块状元素居中。</li>
+<li>盒子嵌套出现的问题：给子类盒子设置marign的时候会造成嵌套崩塌，子类的margin-top没有-效果，直接作用到父类盒子 ：解决方案：父类overflow：hidding或者父类设置极小的padding</li>
+<li>如果垂直两个块状元素同时设置了margin-top和marign- bottom，那么这两个值不会叠加，那个值大用哪个。</li>
+<li>Border：可以在元素周围创建边框 border：1px solid red 分别指定了边框的宽度 样式 颜色 boder-style：none dashed dotted solid double   可以单独设置某一条边框例如 border-right：……</li>
+<li>Padding 影响盒子的大小<br>；元素性质的改变可以通过display来改变</li>
+<li>Visibility 和display-none不同 前者隐藏后仍然占据原来的位置</li>
+<li>Overflow 相关标签里面的内容超出了盒子的范围后处理方式：-visible{默认可见} scroll(强制添加滚动条) -auto（根据需要添加滚动条）-hidden（隐藏超出盒子的内容）</li>
+</ul>
+<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><ul>
+<li>块级元素和行内元素都可以浮动，当一个行内元素浮动以后将会自动变为一个块级元素，当一个块级元素浮动以后，宽度会默认被内容撑开，所以当漂浮一个块级元素时我们都会为其指定一个宽度。 当一个元素浮动以后，其下方的元素会上移。元素中的内容将会围绕在元素的周围，元素浮动以后即完全脱离文档流，这时不会再影响父元素的高度。也就是浮动元素不会撑开父元素。浮动元素默认会变为块元素，即使设置display:inline以后其依然是个块元素。<br>如果子类元素设置了浮动，而父类元素没有设置高度，或者高度比子类元素小，那么子类元素脱离了文档流，就无法把父类盒子撑开。那么整个文档的结构将受到破快。清除浮动的影响： clear: left/right/both 不允许当前元素的left/right/both有浮动元素。在浮动元素的最后面追加一个空的div,设置clear:both即可清除浮动的影响。</li>
+<li>一般只是用左浮动，因为float-right会改变标签的前后顺序。</li>
+<li>一旦子类发生了浮动 父类盒子不需要写高度 </li>
+</ul>
+<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><ul>
+<li>Postion </li>
+<li>Relitive 相对定位。相对定位相对于元素本身的位置定位，开启相对定位以后，可以使用top -right bottom left 四个属性对元素进行定位。相对定位不会改变元素原来的特性，但是会使元素层级提升，使其可以覆盖其他元素。</li>
+<li>Absolute 绝对定位，指元素相对于其他元素的定位，他会是元素脱离原来的文本流，</li>
+<li><p>Fixed 固定定位，相对boday页面定位，页面滚动页面不会随着移动</p>
+</li>
+<li><p>z-index 设置元素的堆叠顺序，拥有更高的堆叠顺序的元素总是位于前面，z-index 仅能在定位元素上奏效。例如{position:absolute} 他的值不限制，没有单位。</p>
+</li>
+<li>border-radius: 50%; 盒子边角变圆。</li>
+<li>cursor: pointer;指针形状改变（pointer（小手）  move（坐标箭头）  help（箭头加问号）  default（默认））</li>
+<li>text-indent：0；恢复缩进</li>
+<li>display:none; 隐藏 display:block; 显示</li>
+<li>text-aliign 可以对文本 行内块 多个行内块进行居中，但是会有一个空格的偏移，清除这个偏移就在父类盒子写font-size=0;清除空格。</li>
+<li>Background-position坐标：是基于规定区域左上角的位置，横向为纵向为Y ，如果只写一个数字，起作用。默认y轴居中，  </li>
+<li>当一个标签设置了两个class属性，为了增加权重可以用交集选择器。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/21/笔记/for循环/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/21/笔记/对象笔记/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Html-CSS知识点总结"><span class="nav-number">1.</span> <span class="nav-text">Html CSS知识点总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html-基础知识"><span class="nav-number">1.1.</span> <span class="nav-text">html 基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表内容"><span class="nav-number">1.2.</span> <span class="nav-text">列表内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格标签："><span class="nav-number">1.3.</span> <span class="nav-text">表格标签：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS书写样式"><span class="nav-number">1.4.</span> <span class="nav-text">CSS书写样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器："><span class="nav-number">1.4.1.</span> <span class="nav-text">选择器：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css的单位"><span class="nav-number">1.5.</span> <span class="nav-text">css的单位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用属性："><span class="nav-number">1.6.</span> <span class="nav-text">常用属性：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背景图片："><span class="nav-number">1.7.</span> <span class="nav-text">背景图片：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签的表现形式"><span class="nav-number">1.8.</span> <span class="nav-text">标签的表现形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮动"><span class="nav-number">1.9.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定位"><span class="nav-number">1.10.</span> <span class="nav-text">定位</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

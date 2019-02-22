@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>缓动轮播</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html,body{
+        width: 100%;
+    }
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    .banner{
+        position: relative;
+        top: 100px;
+        width: 1226px;
+        height: 460px;
+        margin: 0 auto;
+        overflow: hidden;
+        background-color: #000;
+    }
+    .banner .swiper{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 600%;
+        height: 100%;
+    }
+    .banner .swiper li{
+        width: 1226px;
+        height: 460px;
+        float: left;
+    }
+    .banner .btn{
+        position: absolute;
+        bottom: 20px;
+        left: 500px;
+        width: 200px;
+        height: 16px;
+        /* background-color: #000; */
+    }
+    .banner .btn li{
+        height: 100%;
+        width: 16px;
+        float: left;
+        margin-left: 10px;
+        border-radius: 50%;
+        /* background-color: red; */
+    }
+    .banner .btn li a{
+        display: block;
+        width: 100%;    
+        height: 100%;
+        border-radius: 50%;
+        border: 1px solid white;
+    }
+    .banner .btn li.active{
+        background-color: orange;
+    }
+    .banner .btn-l,
+    .banner .btn-r{
+        position: absolute;
+        top: 50%;
+        margin-top: -35px;
+        background-color: #e5e5e5;
+        display: block;
+        line-height: 70px;
+        text-align: center;
+        width: 30px;
+        height: 70px;
+        font-size: 24px;
+        color: white;
+    }
+    .banner .btn-l:hover,
+    .banner .btn-r:hover{
+        background-color: #d6d6d6;
+        color: orange;
+        font-weight: bolder;
+    }
+    .banner .btn-l{
+        position: absolute;
+        right: 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <ul class="swiper"></ul>
+        <ul class="btn"></ul>
+        <a class="btn-r" href="javascript:;">&lt;</a>
+        <a class="btn-l" href="javascript:;">&gt;</a>
+    </div>
+    <script src="utils/common.js"></script>
+    <script>
+    var imgs = ['m1.jpg','m2.jpg','m3.jpg','m4.jpg','m5.jpg','m6.jpg'];
+    // console.log(imgs[1]);
+    var bannerEl = document.getElementsByClassName('banner')[0];
+    var swiperEl = document.getElementsByClassName('swiper')[0];
+    var btnEl = document.getElementsByClassName('btn')[0];
+    var btnL = document.getElementsByClassName('btn-l')[0];
+    var btnR = document.getElementsByClassName('btn-r')[0];
+    innerHTML();
+    innerBtn();
+    var btns = myChildren(btnEl);
+    var lis = swiperEl.children;
+    var liW = lis[0].offsetWidth;
+    var count =0;
+    var timer = null;
+    goOn();
+    initDottsEvent();
+    btnL.onclick = function(){
+        count--;
+        if(count < 0){
+            count = lis.length-1;
+        }
+        var target = -1*count*liW;
+        changeActive(count);
+        animate(swiperEl,target);
+    }
+    btnR.onclick = function(){
+        count++;
+        console.log(lis.length);
+        if(count == lis.length){
+            count = 0
+        }
+        var target = -1*count*liW;
+        changeActive(count);
+        animate(swiperEl,target);
+    }
+    bannerEl.onmouseenter = function(){
+        clearInterval(timer);
+    }
+    bannerEl.onmouseleave = function(){
+       goOn();
+    }
+    /**
+     * 循环绑定事件
+     **/
+        function initDottsEvent(){
+				//给dotts>li循环绑定事件
+				for(var i  = 0 ; i < btns.length ;i ++){
+					// 对象 给具体的对象添加属性 
+                    btns[i].index = i;
+					btns[i].onclick = function(){
+                         count = this.index;
+                        var target = -1*count*liW;
+                        clearInterval(timer);
+                        changeActive(count);
+                        animate(swiperEl,target);
+					}
+				}
+            }
+    /**
+     * 改变激活样式
+     **/
+    function changeActive(count){
+       for(var i = 0;i<btns.length;i++){
+           if(hasClass(btns[i],'active')){
+               removeClassName(btns[i],'active');
+           }    
+       }
+       addClassName(btns[count],'active');
+    }/**
+    *动态生成li图片
+    **/
+    function innerHTML(){
+        var str = '';
+        for(var i = 0; i <imgs.length; i++){
+            str += '<li><img src = "img/'+imgs[i]+'"/></li>'
+        }
+        swiperEl.innerHTML = str;
+    } 
+    /**
+     * 动态生成dotts
+     * */
+    function innerBtn(){
+        var str = '';
+        for(var i = 0; i <imgs.length; i++){
+            var classStr = (i == 0?' class="active"':'');
+            str += '<li '+classStr+'><a href="javascript:;"></a></li>'
+        }
+        btnEl.innerHTML = str;
+    }
+    /**
+     *定时器 
+     * */
+    function goOn(){
+    timer = setInterval(function(){
+        count++;
+        if(count == lis.length){
+            count =0;
+            animate(swiperEl,0);
+            changeActive(0)
+        
+        }else{
+            var target = -1*count*liW;
+            animate(swiperEl,target);
+            changeActive(count);
+        }
+    },3500);
+}
+    </script>
+</body>
+</html>

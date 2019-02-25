@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .banner{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        background-color: #000;
+    }
+    </style>
+</head>
+<body>
+    <div class="banner"></div>
+    <script>
+        var bannerEl = document.getElementsByClassName('banner')[0];
+        var timer = null;
+        document.onclick = function(e){
+            var x = e.pageX - bannerEl.offsetWidth/2;
+            var y = e.pageY- bannerEl.offsetHeight/2;
+            var targetX = x;
+            var targetY = y;
+            animate(bannerEl,targetX,targetY);
+        }
+        function animate(el,targetX,targetY){
+            clearInterval(timer);
+           timer = setInterval(function(){
+                var leaderX = bannerEl.offsetLeft;
+                var leaderY = bannerEl.offsetTop;
+                var stepX = (targetX - leaderX)/10;
+                var stepY = (targetY - leaderY)/10;
+                leaderX += stepX;
+                leaderY += stepY;
+                if(Math.abs(stepX<1)){
+                    stepX = stepX<0?-1:1;
+                }
+                if(Math.abs(stepY<1)){
+                    stepX = stepY<0?-1:1;
+                }
+                el.style.left = leaderX + 'px';
+                el.style.top = leaderY  + 'px';
+                if(targetX == leaderX&&targetY==leaderY){
+                    clearInterval(timer);
+                    console.log('end...');
+                }
+            },17)
+        }
+    </script>
+</body>
+</html>

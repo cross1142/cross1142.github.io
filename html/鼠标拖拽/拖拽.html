@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .banner{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        background-color: #000;
+        cursor: move;
+    }
+    </style>
+</head>
+<body>
+    <div class="banner"></div>
+    <script>
+    var bannerEl = document.getElementsByClassName('banner')[0];
+    bannerEl.onmousedown = function(e){
+        var x = e.pageX - bannerEl.offsetLeft;
+        var y = e.pageY - bannerEl.offsetTop;
+        document.onmousemove = function(e){
+            bannerEl.style.left = e.pageX - x + 'px';
+            bannerEl.style.top = e.pageY - y + 'px';
+        }
+    }
+    bannerEl.onmouseup = function(e){
+        document.onmousemove = null;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    .banner{
+        position: relative;
+        width: 1226px;
+        height: 460px;
+        background-color: lightblue;
+        margin: 100px auto;
+        overflow: hidden;
+    }
+    .banner .btn-l,
+    .banner .btn-r{
+        position: absolute;
+        top: 50%;
+        margin-top: -36px;
+        text-align: center;
+        line-height: 72px;
+        font-size: 24px;
+        color: white;
+        display: block;
+        width: 36px;
+        height: 72px;
+        background-color: #d5d5d5;
+    }
+    .banner .btn-l:hover,
+    .banner .btn-r:hover{
+        color: rgb(58, 44, 19);
+        background-color: #a5a5a5;
+    }
+    .banner .btn-r{
+        position: absolute;
+        right: 0;
+    }
+    .banner .swiper{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 700%;
+        height: 100%;
+        /* overflow: hidden; */
+    }
+    .banner .swiper li{
+        width: 1226px;
+        height: 100%;
+        float: left;
+    }
+    .banner .dotts{
+        position: absolute;
+        bottom: 50px;
+        left: 500px;
+        width: 200px;
+        height: 14px;
+    }
+    .banner .dotts li{
+        height: 100%;
+        width: 14px;
+        float: left;
+        margin-left: 14px;
+        border: 2px solid black;
+        border-radius: 50%;
+        background-color: #fff;
+    }
+    .banner .dotts li.active{
+        border-color: #e5e5e5;
+        background-color: orange;
+    }
+    .banner .dotts li:hover{
+        border-color: #e5e5e5;
+    }
+    .banner .dotts li a{
+        display: block;
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <ul class="swiper"></ul>
+        <ul class="dotts"></ul>
+        <a class="btn-l" href="javascript:;">&lt;</a>
+        <a class="btn-r active" href="javascript:;">&gt;</a>
+    </div>
+    <script>
+    var bannerEl = document.getElementsByClassName('banner')[0];
+    var swiperEl = document.getElementsByClassName('swiper')[0];
+    var dottsEl = document.getElementsByClassName('dotts')[0];
+    var btnL = document.getElementsByClassName('btn-l')[0];
+    var btnR = document.getElementsByClassName('btn-r')[0];
+    var imgs = ['m1.jpg','m2.jpg','m3.jpg','m4.jpg','m5.jpg','m6.jpg','m1.jpg'];
+    var count = 0;
+    var timer = null;
+    initPic();
+    var lis = swiperEl.children;
+    var dots = dottsEl.children;
+    var liW = lis[0].offsetWidth;
+    var count = 0;
+    initDot();
+    offOn();
+    btnL.onclick = function(){
+        count++;
+        if(count == lis.length){
+            count = 1;
+            swiperEl.style.left = 0;
+        }
+        changeActive(count)
+        var target = -1*count*liW;
+        animate(swiperEl,target);
+    }
+    btnR.onclick = function(){
+        count--;
+        if(count < 0){
+            count = lis.length-2;
+            swiperEl.style.left = -1*lis.length*liW + 'px';
+        }
+        changeActive(count)
+        var target = -1*count*liW;
+        animate(swiperEl,target);
+    }
+    /**
+     * 循环绑定
+     * */
+     clickDotts();
+    function clickDotts(){
+        for(var i = 0; i < dots.length; i ++){
+            dots[i].index = i;
+            dots[i].onclick = function(){
+                count = this.index;
+                var target = -1*count*liW;
+                changeActive(count); 
+               animate(swiperEl,target);
+            }
+        }
+    }
+    /**
+    *改变小点的active
+    **/
+    function changeActive(count){
+        if(count == imgs.length-1){
+            count = 0;
+        }
+        for(var i = 0;i < dots.length;i ++){
+            removeClassName(dots[i],'active');
+        }
+        addClassName(dots[count],'active');
+    }
+
+    bannerEl.onmouseenter = function(){
+        clearInterval(timer);
+    }
+    bannerEl.onmouseleave = function(){
+        offOn();
+    }
+    /**
+     * 缓动轮播
+     * */
+    function offOn(){
+   timer = setInterval(function(){
+        count ++;
+        if(count == lis.length){
+            count = 1;
+            swiperEl.style.left = 0;
+        }
+        // console.log(count);
+        var target = -1*count*liW;
+        animate(swiperEl,target);
+        changeActive(count);
+    },3000);
+}
+    /**
+     *动态生成li图片 
+     * */
+    function initPic(){
+        var str = '';
+        for(var i = 0; i< imgs.length;i++){
+            var cActive = (i ==0? 'class = "active"':' ');
+            str += '<li'+' '+cActive+'><img src = img/'+imgs[i]+'></li>';
+        }
+        swiperEl.innerHTML = str;
+    }
+    /**
+     * 动态生成dotts
+     * */
+    function initDot(){
+        var str = '';
+        for(var i = 0; i< imgs.length-1; i++){
+            var cActive = (i ==0? 'class = "active"':' ');
+            str += '<li'+' '+cActive+'><a href = "javascript:;"></a></li>';
+        }
+        dottsEl.innerHTML = str;
+    }
+    /**
+     * 缓动
+     * */
+    function animate(el,target){
+        clearInterval(el.timer);
+    el.timer =  setInterval(function(){
+        var leader = el.offsetLeft;
+        var step = (target - leader)/10;
+        if(Math.abs(step) < 1){
+            step = step < 0?-1:1;
+        }
+        leader += step;
+        el.style.left = leader + 'px';
+        if(target == leader){
+            clearInterval(el.timer);
+        }
+    },17);
+    }
+     /**
+      * 删除class属性
+      * */
+     function removeClassName(el,cname){
+        if(!el.getAttribute('class')){
+            return;
+        }
+        var oldClassNameStr = el.getAttribute('class');
+        var newClassArr = oldClassNameStr.split(' ');
+        var index =  newClassArr.indexOf(cname);
+        if(index!=-1){
+            newClassArr.splice(index,1);
+        }
+        var newClassStr = newClassArr.join(' ');
+        el.setAttribute ('class',newClassStr);
+     }
+     /**
+     *添加class属性
+     **/
+     function addClassName(el,cname){
+         if(!el.getAttribute('class')){
+             el.setAttribute('class',cname);
+             return;
+         }
+         var oldClassNameStr = el.getAttribute('class');
+        
+         var oldClassArr = oldClassNameStr.split(' ');
+         
+         oldClassArr.push(cname);
+         var newClassStr = oldClassArr.join(' ');
+        //  console.log(oldClassArr);
+
+        }
+    </script>
+</body>
+</html>

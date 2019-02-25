@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    .header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px; 
+        background-color: rgba(0, 0, 0, 0);
+        /* opacity: 0.3; */
+    }
+    .header .text{
+        color: orange;
+        text-align: center;
+        line-height: 100px;
+    }
+    .banner{
+        width: 100%;
+        height: 3000px;
+        /* background-color: lightblue; */
+        margin-top: 200px;
+    }
+    .fotter{
+        width: 100%;
+        height: 200px;
+        margin-top: 200px;
+        /* background-color:rgba(0, 0, 0, .3); */
+    }
+    .btn{
+        width: 50px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        position: fixed;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="text">头部导航栏</h1>
+    </div>
+    <button class="btn">打印</button>
+    <div class="banner"></div>
+    <div class="fotter"></div>
+    <script>
+    var headerEl = document.getElementsByClassName('header')[0];
+    var btnEl = document.getElementsByClassName('btn')[0];
+    var num = 0;
+    window.onscroll = function(){
+    for (i = 0; i < document.documentElement.scrollTop; i++){
+        num = i/3000;
+        console.log(num);
+    // headerEl.style.opacity = num;
+    headerEl.style.backgroundColor = 'rgba(0,0,0,'+num+')';
+        } 
+    }
+    // headerEl.style.opacity = 0.8;
+    btnEl.onclick = function(){
+        console.log(document.documentElement.scrollTop);
+    }
+    </script>
+</body>
+</html>

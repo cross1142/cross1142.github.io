@@ -349,9 +349,45 @@
 <li>event 属性<ul>
 <li>pageX/pageY指的是相对于页面本身的位置坐标</li>
 <li>screenX/screenY指的是相对于显示器的位置坐标</li>
-<li>clientX/clientY指的是浏览器客户端（不包含top的工具栏）</li>
+<li>clientX/clientY指的是浏览器客户端（不包含top的工具栏）<h2 id="client-对象"><a href="#client-对象" class="headerlink" title="client 对象"></a>client 对象</h2></li>
 </ul>
 </li>
+<li>clientWidth clientHeight获取网页可视区域的宽度和高度，如果盒子调用的话指的是盒子本身的宽度和高度</li>
+<li>clientX 鼠标距离可视区域左侧距离</li>
+<li>clientY 鼠标距离可视区域上侧的距离</li>
+<li>clientTop/clientLeft 盒子的border宽高<h2 id="三大家族的区别"><a href="#三大家族的区别" class="headerlink" title="三大家族的区别"></a>三大家族的区别</h2></li>
+<li>width 和 height<ul>
+<li>clientWidth = width + padding </li>
+<li>clientHeight = height + padding</li>
+<li>offsetWidth = width + padding + border</li>
+<li>scrollWidth = 内容的宽度 （不包含border）(能被卷进去的东西，如果超出计算整个内容)</li>
+</ul>
+</li>
+<li>top 和left<ul>
+<li>offsetTop 调用者（任意元素，盒子为主）距离父系盒子中带有定位元素的距离</li>
+<li>scrollTop : 调用者 document.documentElement 作用：浏览器无法显示被卷进去的部分</li>
+<li>clientTop 调用者：盒子<br>作用：指的是border</li>
+<li>clientX 调用者：event<br>作用：指的是鼠标距离浏览器可视区域的距离<h2 id="client-家族特殊用法，检测浏览器的宽-高"><a href="#client-家族特殊用法，检测浏览器的宽-高" class="headerlink" title="client 家族特殊用法，检测浏览器的宽/高"></a>client 家族特殊用法，检测浏览器的宽/高</h2></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>docuemnt.body.clientHeight</li>
+<li>window.innerHeight<h2 id="onresize事件"><a href="#onresize事件" class="headerlink" title="onresize事件"></a>onresize事件</h2></li>
+</ol>
+<ul>
+<li>只要浏览器的大小改变哪怕一个像素，就会触发该事件<h2 id="事件总结"><a href="#事件总结" class="headerlink" title="事件总结"></a>事件总结</h2></li>
+<li>window.onscroll 屏幕滑动</li>
+<li>window.onresize 浏览器大小变化</li>
+<li>window.onload 页面加载完毕</li>
+<li>div.onmouseover 鼠标在盒子上移动<h2 id="获取屏幕宽高"><a href="#获取屏幕宽高" class="headerlink" title="获取屏幕宽高"></a>获取屏幕宽高</h2></li>
+<li>window.screen.width <h2 id="冒泡和阻止冒泡"><a href="#冒泡和阻止冒泡" class="headerlink" title="冒泡和阻止冒泡"></a>冒泡和阻止冒泡</h2></li>
+<li>event.stopPropagation();</li>
+<li> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">兼容代码如下：</span><br><span class="line">var event = event || window.event;</span><br><span class="line">if(event &amp;&amp; event.stopPropagation)&#123;</span><br><span class="line">            event.stopPropagation();</span><br><span class="line">&#125;else&#123;</span><br><span class="line">            event.cancelBubble = true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>addEventListenner(参数1什么事件，参数2干什么function,参数3冒泡false/捕获true);</p>
+<h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2></li>
+<li>event.target</li>
 </ul>
 
           

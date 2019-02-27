@@ -229,6 +229,210 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/笔记/html5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/27/笔记/html5/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-27T15:23:04+08:00">
+                2019-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Html5"><a href="#Html5" class="headerlink" title="Html5"></a>Html5</h2><ul>
+<li>结构化语义化的标签<ul>
+<li>scetion表示页面中的一个内容区块，比如章节，页眉，页脚，或者页面的其他部分，可以和h1 h2 等结合起来使用，表示文档结构</li>
+<li>article 表示页面中与上下不想关的独立内容，比如一篇文章</li>
+<li>aside 表示article元素内容之外的、与article元素内容相关的辅助信息</li>
+<li>header元素 表示页面中一个内容区块或真个页面的标题</li>
+<li>hgroup元素 表示对整个页面或页面中的一个内容区块的标题进行组合</li>
+<li>fotter元素 表示整个页面或页面中一个内容区块的脚注。一般来说，他会包含创作者的姓名、创作日期以及创作者的联系信息</li>
+<li>nav元素 表示页面中导航链接的部分。</li>
+<li>figure元素 表示一段独立的流内容，一般表示文档主体流内容中的一个独立单元。<h2 id="seo优化"><a href="#seo优化" class="headerlink" title="seo优化"></a>seo优化</h2></li>
+</ul>
+</li>
+<li>带后台，伪静态</li>
+<li>优化标题关键词</li>
+<li>h1标签权重很高，logo权重很高</li>
+<li>流量 ，内链，外链</li>
+<li>经常更新内容</li>
+<li>原创作品<h2 id="新增全局属性"><a href="#新增全局属性" class="headerlink" title="新增全局属性"></a>新增全局属性</h2></li>
+<li>contentEditable 单独某一个标签的属性，可以使内容能被编辑<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;d1&quot; contentEditable&gt;</span><br><span class="line">		</span><br><span class="line">	&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"> 	// 全局页面都可以被编辑</span><br><span class="line"> 	document.designMode =&apos;on&apos;;</span><br><span class="line"></span><br><span class="line"> &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="兼容处理"><a href="#兼容处理" class="headerlink" title="兼容处理"></a>兼容处理</h2><ul>
+<li>CSS hack<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</span><br><span class="line">	&lt;!-- gte greeter than equal --&gt;</span><br><span class="line">	&lt;!--[if lte IE 8]&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;ie8.css&quot;&gt; &lt;![endif]--&gt;</span><br><span class="line">	&lt;!-- 因为在ie8不能识别html5 的新标签比如section aside  header nav ..,</span><br><span class="line">	需要依赖 html5shiv.min.js把所有的标签转换为div--&gt;</span><br><span class="line">	&lt;!--[if lte IE 8]&gt; &lt;script src=&quot;html5shiv.min.js&quot;&gt;&lt;/script&gt; &lt;![endif]--&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="表单的新增属性"><a href="#表单的新增属性" class="headerlink" title="表单的新增属性"></a>表单的新增属性</h2><ul>
+<li>email 输入email格式<br><code>邮箱:&lt;input type=&quot;email&quot;&gt;</code></li>
+<li>tel 手机号码</li>
+<li>url 网址，只能输入url格式</li>
+<li>number 只能输入数字</li>
+<li>search 搜索框</li>
+<li>range 范围滚动条</li>
+<li>color 拾色器</li>
+<li>time时间</li>
+<li>date日期</li>
+<li>month 月份</li>
+<li>week 星期</li>
+<li>datelist 数据列表，自动补全，与input 配合使用<br><code>性别: &lt;input type=&quot;text&quot; list=&quot;data&quot;&gt;</code></li>
+<li>placeholder 占位符</li>
+<li>autofocus 获取焦点</li>
+<li>multiple 文件上传多选或者多个邮箱地址<h2 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h2></li>
+<li>音频 <audio src="音频路径"></audio><ul>
+<li>autoplay 自动播放</li>
+<li>controls 是否显示默认播放控件</li>
+<li>loop 循环播放</li>
+<li>preload 预加载</li>
+</ul>
+</li>
+<li>视频 <video src="视频路径"></video><h2 id="dom扩展"><a href="#dom扩展" class="headerlink" title="dom扩展"></a>dom扩展</h2></li>
+<li>新增选择器 document.querySelector(‘参数是css选择器参数’)，选择选中的第一个;</li>
+<li>document.querySelectorAll(‘’)选择多个<h2 id="类名操作"><a href="#类名操作" class="headerlink" title="类名操作"></a>类名操作</h2></li>
+<li>node.classList.add(‘class’)添加class对应的名</li>
+<li>node.classList.remove(‘’)移除class</li>
+<li>node.classList.toggle(‘’)切换class，有则移除，无则添加</li>
+<li>node.classList.contains(‘’)检测是否存在class<h2 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h2></li>
+<li>data-color = “blue”;<br><code>&lt;button data-color=&quot;blue&quot; data-text=&quot;今天郑州天气晴朗万里无云&quot; class=&quot;btn news&quot;&gt;新闻&lt;/button&gt;</code><h2 id="圆角"><a href="#圆角" class="headerlink" title="圆角"></a>圆角</h2></li>
+<li>border-top-right-radius: 4px; <h2 id="CSS3新增选择器-属性选择器"><a href="#CSS3新增选择器-属性选择器" class="headerlink" title="CSS3新增选择器 属性选择器"></a>CSS3新增选择器 属性选择器</h2></li>
+<li>属性选择器是补充作用，一般用[];<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.p1[title=&quot;p-1&quot;]&#123;</span><br><span class="line">			color: blue;</span><br><span class="line">		&#125;</span><br><span class="line">        //p开头的都选中</span><br><span class="line">        .p1[title^=&quot;p&quot;]&#123;</span><br><span class="line">			color: blue;</span><br><span class="line">		&#125;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p class=&quot;p1&quot; title=&quot;p-1&quot;&gt;这是p1&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><ul>
+<li>E:first-child第一个子元素</li>
+<li>E:last-child最后一个子元素</li>
+<li>E:nth-child(n) 第n个子元素</li>
+<li>E:nth-last-child(n) 同E:nth-child(n) 相似，只是倒着计算；</li>
+<li>重点通过E来确定元素的父元素，多用于ul列表 ul&gt;li:first-child{};<h2 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h2></li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">/*当li的锚点被触发时候的样式*/</span><br><span class="line">li:target&#123;</span><br><span class="line">			font-size: 30px;</span><br><span class="line">			color: blue;</span><br><span class="line">		&#125;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;a href=&quot;#li3&quot;&gt;点我&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="伪标签"><a href="#伪标签" class="headerlink" title="伪标签"></a>伪标签</h2><ul>
+<li>相当于在盒子的前后加了一个内容，任何一个标签都具有伪标签<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.d1::before&#123;</span><br><span class="line">			content: &apos;你好&apos;;</span><br><span class="line">			color: pink;</span><br><span class="line">			font-size: 30px;</span><br><span class="line">		&#125;</span><br><span class="line">.d1::after&#123;</span><br><span class="line">			content: &apos;你好&apos;;</span><br><span class="line">			color: pink;</span><br><span class="line">			font-size: 30px;</span><br><span class="line">		&#125;</span><br><span class="line">        &lt;body&gt;</span><br><span class="line">        &lt;div class = &quot;d1&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="文本伪标签"><a href="#文本伪标签" class="headerlink" title="文本伪标签"></a>文本伪标签</h2><ul>
+<li>.p1::first-letter 选中文本第一个字</li>
+<li>.p1::first-line 选中文本的第一行</li>
+<li>.p1::selection 选中文本被鼠标选择的部分<h2 id="透明度"><a href="#透明度" class="headerlink" title="透明度"></a>透明度</h2></li>
+<li>opacity 内容也透明</li>
+<li>rgba(0,0,0,.3)内容不透明</li>
+<li>transparent 完全透明<h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2></li>
+<li>text-shadow: -10px 10px 10px red,（X轴位移，Y轴位移，模糊度，颜色）</li>
+<li>box-shadow: 20px 20px 50px -10px red；（X轴位移，Y轴位移，模糊度，扩散半径，颜色）<h2 id="CSS3盒子模型"><a href="#CSS3盒子模型" class="headerlink" title="CSS3盒子模型"></a>CSS3盒子模型</h2></li>
+<li>box-sizing: border-box；添加之后padding 和 border 不会影响盒子大小</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/笔记/bom/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -387,273 +591,8 @@
 </li>
 <li><p>addEventListenner(参数1什么事件，参数2干什么function,参数3冒泡false/捕获true);</p>
 <h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2></li>
-<li>event.target</li>
+<li>event.target<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ul.onclick = function(e)&#123;</span><br><span class="line">			//通过e.target可以获取真正触发事件的元素</span><br><span class="line">			var target = e.target;</span><br><span class="line">			// console.log(&apos;e.target&apos;,e.target);</span><br><span class="line">			// console.log(&apos;e.srcElement&apos;,e.srcElement);</span><br><span class="line">			if(target.tagName == &apos;LI&apos;)&#123;</span><br><span class="line">				alert(target.innerText);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/笔记/newfile/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/18/笔记/newfile/" itemprop="url">作品展示</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T15:53:30+08:00">
-                2019-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="/html/小猪佩琪/08-小猪佩琪.html">小猪佩奇</a><br><a href="/html/精品路线/精品路线.html">精品路线</a><br><a href="/html/摄影作品/摄影.html">摄影作品</a><br><a href="/html/缓动轮播/轮播优化.html">缓动轮播</a><br><a href="/html/跟随广告/跟随广告.html">跟随广告</a><br><a href="/html/鼠标跟随/鼠标跟随.html">鼠标跟随</a><br><a href="/html/鼠标拖拽/拖拽.html">鼠标拖拽</a><br><a href="/html/透明栏渐变/头部透明度渐变.html">透明度渐变</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/笔记/JS基础笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/18/笔记/JS基础笔记/" itemprop="url">js基础笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T15:53:30+08:00">
-                2019-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="js基础"><a href="#js基础" class="headerlink" title="js基础"></a>js基础</h1><h2 id="js组成"><a href="#js组成" class="headerlink" title="js组成"></a>js组成</h2><ul>
-<li>内嵌式（测试时用的比较多）</li>
-<li>外链式（开发时使用）</li>
-</ul>
-<h2 id="基本输出语句"><a href="#基本输出语句" class="headerlink" title="基本输出语句"></a>基本输出语句</h2><ul>
-<li>alert（） 弹窗，括号里面输入的是字符串类型的所以必须加引号，可以是单引号也可以是<br>双引号，每一行语句结束必须写分号</li>
-<li>字符串内部的双引号必须用转义字符来转义，<br>‘<br>document.write(‘欢迎来到\”中国\”河南！’);<br>‘</li>
-<li>confirm 返回是布尔类型的数据 true/false</li>
-<li>console.log 打印 调试代码用的，开发时用得比较多</li>
-<li>prompt 文本输入的语句</li>
-<li>document.write 浏览器输出</li>
-</ul>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
-<li>变量是用var声明的，赋值符号用=，严格区分大小写</li>
-</ul>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
-<li>String 字符串</li>
-<li>Number 数字</li>
-<li>Boolean 布尔类型</li>
-<li>Undefined 未定义-(声明了变量但是没有赋值)</li>
-<li>Null  Null</li>
-</ul>
-<h2 id="判断数据类型"><a href="#判断数据类型" class="headerlink" title="判断数据类型"></a>判断数据类型</h2><ul>
-<li>typeof可以判断基本数据类型</li>
-</ul>
-<p><code>console.log(typeof 变量)</code></p>
 
           
         
@@ -1196,7 +1135,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/笔记/dom笔记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/笔记/JS基础笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -1215,7 +1154,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/18/笔记/dom笔记/" itemprop="url">dom</a></h1>
+                <a class="post-title-link" href="/2019/02/18/笔记/JS基础笔记/" itemprop="url">js基础笔记</a></h1>
         
 
         <div class="post-meta">
@@ -1267,76 +1206,32 @@
       
         
           
-            <h2 id="Dom"><a href="#Dom" class="headerlink" title="Dom"></a>Dom</h2><ul>
-<li>dom -document object model</li>
-<li>页面中所有的标签都是dom元素</li>
-<li>负责页面的增删改查 CURD</li>
-<li>事件的三要素： 事件源 事件 事件驱动程序<h2 id="node节点"><a href="#node节点" class="headerlink" title="node节点"></a>node节点</h2></li>
-<li>页面中所有的标签都是node节点，标签的文本内容也是node节点，标签的换行，回车也是节点，标签的属性也是节点，标签的注释也是节点</li>
-<li>DOM元素和节点的区别</li>
-<li>获取元素<pre><code>1. document.getElementById(&apos;&apos;);根据id获取，用的不是很多
-2. document.getElementByClassName(&apos;&apos;);根据class名称获取
-3. document..getElementByTagName(&apos;&apos;);根据标签名获取
-</code></pre><h2 id="calss选择器的问题"><a href="#calss选择器的问题" class="headerlink" title="calss选择器的问题"></a>calss选择器的问题</h2></li>
-<li>一般在ie-8中存在很多兼容问题，需要做兼容处理</li>
-<li>在ie-8不支持通过class名获取节点的方法：不支持getElementsByClassName();</li>
-<li>在ie-8不支持consoel这个对象<h2 id="节点之间的关系"><a href="#节点之间的关系" class="headerlink" title="节点之间的关系"></a>节点之间的关系</h2></li>
-<li>父类节点 ：获取父类节点的方法parentNode;他是一个属性，不是方法。</li>
-<li>调用父节点直接 .parentNode</li>
-<li>兄弟节点 :nextSibling在ie6,7,8中指下一个元素节点（标签，注释），在其他浏览器中指下一个节点（包括空文档和换行节点），在高级浏览器里下一个节点可以用nextElementSibling</li>
-<li>兄弟节点的上一个节点priviousSibling和priviousElementSibling</li>
-<li>兼容写法 var li5 = li4.nextElementSibling || li4.nextSibling;而且顺序不能颠倒。</li>
-<li>单个子节点 ：第一个子节点firstChild:在ie6,7,8中指第一个子元素节点，在火狐谷歌和ie-9以后的版本指第一个节点（也包括空文档和换行节点），同理可以用firstElementChild在该机浏览器里面指第一个元素节点</li>
-<li>兼容写法 var li1 = ulEl.firstElementChild || ulEl.firstChild;顺序不能颠倒</li>
-<li>单个子节点 ：最后一个子节点 lastElementChild || lastChild;</li>
-<li>所有的子节点 ：childNodes;</li>
-<li>判断节点的类型 ： nodeType;例如（console.log(lis[i].nodeType);）<ol>
-<li>nodeType ==1;元素节点</li>
-<li>nodeType == 3;文本节点/回车，换行</li>
-<li>nodeType == 8; 注释</li>
-</ol>
-</li>
-<li>childNodes是标准属性，嫡出，它返回指定元素的子元素集合，包括HTML节点，所有属性，文本节点</li>
-<li><p>children 非标准属性，它返回指定元素的子元素集合；在ie6,7,8中包含注释节点的，可以用包装好多的匿名函数筛选出来元素节点，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function myChildren (pNode) &#123;</span><br><span class="line">			var children = pNode.children;</span><br><span class="line">			var rs = [];</span><br><span class="line">			for(var i = 0 ; i &lt; children.length ; i++)&#123;</span><br><span class="line">				//过滤元素节点</span><br><span class="line">				if(children[i].nodeType == 1)&#123;</span><br><span class="line">					rs.push(children[i]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			return rs;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>给节点绑定事件 ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pNode.onclick = function()&#123;</span><br><span class="line">    样式的操作 例如：</span><br><span class="line">    pNode.style.backgroundColor = &apos;red&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建子节点</p>
-<ol>
-<li>创建子节点： 使用的方法是document.creatElement();</li>
-<li>通过api创建一个元素，注意：元素创建后必须插入才能显示</li>
-</ol>
-<ul>
-<li>插入方式<ol>
-<li>父节点.appendChild();</li>
-<li>父节点.insertBefore(要插入的节点，参考节点);例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d1El.insertBefore(img, d1El.firstElementChild || d1El.firstChild);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
+            <h1 id="js基础"><a href="#js基础" class="headerlink" title="js基础"></a>js基础</h1><h2 id="js组成"><a href="#js组成" class="headerlink" title="js组成"></a>js组成</h2><ul>
+<li>内嵌式（测试时用的比较多）</li>
+<li>外链式（开发时使用）</li>
 </ul>
-</li>
-<li><p>删除节点</p>
-</li>
-<li>删除操作必须通过父节点执行</li>
-<li>父节点.removeChild(子节点);</li>
-<li>复制节点</li>
-<li>用法： oldNode.cloneNode();</li>
-<li>默认是浅克隆，深克隆需要增加额外的参数<h2 id="属性的设置"><a href="#属性的设置" class="headerlink" title="属性的设置"></a>属性的设置</h2></li>
-<li>添加属性： setAttribute 是用于添加属性的不是用于操作class内容的</li>
-<li>getAttribute 获取属性</li>
-<li>removeAttribute 删除属性</li>
-<li>在body里面为空的时候，如果想让内容铺满，用html,body{</li>
+<h2 id="基本输出语句"><a href="#基本输出语句" class="headerlink" title="基本输出语句"></a>基本输出语句</h2><ul>
+<li>alert（） 弹窗，括号里面输入的是字符串类型的所以必须加引号，可以是单引号也可以是<br>双引号，每一行语句结束必须写分号</li>
+<li>字符串内部的双引号必须用转义字符来转义，<br>‘<br>document.write(‘欢迎来到\”中国\”河南！’);<br>‘</li>
+<li>confirm 返回是布尔类型的数据 true/false</li>
+<li>console.log 打印 调试代码用的，开发时用得比较多</li>
+<li>prompt 文本输入的语句</li>
+<li>document.write 浏览器输出</li>
 </ul>
-<p>}</p>
-<ul>
-<li>忽略边框的宽度，挤压内容属性：box-sizing：border-box;属于c3的属性</li>
-<li>如果希望a标签被当作按钮触发事件，用href=javascript:;<h2 id="内容处理"><a href="#内容处理" class="headerlink" title="内容处理"></a>内容处理</h2></li>
-<li>给p标签插入或者替换内容 用innerText=</li>
-<li>给input设置value 用xxxx.value=</li>
-<li>给ul动态添加xxx.innerHTML = </li>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
+<li>变量是用var声明的，赋值符号用=，严格区分大小写</li>
 </ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li>String 字符串</li>
+<li>Number 数字</li>
+<li>Boolean 布尔类型</li>
+<li>Undefined 未定义-(声明了变量但是没有赋值)</li>
+<li>Null  Null</li>
+</ul>
+<h2 id="判断数据类型"><a href="#判断数据类型" class="headerlink" title="判断数据类型"></a>判断数据类型</h2><ul>
+<li>typeof可以判断基本数据类型</li>
+</ul>
+<p><code>console.log(typeof 变量)</code></p>
 
           
         
@@ -1935,9 +1830,133 @@ opacity:0.5; 单独使用，也表示透明度，改变整体盒子的透明度�
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/笔记/newfile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/18/笔记/newfile/" itemprop="url">作品展示</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T15:53:30+08:00">
+                2019-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="/html/小猪佩琪/08-小猪佩琪.html">小猪佩奇</a><br><a href="/html/精品路线/精品路线.html">精品路线</a><br><a href="/html/摄影作品/摄影.html">摄影作品</a><br><a href="/html/缓动轮播/轮播优化.html">缓动轮播</a><br><a href="/html/跟随广告/跟随广告.html">跟随广告</a><br><a href="/html/鼠标跟随/鼠标跟随.html">鼠标跟随</a><br><a href="/html/鼠标拖拽/拖拽.html">鼠标拖拽</a><br><a href="/html/透明栏渐变/头部透明度渐变.html">透明度渐变</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1981,7 +2000,7 @@ opacity:0.5; 单独使用，也表示透明度，改变整体盒子的透明度�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

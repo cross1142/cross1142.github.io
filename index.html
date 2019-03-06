@@ -229,6 +229,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/笔记/jq笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/05/笔记/jq笔记/" itemprop="url">jq笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-05T11:08:20+08:00">
+                2019-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="jquery笔记"><a href="#jquery笔记" class="headerlink" title="jquery笔记"></a>jquery笔记</h2><ul>
+<li>js函数跟jquery 入口函数的区别<ul>
+<li>window .onload 必须等到页面内包括图片的所有元素加载完毕后才能执行</li>
+<li>$(document).ready() 是DOM结构绘制完毕后就执行，不必等到加载完毕，只加载了dom 框架<h2 id="jquery-基本选择器"><a href="#jquery-基本选择器" class="headerlink" title="jquery 基本选择器"></a>jquery 基本选择器</h2></li>
+</ul>
+</li>
+<li>$(“#demo”).css(“background”,”red”);选择id为demo的第一个元素</li>
+<li>$(“.d1”).css(“background”,”red”);选择所有类名为的d1的元素</li>
+<li>$(“div”).css(“”,””);选择所有标签名为div的元素</li>
+<li>$(“*”)选择所有元素</li>
+<li>$(“div  span”). css(“background”,”red”);空格 后代选择器 选择所有的后代元素</li>
+<li>$(“div&gt;span”). css(“background”,”red”) &gt; 选择所有的子代元素</li>
+<li>$(“div + p”). css(“background”,”red”) +紧邻元素 选择下一个元素</li>
+<li>$(“div~p”).css(“”,””)选择兄弟节点后面的所有节点<h2 id="过滤选择器"><a href="#过滤选择器" class="headerlink" title="过滤选择器"></a>过滤选择器</h2></li>
+<li>$(“li:eq(0)”)从0开始的第几个元素</li>
+<li>$(“li:gt(0)”)选择序号大于下标的元素</li>
+<li>$(“li:lt(0)”)选择序号小于下标的元素</li>
+<li>$(“li:odd(0)”) 选择所有序号为奇数的元素</li>
+<li>$(“li:even(0)”) 选择所有序号为偶数的元素<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2></li>
+<li>$(“a[href]”) 选择所有包含href属性的a标签</li>
+<li>$(“a[href] = ‘baidu’”)选择所有属性值等于baidu的a标签</li>
+<li>$(“a[href] != ‘baidu’”)选择所有属性值不等于baidu的a标签</li>
+<li>$(“a[href^=’web’]”)    选择所有以web开头的元素    $(“a[href^=’web’]”). css(“background”,”red”)</li>
+<li>$(“a[href$=’cn’]”)    选择所有以cn结尾的元素    $(“a[href$=’cn’]”). css(“background”,”red”)</li>
+<li>$(“a[href<em>=’i’]”)    选择所有包含i这个字符的元素，可以是中英文    $(“a[href</em>=’i’]”). css(“background”,”red”)</li>
+<li>$(“a[href][title=’内容’]”)    选择所有符合指定属性规则的元素，都符合才会被选中。    $(“a[href][title=’内容’]”). css(“background”,”red”)<h2 id="筛选选择器方法（方法）"><a href="#筛选选择器方法（方法）" class="headerlink" title="筛选选择器方法（方法）"></a>筛选选择器方法（方法）</h2></li>
+<li><p>find(selector)    查找指定元素的所有后代元素（子子孙孙）    $(“#j_wrap”).find(“li”).css(“color”, “red”);<br>选择id为j_wrap的所有后代元素li</p>
+</li>
+<li><p>children()    查找指定元素的直接子元素（亲儿子元素）    $(“#j_wrap”).children(“ul”).css(“color”, “red”);<br>选择id为j_wrap的所有子代元素ul</p>
+</li>
+<li>siblings()    查找所有兄弟元素（不包括自己）    $(“#j_liItem”).siblings().css(“color”, “red”);<br>选择id为j_liItem的所有兄弟元素</li>
+<li>parent()    查找父元素（亲的）    $(“#j_liItem”).parent(“ul”).css(“color”, “red”);<br>选择id为j_liItem的父元素</li>
+<li>eq(index)    查找指定元素的第index个元素，index是索引号，从0开始    $(“li”).eq(2).css(“color”, “red”);<br>选择所有li元素中的第二个<h2 id="mouseover-和mouseenter-事件的区别"><a href="#mouseover-和mouseenter-事件的区别" class="headerlink" title="mouseover 和mouseenter 事件的区别"></a>mouseover 和mouseenter 事件的区别</h2></li>
+<li>mouseover/mouseout事件，鼠标经过的时候会触发多次，每遇到一个子元素就会触发一次</li>
+<li>mouseenter/mouseleave事件，鼠标经过的时候只会触发一次<h2 id="DOM对象跟jquery对象的相互转化"><a href="#DOM对象跟jquery对象的相互转化" class="headerlink" title="DOM对象跟jquery对象的相互转化"></a>DOM对象跟jquery对象的相互转化</h2></li>
+<li>jQuery对象转换成DOM对象:$(“#btn”)[0]</li>
+<li>DOM对象转换成jQuery对象：<br>$(document)     -&gt; 把DOM对象转成了jQuery对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.getElementById(“bt n”);</span><br><span class="line">btn 	-&gt; $(btn);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="类名操作"><a href="#类名操作" class="headerlink" title="类名操作"></a>类名操作</h2><ul>
+<li><p>添加class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;button:first&apos;).click(function()&#123;</span><br><span class="line">			$(&apos;div&apos;).addClass(&apos;active&apos;)</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;button:eq(1)&apos;).click(function()&#123;</span><br><span class="line">			$(&apos;div&apos;).removeClass(&apos;active&apos;)</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换 class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;button:eq(2)&apos;).click(function()&#123;</span><br><span class="line">			$(&apos;div&apos;).toggleClass(&apos;active&apos;)</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断是否有class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;button:last&apos;).click(function()&#123;</span><br><span class="line">			var isClass = $(&apos;div&apos;).hasClass(&apos;active&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h2><ul>
+<li>append 在后面追加 <code>$(&#39;div&#39;).append($(&#39;&#39;));</code></li>
+<li>prepend 在前面插入</li>
+<li>empty 移除所有的子节点</li>
+<li>remove 移除自身以及自身的事件</li>
+<li>replaceWith 替换内容</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/01/笔记/CSS3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -804,188 +983,6 @@
 <li><p>addEventListenner(参数1什么事件，参数2干什么function,参数3冒泡false/捕获true);</p>
 <h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2></li>
 <li>event.target<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ul.onclick = function(e)&#123;</span><br><span class="line">			//通过e.target可以获取真正触发事件的元素</span><br><span class="line">			var target = e.target;</span><br><span class="line">			// console.log(&apos;e.target&apos;,e.target);</span><br><span class="line">			// console.log(&apos;e.srcElement&apos;,e.srcElement);</span><br><span class="line">			if(target.tagName == &apos;LI&apos;)&#123;</span><br><span class="line">				alert(target.innerText);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/笔记/for循环/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/18/笔记/for循环/" itemprop="url">for循环</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T15:53:30+08:00">
-                2019-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="for循环的基本结构"><a href="#for循环的基本结构" class="headerlink" title="for循环的基本结构"></a>for循环的基本结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for(var i=1;i&lt;=100;i++ )</span><br><span class="line">&#123;</span><br><span class="line">	console.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>for循环是可以嵌套的，嵌套循环内部的变量不能和外部一样</li>
-<li>continue ;结束本次循环后面的代码不再执行，继续下一次循环<br>##switch (){case1：<br>break;<br>}<ul>
-<li>break 结束循环体内部的循环，不再执行该循环。</li>
-<li>从输入框获取的类型都是字符串类型</li>
-<li>如何把字符串类型转换为number类型<ol>
-<li>减去0，做隐式转换</li>
-<li>parseInt把字符串类型转换为number类型,转换的都是整数类型</li>
-</ol>
-</li>
-<li>parseInt 和parseFloat的区别<ol>
-<li>parseFloat 转换的是小数类型</li>
-<li>parseInt转换的都是整数类型</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-<p>##while </p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while(条件)&#123;</span><br><span class="line">	执行事件；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>while 语句需要有跳出条件</li>
-<li>do{}while和while的区别是，do{循环体}while(条件)先输出后判断，而while则是先判断后执行</li>
-<li>for循环break语句一旦break被执行，循环体内部后面的代码也不再执行</li>
-<li>continue结束本次循环，后面的代码不再执行，开始下一次循环</li>
-</ul>
-<p>##数组</p>
-<ol>
-<li>通过数组形式创建数组<br><code>var arr = new Array();</code><br><code>arr[0] = 30;</code><br><code>arr[1] = 40;</code></li>
-<li>直接创建数组<br>‘ var arr2 = [ 30 , 40]</li>
-</ol>
-<ul>
-<li>数组的下标都是从0开始的</li>
-<li>数组的长度length</li>
-<li>数组里面的值可以是任何类型</li>
-<li>数组常用的方法<ol>
-<li>concat() 拼接，并不会影响原来的数组</li>
-<li>join() 把数组转换为字符串默认是 ，</li>
-<li>split(‘以什么打断’)把字符串打断为数组</li>
-<li>数组的添加和删除<ol>
-<li>push()从后面推进去</li>
-<li>unshift()从数组的前面放入</li>
-<li>pop()删除最后一个元素</li>
-<li>shift()删除第一个元素<br>##函数</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>函数的声明方式<pre><code>1. 自定义函数 ，可以先调用，后声明
-2. 匿名函数，必须先声明后使用
-</code></pre></li>
-<li>函数如果不调是不会被执行的</li>
-<li>函数可以封装一部分功能，避免重复性操作</li>
-<li>面向对象编程的特点 继承 多态 封装</li>
-<li>函数的参数，是函数体与外部程序的桥梁</li>
-<li>JS中没有 方法重载，函数名称一旦重复，则后面会覆前面的函数</li>
-<li>函数的返回值return;，返回函数的执行结果，可以供外部使用</li>
-<li>函数变量的作用域<pre><code>1. 在window对象里声明的变量，在函数里都可以使用
-2. 在函数内部不能调用其他函数内部的变量
-3. 在window作用域不能调用函数内部的变量
-</code></pre></li>
 </ul>
 
           
@@ -2120,7 +2117,7 @@ opacity:0.5; 单独使用，也表示透明度，改变整体盒子的透明度�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

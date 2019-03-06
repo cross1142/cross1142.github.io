@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="jquery笔记 js函数跟jquery 入口函数的区别 window .onload 必须等到页面内包括图片的所有元素加载完毕后才能执行 $(document).ready() 是DOM结构绘制完毕后就执行，不必等到加载完毕，只加载了dom 框架jquery 基本选择器   $(“#demo”).css(“background”,”red”);选择id为demo的第一个元素 $(“.d1”).c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jq笔记">
+<meta property="og:url" content="http://yoursite.com/2019/03/05/笔记/jq笔记/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="jquery笔记 js函数跟jquery 入口函数的区别 window .onload 必须等到页面内包括图片的所有元素加载完毕后才能执行 $(document).ready() 是DOM结构绘制完毕后就执行，不必等到加载完毕，只加载了dom 框架jquery 基本选择器   $(“#demo”).css(“background”,”red”);选择id为demo的第一个元素 $(“.d1”).c">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-06T03:03:09.293Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jq笔记">
+<meta name="twitter:description" content="jquery笔记 js函数跟jquery 入口函数的区别 window .onload 必须等到页面内包括图片的所有元素加载完毕后才能执行 $(document).ready() 是DOM结构绘制完毕后就执行，不必等到加载完毕，只加载了dom 框架jquery 基本选择器   $(“#demo”).css(“background”,”red”);选择id为demo的第一个元素 $(“.d1”).c">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/05/笔记/jq笔记/">
+
+
+
+
+
+  <title>jq笔记 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/笔记/jq笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jq笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-05T11:08:20+08:00">
+                2019-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="jquery笔记"><a href="#jquery笔记" class="headerlink" title="jquery笔记"></a>jquery笔记</h2><ul>
+<li>js函数跟jquery 入口函数的区别<ul>
+<li>window .onload 必须等到页面内包括图片的所有元素加载完毕后才能执行</li>
+<li>$(document).ready() 是DOM结构绘制完毕后就执行，不必等到加载完毕，只加载了dom 框架<h2 id="jquery-基本选择器"><a href="#jquery-基本选择器" class="headerlink" title="jquery 基本选择器"></a>jquery 基本选择器</h2></li>
+</ul>
+</li>
+<li>$(“#demo”).css(“background”,”red”);选择id为demo的第一个元素</li>
+<li>$(“.d1”).css(“background”,”red”);选择所有类名为的d1的元素</li>
+<li>$(“div”).css(“”,””);选择所有标签名为div的元素</li>
+<li>$(“*”)选择所有元素</li>
+<li>$(“div  span”). css(“background”,”red”);空格 后代选择器 选择所有的后代元素</li>
+<li>$(“div&gt;span”). css(“background”,”red”) &gt; 选择所有的子代元素</li>
+<li>$(“div + p”). css(“background”,”red”) +紧邻元素 选择下一个元素</li>
+<li>$(“div~p”).css(“”,””)选择兄弟节点后面的所有节点<h2 id="过滤选择器"><a href="#过滤选择器" class="headerlink" title="过滤选择器"></a>过滤选择器</h2></li>
+<li>$(“li:eq(0)”)从0开始的第几个元素</li>
+<li>$(“li:gt(0)”)选择序号大于下标的元素</li>
+<li>$(“li:lt(0)”)选择序号小于下标的元素</li>
+<li>$(“li:odd(0)”) 选择所有序号为奇数的元素</li>
+<li>$(“li:even(0)”) 选择所有序号为偶数的元素<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2></li>
+<li>$(“a[href]”) 选择所有包含href属性的a标签</li>
+<li>$(“a[href] = ‘baidu’”)选择所有属性值等于baidu的a标签</li>
+<li>$(“a[href] != ‘baidu’”)选择所有属性值不等于baidu的a标签</li>
+<li>$(“a[href^=’web’]”)    选择所有以web开头的元素    $(“a[href^=’web’]”). css(“background”,”red”)</li>
+<li>$(“a[href$=’cn’]”)    选择所有以cn结尾的元素    $(“a[href$=’cn’]”). css(“background”,”red”)</li>
+<li>$(“a[href<em>=’i’]”)    选择所有包含i这个字符的元素，可以是中英文    $(“a[href</em>=’i’]”). css(“background”,”red”)</li>
+<li>$(“a[href][title=’内容’]”)    选择所有符合指定属性规则的元素，都符合才会被选中。    $(“a[href][title=’内容’]”). css(“background”,”red”)<h2 id="筛选选择器方法（方法）"><a href="#筛选选择器方法（方法）" class="headerlink" title="筛选选择器方法（方法）"></a>筛选选择器方法（方法）</h2></li>
+<li><p>find(selector)    查找指定元素的所有后代元素（子子孙孙）    $(“#j_wrap”).find(“li”).css(“color”, “red”);<br>选择id为j_wrap的所有后代元素li</p>
+</li>
+<li><p>children()    查找指定元素的直接子元素（亲儿子元素）    $(“#j_wrap”).children(“ul”).css(“color”, “red”);<br>选择id为j_wrap的所有子代元素ul</p>
+</li>
+<li>siblings()    查找所有兄弟元素（不包括自己）    $(“#j_liItem”).siblings().css(“color”, “red”);<br>选择id为j_liItem的所有兄弟元素</li>
+<li>parent()    查找父元素（亲的）    $(“#j_liItem”).parent(“ul”).css(“color”, “red”);<br>选择id为j_liItem的父元素</li>
+<li>eq(index)    查找指定元素的第index个元素，index是索引号，从0开始    $(“li”).eq(2).css(“color”, “red”);<br>选择所有li元素中的第二个<h2 id="mouseover-和mouseenter-事件的区别"><a href="#mouseover-和mouseenter-事件的区别" class="headerlink" title="mouseover 和mouseenter 事件的区别"></a>mouseover 和mouseenter 事件的区别</h2></li>
+<li>mouseover/mouseout事件，鼠标经过的时候会触发多次，每遇到一个子元素就会触发一次</li>
+<li>mouseenter/mouseleave事件，鼠标经过的时候只会触发一次<h2 id="DOM对象跟jquery对象的相互转化"><a href="#DOM对象跟jquery对象的相互转化" class="headerlink" title="DOM对象跟jquery对象的相互转化"></a>DOM对象跟jquery对象的相互转化</h2></li>
+<li>jQuery对象转换成DOM对象:$(“#btn”)[0]</li>
+<li>DOM对象转换成jQuery对象：<br>$(document)     -&gt; 把DOM对象转成了jQuery对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.getElementById(“bt n”);</span><br><span class="line">btn 	-&gt; $(btn);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="类名操作"><a href="#类名操作" class="headerlink" title="类名操作"></a>类名操作</h2><ul>
+<li><p>添加class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;button:first&apos;).click(function()&#123;</span><br><span class="line">			$(&apos;div&apos;).addClass(&apos;active&apos;)</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;button:eq(1)&apos;).click(function()&#123;</span><br><span class="line">			$(&apos;div&apos;).removeClass(&apos;active&apos;)</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换 class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;button:eq(2)&apos;).click(function()&#123;</span><br><span class="line">			$(&apos;div&apos;).toggleClass(&apos;active&apos;)</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断是否有class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;button:last&apos;).click(function()&#123;</span><br><span class="line">			var isClass = $(&apos;div&apos;).hasClass(&apos;active&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h2><ul>
+<li>append 在后面追加 <code>$(&#39;div&#39;).append($(&#39;&#39;));</code></li>
+<li>prepend 在前面插入</li>
+<li>empty 移除所有的子节点</li>
+<li>remove 移除自身以及自身的事件</li>
+<li>replaceWith 替换内容</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/01/笔记/CSS3/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jquery笔记"><span class="nav-number">1.</span> <span class="nav-text">jquery笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jquery-基本选择器"><span class="nav-number">2.</span> <span class="nav-text">jquery 基本选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤选择器"><span class="nav-number">3.</span> <span class="nav-text">过滤选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性选择器"><span class="nav-number">4.</span> <span class="nav-text">属性选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#筛选选择器方法（方法）"><span class="nav-number">5.</span> <span class="nav-text">筛选选择器方法（方法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mouseover-和mouseenter-事件的区别"><span class="nav-number">6.</span> <span class="nav-text">mouseover 和mouseenter 事件的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM对象跟jquery对象的相互转化"><span class="nav-number">7.</span> <span class="nav-text">DOM对象跟jquery对象的相互转化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类名操作"><span class="nav-number">8.</span> <span class="nav-text">类名操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入节点"><span class="nav-number">9.</span> <span class="nav-text">插入节点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

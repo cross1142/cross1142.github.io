@@ -596,12 +596,12 @@
 </li>
 <li><p>xx.addEventListener();</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d1.addEventListener(&apos;transitionend&apos;,function () &#123;</span><br><span class="line">			console.log(&apos;end...&apos;)</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>animationstart动画开始后触发</li>
+</li>
+<li><p>animationstart动画开始后触发</p>
+</li>
 <li>animationiteration 动画重复播放时触发</li>
 <li>animationed 动画完成后触发</li>
-</ul>
-</li>
+<li>取消过度效果$<code>(&#39;.swiper&#39;).css(&#39;transition&#39;,&#39;none&#39;);</code></li>
 </ul>
 
           
@@ -670,7 +670,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/27/笔记/html5/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/02/27/笔记/html5/" itemprop="url">HTML5</a></h1>
         
 
         <div class="post-meta">
@@ -805,7 +805,75 @@
 <li>transparent 完全透明<h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2></li>
 <li>text-shadow: -10px 10px 10px red,（X轴位移，Y轴位移，模糊度，颜色）</li>
 <li>box-shadow: 20px 20px 50px -10px red；（X轴位移，Y轴位移，模糊度，扩散半径，颜色）<h2 id="CSS3盒子模型"><a href="#CSS3盒子模型" class="headerlink" title="CSS3盒子模型"></a>CSS3盒子模型</h2></li>
-<li>box-sizing: border-box；添加之后padding 和 border 不会影响盒子大小</li>
+<li>box-sizing: border-box；添加之后padding 和 border 不会影响盒子大小<h2 id="新增API，多媒体"><a href="#新增API，多媒体" class="headerlink" title="新增API，多媒体"></a>新增API，多媒体</h2></li>
+<li>方法：<ul>
+<li>load()加载</li>
+<li>play() 播放</li>
+<li>pause() 暂停</li>
+</ul>
+</li>
+<li>属性<ul>
+<li>currentTime 视频播放的当前进度</li>
+<li>duration 视频的总时间</li>
+<li>paused 视频播放的状态</li>
+</ul>
+</li>
+<li>事件<ul>
+<li>oncanplay: 事件在用户开始播放音频视频时开始播放</li>
+<li>ontimeupdate: 通过该事件来报告当前的播放进度</li>
+<li>onended: 视频播放完时触发</li>
+</ul>
+</li>
+<li>全屏<ul>
+<li>video.webkitRequestFullScreen();<h2 id="拖拽"><a href="#拖拽" class="headerlink" title="拖拽"></a>拖拽</h2></li>
+</ul>
+</li>
+<li>先设置元素是否可以拖拽<ul>
+<li><code>draggable=&quot;true&quot;</code></li>
+</ul>
+</li>
+<li>拖拽元素<ul>
+<li>ondrag 应用于拖拽元素，整个拖拽过程都会调用</li>
+<li>ondragstart 应用于拖拽元素，当拖拽开始时调用</li>
+<li>ondragleave    应用于拖拽元素，当鼠标离开拖拽元素时调用</li>
+<li>ondragend    应用于拖拽元素，当拖拽结束时调用</li>
+</ul>
+</li>
+<li>目标元素<ul>
+<li>ondragenter    应用于目标元素，当拖拽元素进入时调用</li>
+<li>ondragover    应用于目标元素，当停留在目标元素上时调用</li>
+<li>ondrop   应用于目标元素，当在目标元素上松开鼠标时调用</li>
+<li>ondragleave    应用于目标元素，当鼠标离开目标元素时调用<h2 id="web存储"><a href="#web存储" class="headerlink" title="web存储"></a>web存储</h2></li>
+</ul>
+</li>
+<li>sessionStorage 暂时存储 存储空间5M window.sessionStorage</li>
+<li>localStorage 长期存储 存储空间20M window.localStorage</li>
+<li>都是智能存储字符串</li>
+<li>方法<ul>
+<li>setItem(key, value) 设置存储内容</li>
+<li>getItem(key) 读取存储内容</li>
+<li>removeItem(key) 删除键值为key的存储内容</li>
+<li>clear() 清空所有存储内容</li>
+<li>key(n) 以索引值来获取存储内容<h2 id="全屏"><a href="#全屏" class="headerlink" title="全屏"></a>全屏</h2></li>
+</ul>
+</li>
+<li><p>开启全屏</p>
+<ul>
+<li>requestFullscreen() 开启全屏显示</li>
+<li>exitFullscreen () 关闭全屏显示<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if (document.exitFullscreen) &#123;</span><br><span class="line">          document.exitFullscreen();</span><br><span class="line">      &#125;</span><br><span class="line">      else if (document.webkitCancelFullScreen) &#123;</span><br><span class="line">          document.webkitCancelFullScreen();</span><br><span class="line">      &#125;</span><br><span class="line">      else if (document.mozCancelFullScreen) &#123;</span><br><span class="line">          document.mozCancelFullScreen();</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>检测当前是否处于全屏 ⦁    通过document.fullScreen检测当前是否处于全屏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function fullscreen() &#123;</span><br><span class="line">        return document.fullscreen ||</span><br><span class="line">               document.webkitIsFullScreen ||</span><br><span class="line">               document.mozFullScreen ||</span><br><span class="line">               false;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>全屏伪类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:full-screen .box &#123;&#125;、:-webkit-full-screen &#123;&#125;、:moz-full-screen &#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="onmouseenter-amp-onmouseleave与onmouseover-amp-onmouseout的区别"><a href="#onmouseenter-amp-onmouseleave与onmouseover-amp-onmouseout的区别" class="headerlink" title="onmouseenter&amp;onmouseleave与onmouseover&amp;onmouseout的区别"></a>onmouseenter&amp;onmouseleave与onmouseover&amp;onmouseout的区别</h2><ul>
+<li>onmouseenter&amp;onmouseleave只要穿过一次内部元素都会触发事件</li>
+<li>onmouseover&amp;onmouseout的区别穿过内部元素不会触发事件</li>
 </ul>
 
           
@@ -2101,7 +2169,7 @@ opacity:0.5; 单独使用，也表示透明度，改变整体盒子的透明度�
       
         
           
-            <p><a href="/html/小猪佩琪/08-小猪佩琪.html">小猪佩奇</a><br><a href="/html/精品路线/精品路线.html">精品路线</a><br><a href="/html/摄影作品/摄影.html">摄影作品</a><br><a href="/html/缓动轮播/轮播优化.html">缓动轮播</a><br><a href="/html/跟随广告/跟随广告.html">跟随广告</a><br><a href="/html/鼠标跟随/鼠标跟随.html">鼠标跟随</a><br><a href="/html/鼠标拖拽/拖拽.html">鼠标拖拽</a><br><a href="/html/透明栏渐变/头部透明度渐变.html">透明度渐变</a><br><a href="/html/日历/日历动态.html">日历</a></p>
+            <p><a href="/html/小猪佩琪/08-小猪佩琪.html">小猪佩奇</a><br><a href="/html/精品路线/精品路线.html">精品路线</a><br><a href="/html/摄影作品/摄影.html">摄影作品</a><br><a href="/html/缓动轮播/轮播优化.html">缓动轮播</a><br><a href="/html/跟随广告/跟随广告.html">跟随广告</a><br><a href="/html/鼠标跟随/鼠标跟随.html">鼠标跟随</a><br><a href="/html/鼠标拖拽/拖拽.html">鼠标拖拽</a><br><a href="/html/透明栏渐变/头部透明度渐变.html">透明度渐变</a><br><a href="/html/日历/日历动态.html">日历</a><br><a href="/html/相册/相册.html">相册</a></p>
 
           
         

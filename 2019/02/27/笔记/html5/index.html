@@ -81,14 +81,14 @@
 
 <meta name="description" content="Html5 结构化语义化的标签 scetion表示页面中的一个内容区块，比如章节，页眉，页脚，或者页面的其他部分，可以和h1 h2 等结合起来使用，表示文档结构 article 表示页面中与上下不想关的独立内容，比如一篇文章 aside 表示article元素内容之外的、与article元素内容相关的辅助信息 header元素 表示页面中一个内容区块或真个页面的标题 hgroup元素 表示对整个页">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="HTML5">
 <meta property="og:url" content="http://yoursite.com/2019/02/27/笔记/html5/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Html5 结构化语义化的标签 scetion表示页面中的一个内容区块，比如章节，页眉，页脚，或者页面的其他部分，可以和h1 h2 等结合起来使用，表示文档结构 article 表示页面中与上下不想关的独立内容，比如一篇文章 aside 表示article元素内容之外的、与article元素内容相关的辅助信息 header元素 表示页面中一个内容区块或真个页面的标题 hgroup元素 表示对整个页">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-27T09:17:44.023Z">
+<meta property="og:updated_time" content="2019-03-12T12:05:33.660Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="HTML5">
 <meta name="twitter:description" content="Html5 结构化语义化的标签 scetion表示页面中的一个内容区块，比如章节，页眉，页脚，或者页面的其他部分，可以和h1 h2 等结合起来使用，表示文档结构 article 表示页面中与上下不想关的独立内容，比如一篇文章 aside 表示article元素内容之外的、与article元素内容相关的辅助信息 header元素 表示页面中一个内容区块或真个页面的标题 hgroup元素 表示对整个页">
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title> | Hexo</title>
+  <title>HTML5 | Hexo</title>
   
 
 
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">HTML5</h1>
         
 
         <div class="post-meta">
@@ -382,7 +382,75 @@
 <li>transparent 完全透明<h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2></li>
 <li>text-shadow: -10px 10px 10px red,（X轴位移，Y轴位移，模糊度，颜色）</li>
 <li>box-shadow: 20px 20px 50px -10px red；（X轴位移，Y轴位移，模糊度，扩散半径，颜色）<h2 id="CSS3盒子模型"><a href="#CSS3盒子模型" class="headerlink" title="CSS3盒子模型"></a>CSS3盒子模型</h2></li>
-<li>box-sizing: border-box；添加之后padding 和 border 不会影响盒子大小</li>
+<li>box-sizing: border-box；添加之后padding 和 border 不会影响盒子大小<h2 id="新增API，多媒体"><a href="#新增API，多媒体" class="headerlink" title="新增API，多媒体"></a>新增API，多媒体</h2></li>
+<li>方法：<ul>
+<li>load()加载</li>
+<li>play() 播放</li>
+<li>pause() 暂停</li>
+</ul>
+</li>
+<li>属性<ul>
+<li>currentTime 视频播放的当前进度</li>
+<li>duration 视频的总时间</li>
+<li>paused 视频播放的状态</li>
+</ul>
+</li>
+<li>事件<ul>
+<li>oncanplay: 事件在用户开始播放音频视频时开始播放</li>
+<li>ontimeupdate: 通过该事件来报告当前的播放进度</li>
+<li>onended: 视频播放完时触发</li>
+</ul>
+</li>
+<li>全屏<ul>
+<li>video.webkitRequestFullScreen();<h2 id="拖拽"><a href="#拖拽" class="headerlink" title="拖拽"></a>拖拽</h2></li>
+</ul>
+</li>
+<li>先设置元素是否可以拖拽<ul>
+<li><code>draggable=&quot;true&quot;</code></li>
+</ul>
+</li>
+<li>拖拽元素<ul>
+<li>ondrag 应用于拖拽元素，整个拖拽过程都会调用</li>
+<li>ondragstart 应用于拖拽元素，当拖拽开始时调用</li>
+<li>ondragleave    应用于拖拽元素，当鼠标离开拖拽元素时调用</li>
+<li>ondragend    应用于拖拽元素，当拖拽结束时调用</li>
+</ul>
+</li>
+<li>目标元素<ul>
+<li>ondragenter    应用于目标元素，当拖拽元素进入时调用</li>
+<li>ondragover    应用于目标元素，当停留在目标元素上时调用</li>
+<li>ondrop   应用于目标元素，当在目标元素上松开鼠标时调用</li>
+<li>ondragleave    应用于目标元素，当鼠标离开目标元素时调用<h2 id="web存储"><a href="#web存储" class="headerlink" title="web存储"></a>web存储</h2></li>
+</ul>
+</li>
+<li>sessionStorage 暂时存储 存储空间5M window.sessionStorage</li>
+<li>localStorage 长期存储 存储空间20M window.localStorage</li>
+<li>都是智能存储字符串</li>
+<li>方法<ul>
+<li>setItem(key, value) 设置存储内容</li>
+<li>getItem(key) 读取存储内容</li>
+<li>removeItem(key) 删除键值为key的存储内容</li>
+<li>clear() 清空所有存储内容</li>
+<li>key(n) 以索引值来获取存储内容<h2 id="全屏"><a href="#全屏" class="headerlink" title="全屏"></a>全屏</h2></li>
+</ul>
+</li>
+<li><p>开启全屏</p>
+<ul>
+<li>requestFullscreen() 开启全屏显示</li>
+<li>exitFullscreen () 关闭全屏显示<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if (document.exitFullscreen) &#123;</span><br><span class="line">          document.exitFullscreen();</span><br><span class="line">      &#125;</span><br><span class="line">      else if (document.webkitCancelFullScreen) &#123;</span><br><span class="line">          document.webkitCancelFullScreen();</span><br><span class="line">      &#125;</span><br><span class="line">      else if (document.mozCancelFullScreen) &#123;</span><br><span class="line">          document.mozCancelFullScreen();</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>检测当前是否处于全屏 ⦁    通过document.fullScreen检测当前是否处于全屏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function fullscreen() &#123;</span><br><span class="line">        return document.fullscreen ||</span><br><span class="line">               document.webkitIsFullScreen ||</span><br><span class="line">               document.mozFullScreen ||</span><br><span class="line">               false;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>全屏伪类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:full-screen .box &#123;&#125;、:-webkit-full-screen &#123;&#125;、:moz-full-screen &#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="onmouseenter-amp-onmouseleave与onmouseover-amp-onmouseout的区别"><a href="#onmouseenter-amp-onmouseleave与onmouseover-amp-onmouseout的区别" class="headerlink" title="onmouseenter&amp;onmouseleave与onmouseover&amp;onmouseout的区别"></a>onmouseenter&amp;onmouseleave与onmouseover&amp;onmouseout的区别</h2><ul>
+<li>onmouseenter&amp;onmouseleave只要穿过一次内部元素都会触发事件</li>
+<li>onmouseover&amp;onmouseout的区别穿过内部元素不会触发事件</li>
 </ul>
 
       
@@ -543,7 +611,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5"><span class="nav-number">1.</span> <span class="nav-text">Html5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#seo优化"><span class="nav-number">2.</span> <span class="nav-text">seo优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新增全局属性"><span class="nav-number">3.</span> <span class="nav-text">新增全局属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容处理"><span class="nav-number">4.</span> <span class="nav-text">兼容处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表单的新增属性"><span class="nav-number">5.</span> <span class="nav-text">表单的新增属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多媒体"><span class="nav-number">6.</span> <span class="nav-text">多媒体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dom扩展"><span class="nav-number">7.</span> <span class="nav-text">dom扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类名操作"><span class="nav-number">8.</span> <span class="nav-text">类名操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义属性"><span class="nav-number">9.</span> <span class="nav-text">自定义属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆角"><span class="nav-number">10.</span> <span class="nav-text">圆角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3新增选择器-属性选择器"><span class="nav-number">11.</span> <span class="nav-text">CSS3新增选择器 属性选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪类选择器"><span class="nav-number">12.</span> <span class="nav-text">伪类选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锚点"><span class="nav-number">13.</span> <span class="nav-text">锚点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪标签"><span class="nav-number">14.</span> <span class="nav-text">伪标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本伪标签"><span class="nav-number">15.</span> <span class="nav-text">文本伪标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#透明度"><span class="nav-number">16.</span> <span class="nav-text">透明度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阴影"><span class="nav-number">17.</span> <span class="nav-text">阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3盒子模型"><span class="nav-number">18.</span> <span class="nav-text">CSS3盒子模型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5"><span class="nav-number">1.</span> <span class="nav-text">Html5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#seo优化"><span class="nav-number">2.</span> <span class="nav-text">seo优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新增全局属性"><span class="nav-number">3.</span> <span class="nav-text">新增全局属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容处理"><span class="nav-number">4.</span> <span class="nav-text">兼容处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表单的新增属性"><span class="nav-number">5.</span> <span class="nav-text">表单的新增属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多媒体"><span class="nav-number">6.</span> <span class="nav-text">多媒体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dom扩展"><span class="nav-number">7.</span> <span class="nav-text">dom扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类名操作"><span class="nav-number">8.</span> <span class="nav-text">类名操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义属性"><span class="nav-number">9.</span> <span class="nav-text">自定义属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆角"><span class="nav-number">10.</span> <span class="nav-text">圆角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3新增选择器-属性选择器"><span class="nav-number">11.</span> <span class="nav-text">CSS3新增选择器 属性选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪类选择器"><span class="nav-number">12.</span> <span class="nav-text">伪类选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锚点"><span class="nav-number">13.</span> <span class="nav-text">锚点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪标签"><span class="nav-number">14.</span> <span class="nav-text">伪标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本伪标签"><span class="nav-number">15.</span> <span class="nav-text">文本伪标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#透明度"><span class="nav-number">16.</span> <span class="nav-text">透明度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阴影"><span class="nav-number">17.</span> <span class="nav-text">阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3盒子模型"><span class="nav-number">18.</span> <span class="nav-text">CSS3盒子模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新增API，多媒体"><span class="nav-number">19.</span> <span class="nav-text">新增API，多媒体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拖拽"><span class="nav-number">20.</span> <span class="nav-text">拖拽</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web存储"><span class="nav-number">21.</span> <span class="nav-text">web存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全屏"><span class="nav-number">22.</span> <span class="nav-text">全屏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#onmouseenter-amp-onmouseleave与onmouseover-amp-onmouseout的区别"><span class="nav-number">23.</span> <span class="nav-text">onmouseenter&amp;onmouseleave与onmouseover&amp;onmouseout的区别</span></a></li></ol></div>
             
 
           </div>

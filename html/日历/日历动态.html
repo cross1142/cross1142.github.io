@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="commen.css">
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    a{
+        text-decoration: none;
+    }
+    ul{
+        list-style: none;
+    }
+    .date-table{
+        position: relative;
+        width: 670px;
+        height: 460px;
+        border: 2px solid lightblue;
+        margin: 100px auto;
+    }
+    .date-table .today{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 160px;
+        height: 100%;
+        background-color: #5DAEFF;
+    }
+    .date-table .header{
+        width: 480px;
+        height: 50px;
+        border-bottom: 1px solid #5DAEFF;
+        margin-left: 15px;
+    }
+    .date-table .header .timer{
+        width: 100%;
+        height: 100%;
+        /* background-color: #e5e5e5; */
+    }
+    .date-table .header .timer .years{
+        width: 100px;
+        height: 100%;
+        /* background-color: lightblue; */
+    }
+    .date-table .header .timer .years .years-sec{
+        /* background-color: orange; */
+        width: 100px;
+        height: 30px;
+        margin: 10px auto;
+        outline: none;
+        border: none;
+        border: 1px solid grey;
+        margin-left: 5px;
+        text-indent: 5px;
+    }
+    .date-table .header .timer .month .month-sec{
+        width: 100px;
+        height: 30px;
+        margin: 10px auto;
+        outline: none;
+        border: none;
+        border: 1px solid grey;
+        text-indent: 20px;
+        margin-left: 25px;
+    }
+    .date-table .header .timer .holiday .holiday-sec{
+        width: 100px;
+        height: 30px;
+        margin: 10px auto;
+        outline: none;
+        border: none;
+        border: 1px solid grey;
+        text-indent: 5px;
+        margin-left: 25px;
+    }
+    .date-table .header .timer .return{
+        width: 100px;
+        height: 30px;
+        margin: 10px auto;
+        border: 1px solid grey;
+        text-indent: 5px;
+        margin-left: 25px;
+    }
+    .date-table .header .timer .return a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: black;
+        text-align: center;
+        line-height: 30px;
+        font-size: 14px;
+    }
+    .date-table .header .timer .return a:hover{
+        background-color: #f5f5f5;
+    }
+    .date-table .header .timer li{
+        float: left;
+    }
+    .date-table .weekdays{
+        width: 480px;
+        height: 42px;
+        border-bottom: 1px solid #e5e5e5;
+        margin-left: 15px;
+    }
+    .date-table .weekdays .weekday{
+        width: 100%;
+        height: 100%;
+        /* background-color: #959595; */
+    }
+    .date-table .weekdays .weekday li{
+        width: 60px;
+        height: 100%;
+        float: left;
+        text-align: center;
+        margin-right: 8px;
+        line-height: 42px;
+    }
+    .date-table .weekdays .weekday li.active{
+        color: red;
+    }
+    .date-table .content{
+        position: relative;
+        width: 480px;
+        height: 355px;
+        /* background-color: #e5e5e5; */
+        margin: 5px 15px;
+    }
+    .date-table .content .rest{
+        position: absolute;
+        top: 68px;
+        left: 0;
+        /* background-color: #e5e5e5; */
+        width: 480px;
+        height: 17px;
+
+    }
+    .date-table .content .rest>li:first-child{
+        margin-left: 7px;;
+    }
+    .date-table .content .rest>li:nth-child(5),
+    .date-table .content .rest>li:nth-child(6),
+    .date-table .content .rest>li:nth-child(7){
+        color: white;
+    }
+    .date-table .content .rest li{
+        float: left;
+        height: 100%;
+        width: 17px;
+        background-color: red;
+        margin-left: 50px;
+        color: white;
+        font-size: 14px;
+        text-align: center;
+        z-index: 100;
+    }
+    .date-table .content .content-day{
+        width: 100%;
+        height: 340px;
+        /* background-color: #e5e5e5; */
+        margin: 10px 5px;
+
+    }
+    .date-table .content .content-day li{
+        position: relative;
+        width: 65px;
+        height: 65px;
+        float: left;
+        /* background-color: lightblue; */
+        text-align: center;
+        line-height: 45px;
+        margin: 1px;
+        color: grey;
+        box-sizing: border-box;
+        border: 2px solid white;
+    }
+    .date-table .content ul>li:nth-child(n+5){
+        color: black;
+    }
+    .date-table .content .content-day li:hover{
+        border-color: orange;
+    }
+    .date-table .content .line{
+        display: block;
+        width: 480px;
+        height: 1px;
+        background-color: #e5e5e5;
+    }
+    .date-table .content .line.line1{
+        position: absolute;
+        top: 66px;
+    }
+    .date-table .content .line.line2{
+        position: absolute;
+        top: 134px;
+    }
+    .date-table .content .line.line3{
+        position: absolute;
+        top: 200px;
+    }
+    .date-table .content .line.line4{
+        position: absolute;
+        top: 268px;
+    }
+    .date-table .content .content-day li.active{
+        background-color: orange;
+        border: none;
+        color: white;
+    }
+    .date-table .content ul>li:nth-child(7n+6),
+    .date-table .content ul>li:nth-child(7n+7)
+    {
+        color: red;
+    }
+    .date-table .content ul>li:nth-child(n+30){
+        color: grey;
+    }
+    .date-table .content .content-day li .day-text{
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        /* background-color: green; */
+        display: block;
+        font-size: 12px;
+        text-align: center;
+        line-height: 16px;
+        width: 65px;
+        height: 16px;
+        color: grey;
+    }
+    .date-table .content .content-day>li:nth-child(14) .day-text{
+        color: red;
+    }
+    .date-table .content .content-day>li:nth-child(15) .day-text{
+        color: red;
+    }
+    .date-table .content .content-day>li:nth-child(5) .day-text{
+        color: red;
+    }
+    .date-table .content .content-day>li:nth-child(6) .day-text{
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <div class = "date-table">
+        <div class="header">
+            <ul class="timer">
+                <li class="years">
+                    <select name="years- select" class="years-sec">
+                        <option value=""></option>
+                    </select>
+                </li>
+                <li class="month">
+                    <select name="month- select" class="month-sec">
+                        <option value=""></option>
+                    </select>
+                </li>
+                <li class="holiday">
+                    <select name="holiday- select" class="holiday-sec">
+                    </select>
+                </li>
+                <li class="return"><a href="#">返回今天</a></li>
+            </ul>
+        </div>
+        <div class="weekdays">
+            <ul class="weekday">
+            </ul>
+        </div>
+        <div class="content">
+            <ul class="rest">
+
+            </ul>
+            <span class="line1 line"></span>
+            <span class="line2 line"></span>
+            <span class="line3 line"></span>
+            <span class="line4 line"></span>
+            <ul class="content-day"></ul>
+        </div>
+        <div class="today">
+                <p class="today-num"></p>
+                <div class="datas">
+                </div>
+                <div class="eve">
+                    <ul>
+                        <li>正月廿三</li>
+                        <li>己亥年 【猪年】</li>
+                        <li>丙寅月 乙未日</li>
+                    </ul>
+                </div>
+                <ul class="nice">
+                    <li>宜</li>
+                    <li>祭祀</li>
+                    <li>祈福</li>
+                    <li>酬神</li>
+                    <li>订盟</li>
+                    <li>纳彩</li>
+                </ul>
+                <ul class="bad">
+                    <li>忌</li>
+                    <li>栽种</li>
+                    <li>动土</li>
+                    <li>开市</li>
+                    <li>作灶</li>
+                </ul>
+            </div>
+    </div>
+    <script>
+    var yearsEl = document.querySelector('.date-table .header .timer .years .years-sec');
+    var monthEl = document.querySelector('.date-table .header .timer .month .month-sec');
+    var holidayEl = document.querySelector('.date-table .header .timer .holiday .holiday-sec');
+    var returnEl = document.querySelector('.date-table .header .timer .return');
+    var weekEl = document.querySelector('.date-table .weekdays .weekday');
+    var contentEl = document.querySelector('.date-table .content .content-day');
+    var restEl = document.querySelector('.date-table .content .rest');
+    var todayEl = document.querySelector('.date-table .today');
+    var datasEl = document.querySelector('.date-table .today .datas');
+    var todayNumEl = document.querySelector('.date-table .today .today-num');
+    var monthChildren = monthEl.children;
+    var monthArr = [31,28,31,30,31,30,31,31,30,31,30,31];
+    var date = new Date();
+    var year = date.getFullYear();
+    var mon = date.getMonth();
+    var day = date.getDate();
+    var holidayArr = ['假期安排','春节','除夕','元旦','元宵节','情人节','国庆节'];
+    var weekArr = ['一','二','三','四','五','六','日'];
+    var dayArr = ['一','二','三','四','除夕','春节','七','八','九','十','十一','十二','十三','情人节','元宵节','十六','十七','十八','十九','二十','二十一','二十二','二十三','二十四','二十五','二十六','二十七','二十八','二十九','三十','三十一','一','二','三','四'];
+    var count = 1994;
+    var months = 0;
+    var num = 27;
+    initSelectY();
+    initSelectM();
+    initSelectH();
+    initSelectW();
+    initSelectD();
+    innerRest();
+    datasEl.innerText = day;
+    todayNumEl.innerText = year+'-'+(mon+1)+'-'+day;
+    returnEl.onclick = function(){
+        todayEl.style.backgroundColor = '#5AADFF';
+    }
+    for(var i = 0; i<monthChildren.length; i++){     
+         monthEl.onchange = function(){
+             mon = this.value;
+             if(mon!=1){
+                restEl.style.display = 'none';
+             }else{
+                restEl.style.display = 'block';
+             }
+             initSelectD();
+         }
+        
+        }
+        holidayEl.onchange = function(){
+            todayEl.style.backgroundColor = '#E43B1F';
+        }
+    /**
+    *动态生成下拉框年份
+    **/
+    function initSelectY(){
+        var str = '';
+        for(var i = 0; i<50; i++){
+            count ++;
+            var cActive = (count ==year? 'selected':'class = "up-year"');
+            str += '<option '+cActive+' value="'+i+'">'+count+'年</option>';
+        }
+        yearsEl.innerHTML = str;
+    }
+    /**
+    *动态生成下拉框月份
+    **/
+    function initSelectM(){
+        var str = '';
+        for(var i = 0; i<12; i++){
+            months ++;
+            var cActive = (months ==mon+1? 'selected':' ');
+            str += '<option '+cActive+' value="'+i+'">'+months+'月</option>';
+        }
+        monthEl.innerHTML = str;
+    }
+     /**
+    *动态生成下拉框假期
+    **/
+    function initSelectH(){
+        var str = '';
+        for(var i = 0; i<holidayArr.length; i++){
+            var cActive = (i ==0? 'selected':' ');
+            str += '<option '+cActive+' value="'+i+'">'+holidayArr[i]+'</option>';
+        }
+        holidayEl.innerHTML = str;
+    }
+    /**
+    *动态生成星期
+    **/
+    function initSelectW(){
+        var str = '';
+        for(var i = 0; i<weekArr.length; i++){
+            var cActive = (i > 4? 'class = "active"':' ');
+            str += '<li '+cActive+' value="'+i+'">'+weekArr[i]+'</li>';
+        }
+        weekEl.innerHTML = str;
+    }
+     /**
+    *动态生成天
+    **/
+    function initSelectD(){
+        var str = '';
+        
+       var days = monthArr[mon];
+       var beforeDays = monthArr[mon - 1];
+    //    console.log(days);
+        for(var i = 0; i<35; i++){
+            num ++ ;
+      if(mon ==0||mon==2||mon==4||mon==6||mon==9||mon ==7||mon==11){
+          if(num>31){
+              num = 1;
+          }
+      }else if(mon ==1||mon==5||mon==8||mon==10){     
+        if(num>30){
+              num = 1;
+          }
+           }
+         
+      else if(mon ==1){
+          if(num>28){
+              num =1;
+          }
+      }
+            var cActive = (i == day? 'class = "active"':' ');
+            str += '<li '+cActive+' value="'+i+'">'+num+'<span class = "day-text">'+dayArr[num]+'</span></li>';
+        }
+        contentEl.innerHTML = str;
+    }
+    /**
+    *动态生成rest
+    **/
+    function innerRest(){
+        var str = '';
+        for(var i = 0; i < 7;i++){
+            str += '<li class = "li'+i+'">休</li>';
+        }
+        restEl.innerHTML = str;
+    }
+    //表单里面的内容改变用 onchange事件
+    // yearsEl.onchange = function(){
+    //     console.log(this.value);
+    // }
+    </script>
+</body>
+</html>

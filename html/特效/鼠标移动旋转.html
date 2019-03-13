@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .banner{
+        width: 1200px;
+        height: 600px;
+        background-color: greenyellow;
+        margin: 100px auto;
+        perspective: 1000px;
+    }
+    .banner .pic{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: url(img/banner.png) no-repeat center;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        transition: all ease .1s;
+    }
+    /* .banner .pic:hover{
+        transform: rotateX(16deg) rotateY(16deg);
+        transform-origin: center;
+    } */
+    .banner .pic .dott{
+        position: absolute;
+        top: 150px;
+        left: 150px;
+        width: 150px;
+        height: 150px;
+        background-color: yellow;
+        transition: all ease .4s;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+    }
+    .banner .pic:hover .dott{
+        transform: translateZ(80PX);
+    }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="pic">
+            <div class="dott"></div>
+        </div>
+    </div>
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $('.banner .pic').mouseenter(function(e){
+            $('.banner .pic').mousemove(function(e){
+                var rW = e.pageX -  $('.banner .pic').offset().left - 600;
+                var lW =  e.pageX -  $('.banner .pic').offset().left;
+                var tH =  e.pageY -  $('.banner .pic').offset().top ;
+                var bH =  e.pageY -  $('.banner .pic').offset().top - 300 ;
+                var bl1 = rW/600*10;
+                var bl2 = -1*bH / 300*10;
+                if(e.pageX>700 && e.pageY > 350){
+                 $(this).css('transform','translateX('+bl1+'px) rotateX('+bl2+'deg) rotateY('+ bl1+'deg)');
+                }
+                if(e.pageX<700 && e.pageY > 350){
+                 $(this).css('transform','translateX('+bl1+'px) rotateX('+bl2+'deg) rotateY('+ bl1+'deg)');
+                }
+                if(e.pageX>700 && e.pageY < 350){
+                 $(this).css('transform','translateX('+bl1+'px) rotateX('+bl2+'deg) rotateY('+ bl1+'deg)');
+                }
+                if(e.pageX<700 && e.pageY < 350){
+                 $(this).css('transform','translateX('+bl1+'px) rotateX('+bl2+'deg) rotateY('+ bl1+'deg)');
+                }
+            })
+        })
+        $('.banner .pic').mouseleave(function(e){
+            $(this).css('transform','rotateX(0) rotateY(0)');
+        })
+    </script>
+</body>
+</html>

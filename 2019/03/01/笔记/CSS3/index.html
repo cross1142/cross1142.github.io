@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="阴影 内阴影 1box-shadow: 20px 20px 0 0 blue inset,-20px -20px 0 0 blue inset;   渐变 1ackground: linear-gradient(to right,red,orange,yellow,green,#004400,blue,purple);  兼容写法 兼容谷歌和苹果浏览器 方向不能带 to 1background:">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-11T12:40:48.507Z">
+<meta property="og:updated_time" content="2019-03-13T10:37:10.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="阴影 内阴影 1box-shadow: 20px 20px 0 0 blue inset,-20px -20px 0 0 blue inset;   渐变 1ackground: linear-gradient(to right,red,orange,yellow,green,#004400,blue,purple);  兼容写法 兼容谷歌和苹果浏览器 方向不能带 to 1background:">
@@ -390,8 +390,19 @@
 </li>
 <li>animationiteration 动画重复播放时触发</li>
 <li>animationed 动画完成后触发</li>
-<li>取消过度效果$<code>(&#39;.swiper&#39;).css(&#39;transition&#39;,&#39;none&#39;);</code></li>
+<li>取消过度效果$<code>(&#39;.swiper&#39;).css(&#39;transition&#39;,&#39;none&#39;);</code><h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2></li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@font-face &#123;</span><br><span class="line">      font-family: &apos;mzd&apos;;</span><br><span class="line">      src: url(&apos;font/mzdzt.ttf&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">        .mzd-box&#123;</span><br><span class="line">    	font-family: &apos;mzd&apos;;</span><br><span class="line">    	font-size: 30px;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<h2 id="鼠标滚动监听"><a href="#鼠标滚动监听" class="headerlink" title="鼠标滚动监听"></a>鼠标滚动监听</h2><ul>
+<li>window.onmousewheel 鼠标滚轮监听</li>
+<li>wheelDelta 判断鼠标滚动方向 往上滚为正值 往下滚为负值<h2 id="帧动画"><a href="#帧动画" class="headerlink" title="帧动画"></a>帧动画</h2></li>
+<li><code>animation: sec 60s steps(60) infinite both;</code>只需要把运动方式改为走多少步<h2 id="animatecss-css"><a href="#animatecss-css" class="headerlink" title="animatecss.css"></a>animatecss.css</h2></li>
+</ul>
+<ol>
+<li>下载animatecss.css文件，</li>
+<li>直接在HTML里面引用</li>
+</ol>
 
       
     </div>
@@ -551,7 +562,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#阴影"><span class="nav-number">1.</span> <span class="nav-text">阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渐变"><span class="nav-number">2.</span> <span class="nav-text">渐变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#background"><span class="nav-number">3.</span> <span class="nav-text">background</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过度"><span class="nav-number">4.</span> <span class="nav-text">过度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变换"><span class="nav-number">5.</span> <span class="nav-text">变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动画"><span class="nav-number">6.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动画监听"><span class="nav-number">7.</span> <span class="nav-text">动画监听</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#阴影"><span class="nav-number">1.</span> <span class="nav-text">阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渐变"><span class="nav-number">2.</span> <span class="nav-text">渐变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#background"><span class="nav-number">3.</span> <span class="nav-text">background</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过度"><span class="nav-number">4.</span> <span class="nav-text">过度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变换"><span class="nav-number">5.</span> <span class="nav-text">变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动画"><span class="nav-number">6.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动画监听"><span class="nav-number">7.</span> <span class="nav-text">动画监听</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体"><span class="nav-number">8.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鼠标滚动监听"><span class="nav-number">9.</span> <span class="nav-text">鼠标滚动监听</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帧动画"><span class="nav-number">10.</span> <span class="nav-text">帧动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#animatecss-css"><span class="nav-number">11.</span> <span class="nav-text">animatecss.css</span></a></li></ol></div>
             
 
           </div>

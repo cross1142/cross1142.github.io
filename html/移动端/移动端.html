@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lb/swiper-3.4.2.min.css">
+    <script>
+        resetFontSize();
+
+        // 当浏览器大小变化的时候触发
+        window.onresize = function() {
+                resetFontSize();
+            }
+            /**
+             * 根据浏览器宽度重新设置 html font-szie大小
+             **/
+        function resetFontSize() {
+            // 浏览器宽度 1/10
+            document.documentElement.style.fontSize = window.innerWidth / 10 + 'px';
+            console.log('html font-size重置为: ' + window.innerWidth / 10);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <a href="#" class="logo"></a>
+        <p class="title">郑州高端互联网技术培训</p>
+        <div class="nav">
+            <span class="nav-line"></span>
+            <span class="nav-line"></span>
+            <span class="nav-line"></span>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="header-nav">
+            <ul>
+                <li class="lit"><a href="javascript:;">首页</a></li>
+                <li class="lit"><a href="javascript:;">关于</a></li>
+                <li class="lit"><a href="javascript:;">介绍</a></li>
+                <li class="lit"><a href="javascript:;">环境</a></li>
+                <li class="lit"><a href="javascript:;">作品</a></li>
+                <li class="lit"><a href="javascript:;">就业</a></li>
+                <li class="lit"><a href="javascript:;">优势</a></li>
+                <li class="lit"><a href="javascript:;">联系</a></li>
+            </ul>
+        </div>
+        <div class="text">
+        </div>
+        <div class="banner-center">
+            <div class="about-us">
+                <p>关于我们</p><br>
+                <p class="p2">Course</p>
+            </div>
+            <div class="bufan-pic"></div>
+            <div class="introduce">
+                <span>
+						  不凡学院老师由一帮80后老北漂组成。我们分别来自于腾讯网，凤凰网，网易等北京知名互联网公司，我们都曾奋斗在一线岗位，都曾面试新人，带新人，深知公司需要什么样的人才。我们会通过实战项目结
+						  合 培训的教学模式，把知名互联网公司的工作流程，设计方法，开发方 式手把手的教给大家，在不凡学
+						  习就相当于工作，高薪就业你也行！
+				</span>
+            </div>
+        </div>
+        <div class="design">
+            <span class="ui">UI设计</span>
+            <span>
+				就业方向：网页设计，APP设计, 管理系统软件设计，智能电视，车载系统，智能穿戴设备等软件设计。	
+			</span>
+            <span class="course"><a href="javascript:;">课程详情</a></span>
+        </div>
+        <div class="best">
+            <div class="btn">x</div>
+            <div class="line"></div>
+            <span>H5前端开发精品班</span>
+            <ul>
+                <li>课程周期： 三个月</li>
+                <li>上课时间： 周一至周五</li>
+                <li>招生对象： 大专以上学历</li>
+                <li>班级人数： 每班限制15人</li>
+            </ul>
+        </div>
+        <div class="design2">
+            <span class="ui H5">H5前端开发</span>
+            <span>
+				就业方向：网页设计，APP设计, 管理系统软件设计，智能电视，车载系统，智能穿戴设备等软件设计。	
+			</span>
+            <span class="course"><a href="javascript:;">课程详情</a></span>
+        </div>
+        <div class="environment">
+            <div class="about-us">
+                <p>关于我们</p><br>
+                <p class="p2">Course</p>
+            </div>
+            <div class="pic">
+                <ul class="pic-play">
+                    <li><img src="img/bufanxueyuan.png" alt=""></li>
+                    <li>
+                        <span class="bufan">
+								<p class="p1">不凡学院</p>
+								<div class="bufan-text">
+								<p class="p2">平凡人的不平凡</p>
+								<p>我们在学院等你</p>
+							</div>
+								</span>
+                    </li>
+                    <li>
+                        <span class="bufan">
+											<p class="p1">不凡学院</p>
+											<div class="bufan-text">
+											<p class="p2">平凡人的不平凡</p>
+											<p>我们在学院等你</p>
+										</div>
+											</span>
+                    </li>
+                    <li><img src="img/bufanxueyuan.png" alt=""></li>
+                    <li><img src="img/bufanxueyuan.png" alt=""></li>
+                    <li>
+                        <span class="bufan">
+											<p class="p1">不凡学院</p>
+											<div class="bufan-text">
+											<p class="p2">平凡人的不平凡</p>
+											<p>我们在学院等你</p>
+										</div>
+											</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="works">
+            <div class="about-us">
+                <p>关于我们</p><br>
+                <p class="p2">Course</p>
+            </div>
+        </div>
+    </div>
+    <div class="fotter">
+        <!-- 轮播一 -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/show1.png" alt="">
+                    <img src="img/show2.png" alt="">
+                    <img src="img/show2.png" alt="">
+                    <img src="img/show2.png" alt="">
+                    <img src="img/show2.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/show2.png" alt="">
+                    <img src="img/show2.png" alt="">
+                    <img src="img/show2.png" alt="">
+                    <img src="img/show2.png" alt="">
+                    <img src="img/show2.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/show3.png" alt="">
+                    <img src="img/show3.png" alt="">
+                    <img src="img/show3.png" alt="">
+                    <img src="img/show3.png" alt="">
+                    <img src="img/show3.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/show4.png" alt="">
+                    <img src="img/show4.png" alt="">
+                    <img src="img/show4.png" alt="">
+                    <img src="img/show4.png" alt="">
+                    <img src="img/show4.png" alt="">
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            <!-- 如果需要滚动条 -->
+            <div class="swiper-scrollbar"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <!-- 就业 -->
+    <div class="foot">
+        <div class="about-us">
+            <p>关于我们</p><br>
+            <p class="p2">Course</p>
+        </div>
+        <ul class="employment">
+            <li><img src="img/em_2.jpg" alt=""></li>
+            <li><img src="img/em_2.jpg" alt=""></li>
+            <li><img src="img/em_2.jpg" alt=""></li>
+        </ul>
+    </div>
+    <!-- 师资力量 -->
+    <div class="teacher">
+        <div class="about-us">
+            <p>关于我们</p><br>
+            <p class="p2">Course</p>
+        </div>
+        <div class="teacher-pic">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/ding2.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/ding2.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/ding2.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/ding2.png" alt="">
+                    </div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+                <!-- 如果需要滚动条 -->
+                <div class="swiper-scrollbar"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+        <div class="teacher-text"></div>
+    </div>
+    <!-- 课程优势 -->
+    <div class="advantage">
+        <div class="about-us">
+            <p>关于我们</p><br>
+            <p class="p2">Course</p>
+        </div>
+        <ul class="advantage-play">
+            <li><span class="advantage-pic"><img class="imgs" src="img/zhen.png" alt=""></span><span class="advantage-text">
+						<p class="p1">最好的师资力量</p><br><span class="p2">北京知名一线互联网公司资深设计师担任讲师，现场面授！</span>
+                </span>
+            </li>
+            <li><span class="advantage-pic"><img class="imgs" src="img/zhen.png" alt=""></span><span class="advantage-text">
+						<p class="p1">最好的师资力量</p><br><span class="p2">北京知名一线互联网公司资深设计师担任讲师，现场面授！</span>
+                </span>
+            </li>
+            <li><span class="advantage-pic"><img class="imgs" src="img/zhen.png" alt=""></span><span class="advantage-text">
+						<p class="p1">最好的师资力量</p><br><span class="p2">北京知名一线互联网公司资深设计师担任讲师，现场面授！</span>
+                </span>
+            </li>
+            <li><span class="advantage-pic"><img class="imgs" src="img/zhen.png" alt=""></span><span class="advantage-text">
+						<p class="p1">最好的师资力量</p><br><span class="p2">北京知名一线互联网公司资深设计师担任讲师，现场面授！</span>
+                </span>
+            </li>
+            <li><span class="advantage-pic"><img class="imgs" src="img/zhen.png" alt=""></span><span class="advantage-text">
+						<p class="p1">最好的师资力量</p><br><span class="p2">北京知名一线互联网公司资深设计师担任讲师，现场面授！</span>
+                </span>
+            </li>
+            <li><span class="advantage-pic"><img class="imgs" src="img/zhen.png" alt=""></span><span class="advantage-text">
+						<p class="p1">最好的师资力量</p><br><span class="p2">北京知名一线互联网公司资深设计师担任讲师，现场面授！</span>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div class="contact">
+        <div class="about-us">
+            <p>关于我们</p><br>
+            <p class="p2">Course</p>
+        </div>
+        <ul class="address">
+            <li><span class="font-text">地址</span>
+                <p>郑州市郑东新区金水东路绿地新都汇6号楼1210</p>
+            </li>
+            <li><span class="font-text">地址</span>
+                <p>郑州市郑东新区金水东路绿地新都汇6号楼1210</p>
+            </li>
+            <li><span class="font-text">地址</span>
+                <p>郑州市郑东新区金水东路绿地新都汇6号楼1210</p>
+            </li>
+        </ul>
+        <ul class="dotts">
+            <li><img src="img/address.png" alt=""></li>
+            <li><img src="img/address.png" alt=""></li>
+            <li><img src="img/address.png" alt=""></li>
+        </ul>
+        <div class="consul">咨询</div>
+        <div class="go-up">^</div>
+        <script src="lb/swiper-3.4.2.min.js"></script>
+        <script src="lib/jquery-3.3.1.min.js"></script>
+        <script>
+            var headerNav = document.querySelector('.banner .header-nav');
+            var navEl = document.querySelector('.header .nav');
+            var courseEl = document.querySelector('.banner .design .course');
+            var bannerBest = document.querySelector('.banner .best');
+            var bestBtn = document.querySelector('.banner .best .btn');
+            var goUp = document.querySelector('.contact .go-up');
+            var headerNavEl = document.querySelector('.banner .header-nav ul');
+            var headerNavEls = headerNavEl.children;
+            var timer = null;
+            /**
+             * 头部字体点击
+             * */
+            for (var i = 0; i < headerNavEls.length; i++) {
+                headerNavEls[i].index = i;
+                var index = headerNavEls[i].index;
+                headerNavEls[index].onclick = function() {
+                    $(this).addClass('active');
+                    $(this).siblings().removeClass('active');
+                }
+            }
+            /**
+             *头部导航点击
+             **/
+            navEl.onclick = function() {
+                    var value = $('.banner .header-nav').attr('class');
+                    if (value.indexOf('active') != -1) {
+                        headerNav.classList.remove('active');
+                        $('.banner .header-nav ul>li').removeClass('active');
+                    } else {
+                        headerNav.classList.add('active');
+                    }
+                }
+                /**
+                 *课程介绍点击
+                 **/
+            courseEl.onclick = function() {
+                    bannerBest.classList.add('active');
+                    $('body').css('backgroundColor', 'rgba(0, 0, 0, .4)').css('z-index', '1000');
+                    bestBtn.onclick = function() {
+                        bannerBest.classList.remove('active');
+                        $('body').css('backgroundColor', 'white').css('z-index', '0');
+                    }
+                }
+                /**
+                 *回到顶部点击
+                 **/
+            $('.contact .go-up').click(function() {
+                    console.log('ha');
+                    $('body,html').animate({
+                        scrollTop: '0'
+                    }, 1000, function() {
+                        // alert('结束...');
+                        return;
+                    });
+                })
+                /**
+                 * 缓动函数
+                 * */
+            function animate(target) {
+                clearInterval(timer);
+                timer = setInterval(function() {
+                    var leader = Math.floor(document.documentElement.scrollTop);
+                    // console.log(leader)
+                    var step = Math.floor((target - leader) / 10);
+                    if (Math.abs(step) < 1) {
+                        step = step < 0 ? -1 : 1;
+                    }
+                    leader += step;
+                    document.documentElement.scrollTop = leader;
+                    if (leader == target) {
+                        clearInterval(timer);
+                    }
+                }, 17);
+            }
+            /**
+             * 轮播
+             * */
+            var mySwiper = new Swiper('.swiper-container', {
+                loop: true,
+
+                // 如果需要分页器
+                pagination: '.swiper-pagination',
+
+                // 如果需要前进后退按钮
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+
+                // 如果需要滚动条
+                scrollbar: '.swiper-scrollbar',
+                autoplay: 1000,
+                speed: 1000,
+                slidesPerView: 1.2,
+                spaceBetween: 20,
+                centeredSlides: true,
+                paginationClickable: true,
+                grabCursor: true,
+                parallax: true,
+                keyboardControl: true,
+                scrollbarHide: false,
+                scrollbarDraggable: true,
+            })
+        </script>
+    </div>
+</body>
+
+</html>

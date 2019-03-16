@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="阴影 内阴影 1box-shadow: 20px 20px 0 0 blue inset,-20px -20px 0 0 blue inset;   渐变 1ackground: linear-gradient(to right,red,orange,yellow,green,#004400,blue,purple);  兼容写法 兼容谷歌和苹果浏览器 方向不能带 to 1background:">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-13T10:37:10.993Z">
+<meta property="og:updated_time" content="2019-03-13T11:12:03.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="阴影 内阴影 1box-shadow: 20px 20px 0 0 blue inset,-20px -20px 0 0 blue inset;   渐变 1ackground: linear-gradient(to right,red,orange,yellow,green,#004400,blue,purple);  兼容写法 兼容谷歌和苹果浏览器 方向不能带 to 1background:">
@@ -403,6 +403,14 @@
 <li>下载animatecss.css文件，</li>
 <li>直接在HTML里面引用</li>
 </ol>
+<ul>
+<li><code>$(selector).each(function(index,element))</code></li>
+<li>必需 为每个匹配元素规定运行的函数。<ul>
+<li>index - 选择器的 index 位置</li>
+<li>element - 当前的元素（也可使用 “this” 选择器）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> var tags = [];</span><br><span class="line">$(&apos;.box&apos;).children().each(function(index,item)&#123;</span><br><span class="line">	console.log(index,item);</span><br><span class="line">	if(item.hasAttribute(&apos;data-deep&apos;))&#123;</span><br><span class="line">		tags.push(item);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -516,7 +524,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

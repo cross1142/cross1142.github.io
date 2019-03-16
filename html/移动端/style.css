@@ -1,0 +1,778 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+html{
+    font-size: 37.5px;
+}
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1.066667rem;
+    background-color: white;
+    z-index: 1001;
+}
+.banner .header-nav{
+    position: fixed;
+    top: 1.066667rem;
+    width: 100%;
+    height: 10.053333rem;
+    background-color: #fff;
+    z-index: 100;
+    display: none;
+}
+.banner .header-nav.active{
+    transition: all ease .4s;
+    display: block;
+}
+.banner .header-nav ul{
+    position: absolute;
+    left: 2.4rem;
+    width: 5.333333rem;
+    height: 100%;
+}
+.banner .header-nav ul>li{
+    margin-left: 2.266667rem;
+    margin-top: .533333rem;
+    width:1rem;
+    height: .64rem;
+    font-size: .426667rem;
+}
+.banner .header-nav ul>li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: black;
+}
+.banner .header-nav ul>li.active a{
+    color: #00c0ef;
+}
+.header .logo{
+    position: absolute;
+    left: 0.4rem;
+    top: 0.16rem;
+    width: 1.733333rem;
+    height: 0.746667rem;
+    background: url(img/logo.png) no-repeat center;
+    background-size: cover;
+    /*特别注意: 精灵图片 在rem时候 应该写原始宽高;*/
+    /*background-size: 2.666667rem  2.0rem;*/
+}
+.header .title{
+    line-height: 1.066667rem;
+    font-size: 0.346667rem;
+    color: #9D9E9E;
+    text-align: center;
+}
+.header .nav{
+    position: absolute;
+    top: 0.213333rem;
+    right: 0.4rem;
+    width: 0.533333rem;
+    height: 0.8rem;
+    /*background-color: #000;*/
+}
+.header .nav .nav-line{
+    display: block;
+    width: 100%;
+    height: 0.08rem;
+    background-color: #6d6d6e;
+    margin-top: 0.106667rem;
+    border-bottom-right-radius: 0.053333rem;
+    border-bottom-left-radius: 0.053333rem;
+}
+.banner{
+    position: relative;
+    top: 1.013333rem;
+    width: 100%;
+    height: 5.626667rem;
+    background-color: #00c0ef;
+}
+.banner .text{
+    position: absolute;
+    top: 1.866667rem;
+    left: 2.453333rem;
+    height: 1.386667rem;
+    width: 5.253333rem;
+    background-color: green;
+    background: url(img/xueyuan-1.png) no-repeat center;
+    background-size: cover;
+}
+.banner .banner-center{
+    position: absolute;
+    left: 1.493333rem;
+    top: 6.293333rem;
+    width: 7.2rem;
+}
+.banner .banner-center .about-us{
+    position: relative;
+    width: 7.2rem;
+    height: .586667rem;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .586667rem;
+
+}
+.banner .banner-center .about-us p{
+    position: absolute;
+    left: 2.666667rem;
+    width: 1.866667rem;
+    height: .8rem;
+    border-bottom: .053333rem solid #74a1f5;
+    border-image: -webkit-linear-gradient( green, blue) 10;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .8rem;
+
+}
+.banner .banner-center .about-us .p2{
+    width:  1.866667rem;
+    height: .373333rem;
+    border: none;
+    font-size: .32rem;
+    text-align: center;
+    margin-top: .106667rem;
+}
+.banner .banner-center .bufan-pic{
+    width: 7.12rem;
+    height: 4.293333rem;
+    background-color: green;
+    margin-top: 1.413333rem;
+    background:url(img/bufan-1.png) no-repeat center;
+}
+.banner .banner-center .introduce{
+    width: 7.2rem;
+    height: 4.8rem;
+    margin-top: .453333rem;
+}
+.banner .banner-center .introduce span{
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: .373333rem;
+    line-height: .533333rem;
+    font-family: 'PingFangSC-Regular';
+    text-align:justify;
+    color: #6D6D6E;
+}
+.banner .design{
+    position: absolute;
+    top: 18.4rem;
+    width: 100%;
+    height: 4rem;
+    background: -webkit-linear-gradient(left, #FF769B,#FFC29C);
+}
+.banner .best{
+    position: absolute;
+    top: 19.6rem;
+    left: 1.173333rem;
+    width: 7.653333rem;
+    height: 6rem;
+    z-index: 99;
+    display: none;
+    background: -webkit-linear-gradient(top,#FF4A5A,#FFCB8A);
+}
+.banner .best.active{
+    display: block;
+}
+.banner .best span{
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: .48rem;
+    line-height: .666667rem;
+    margin-top: 1.066667rem;
+}
+.banner .best .btn{
+    position: absolute;
+    top: -1.066667rem;
+    right:0;
+    width: .8rem;
+    height: .8rem;
+    border-radius: 50%;
+    background-color: #fff;
+    font-size: .64rem;
+    text-align: center;
+    line-height: .64rem;
+    z-index: 99;
+    color: grey;
+}
+.banner .best .line{
+    position: absolute;
+    top: -0.32rem;
+    right: .346667rem;
+    width: .08rem;
+    height: .266667rem;
+    background-color: #fff;
+    z-index: 99;
+    color: grey;
+}
+.banner .best li{
+    margin-left: 1.333333rem;
+    width: 5.333333rem;
+    color: white;
+    font-size: .426667rem;
+    line-height: .8rem;
+}
+.banner .best li:nth-child(1){
+    margin-top: .266667rem;
+}
+.banner .design span{
+    display: block;	
+    font-size: .373333rem;
+    width: 9.013333rem;
+    height: 1.066667rem;
+    color: white;
+    line-height: .533333rem;
+    margin-left: .666667rem;
+    margin-top: .133333rem;
+}
+.banner .design .ui{
+    display: block;	
+    height: .666667rem;
+    width: 100%;
+    font-size: .48rem;
+    margin-top: .56rem;
+    text-align: center;
+    color: white;
+    line-height: .666667rem;
+    margin-left: 0;
+}
+.banner .design .course{
+    position: absolute;
+    bottom: .56rem;
+    left: 3.2rem;
+    display: block;
+    width: 2.293333rem;
+    height: .666667rem;
+    border: .026667rem solid white;
+    border-top-left-radius: .4rem;
+    border-bottom-left-radius: .4rem;
+    border-bottom-right-radius: .4rem;
+    border-top-right-radius: .4rem;
+}
+.banner .design .course a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    line-height: .666667rem;
+}
+.banner .design2{
+    position: absolute;
+    top: 22.933333rem;
+    width: 100%;
+    height: 4rem;
+    background: -webkit-linear-gradient(left,#6BBBFF,#B9A7FF);
+}
+.banner .design2 span{
+    display: block;	
+    font-size: .373333rem;
+    width: 9.013333rem;
+    height: 1.066667rem;
+    color: white;
+    line-height: .533333rem;
+    margin-left: .666667rem;
+    margin-top: .133333rem;
+}
+.banner .design2 .ui.H5{
+    display: block;	
+    height: .666667rem;
+    width: 100%;
+    font-size: .48rem;
+    margin-top: .56rem;
+    text-align: center;
+    color: white;
+    line-height: .666667rem;
+    margin-left: 0;
+}
+.banner .design2 .course{
+    position: absolute;
+    bottom: .56rem;
+    left: 3.2rem;
+    display: block;
+    width: 2.293333rem;
+    height: .666667rem;
+    border: .026667rem solid white;
+    border-top-left-radius: .4rem;
+    border-bottom-left-radius: .4rem;
+    border-bottom-right-radius: .4rem;
+    border-top-right-radius: .4rem;
+}
+.banner .design2 .course a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    line-height: .666667rem;
+}
+.banner .environment{
+    position: absolute;
+    top: 27.466667rem;
+    height: 13.973333rem;
+    width: 100%;
+    background-color: #3d3d3d;
+}
+.banner .environment .about-us{
+    position: relative;
+    width: 7.2rem;
+    height: .586667rem;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .586667rem;
+}
+.banner .environment .about-us p{
+    position: absolute;
+    left: 4.133333rem;
+    top: .773333rem;
+    width: 1.866667rem;
+    height: .8rem;
+    border-bottom: .053333rem solid #74a1f5;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .8rem;
+    color: white;
+
+}
+.banner .environment .about-us .p2{
+    position: absolute;
+    top: 1.466667rem;
+    width:  1.866667rem;
+    height: .373333rem;
+    border: none;
+    font-size: .32rem;
+    text-align: center;
+    margin-top: .106667rem;
+}
+.banner .environment .pic{
+    position: absolute;
+    top: 2.506667rem;
+    left: 1.52rem;
+    height: 10.32rem;
+    width: 6.88rem;
+    background-color: #fff;
+}
+.banner .environment .pic .pic-play{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.banner .environment .pic .pic-play li{
+    width: 3.44rem;
+    height: 3.44rem;
+    float: left;
+}
+.banner .environment .pic .pic-play li:nth-child(2) .bufan .p1{
+    position: absolute;
+    top: 1.066667rem;
+    left: 4.533333rem;
+    width:  1.706667rem;
+    height: .586667rem;
+    color: #6D6D6E ;
+    font-size: .426667rem;
+}
+.banner .environment .pic .pic-play li:nth-child(3) .bufan .p1{
+    position: absolute;
+    top: 4.4rem;
+    left: .853333rem;
+    width:  1.706667rem;
+    height: .586667rem;
+    color: #6D6D6E ;
+    font-size: .426667rem;
+}
+.banner .environment .pic .pic-play li:nth-child(6) .bufan .p1{
+    position: absolute;
+    left: 4.266667rem;
+    top: 7.733333rem;
+    width:  1.706667rem;
+    height: .586667rem;
+    color: #6D6D6E ;
+    font-size: .426667rem;
+}
+.banner .environment .pic .pic-play li:nth-child(2) .bufan  .bufan-text{
+   position: absolute;
+   left: 4.266667rem;
+   top: 1.6rem;
+    font-size: .32rem;
+    color: #9D9E9E;
+    line-height: .453333rem;
+}
+.banner .environment .pic .pic-play li:nth-child(3) .bufan  .bufan-text{
+   position: absolute;
+   left: .586667rem;
+   top: 5.12rem;
+    font-size: .32rem;
+    color: #9D9E9E;
+    line-height: .453333rem;
+}
+.banner .environment .pic .pic-play li:nth-child(6) .bufan  .bufan-text{
+    position: absolute;
+    left: 4.0rem;
+    top: 8.453333rem;
+    font-size: .32rem;
+    color: #9D9E9E;
+    line-height: .453333rem;
+}
+.banner .environment .pic .pic-play li img{
+    width: 100%;
+    height: 100%;
+}
+.banner .works{
+    position: absolute;
+    top: 41.333333rem;
+    height: 2.133333rem;
+    width: 100%;
+}
+.banner .works .about-us{
+    position: relative;
+    width: 7.2rem;
+    height: .586667rem;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .586667rem;
+}
+.banner .works .about-us p{
+    position: absolute;
+    left: 4.133333rem;
+    top: .773333rem;
+    width: 1.866667rem;
+    height: .8rem;
+    border-bottom: .053333rem solid #74a1f5;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .8rem;
+    color: black;
+
+}
+.banner .works .about-us .p2{
+    position: absolute;
+    top: 1.466667rem;
+    width:  1.866667rem;
+    height: .373333rem;
+    border: none;
+    font-size: .32rem;
+    text-align: center;
+    margin-top: .106667rem;
+}
+.fotter{
+    position: relative;
+    top: 39.466667rem;
+    width: 100%;
+    height: 20rem;
+}
+.fotter .swiper-container{
+    position: absolute;
+    left: 0.85rem;
+    top: .533333rem;
+    width: 8.213333rem;
+}
+
+.fotter .swiper-container img{
+    width: 100%;
+    height: 100%;
+}
+.foot{
+    position: relative;
+    top: 40rem;
+    width: 100%;
+    height: 13.333333rem;
+}
+.foot .about-us{
+    position: relative;
+    width: 7.2rem;
+    height: .586667rem;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .586667rem;
+}
+.foot .about-us p{
+    position: absolute;
+    left: 4.133333rem;
+    top: .773333rem;
+    width: 1.866667rem;
+    height: .8rem;
+    border-bottom: .053333rem solid #74a1f5;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .8rem;
+    color: black;
+
+}
+.foot .about-us .p2{
+    position: absolute;
+    top: 1.466667rem;
+    width:  1.866667rem;
+    height: .373333rem;
+    border: none;
+    font-size: .32rem;
+    text-align: center;
+    margin-top: .106667rem;
+}
+.foot .employment{
+width: 100%;
+height: 11.733333rem;
+}
+.foot .employment li{
+    width: 100%;
+    height: 3.733333rem;
+    margin-top: .4rem;
+}
+.foot .employment li:nth-child(1){
+    margin-top: 1.866667rem;
+}
+.foot .employment li img{
+    width: 100%;
+    height: 100%;
+}
+.teacher{
+    position: relative;
+    top: 41.333333rem;
+    height: 12rem;
+    width: 100%;
+}
+.teacher .about-us{
+    position: relative;
+    width: 7.2rem;
+    height: .586667rem;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .586667rem;
+}
+.teacher .about-us p{
+    position: absolute;
+    left: 4.133333rem;
+    top: .773333rem;
+    width: 1.866667rem;
+    height: .8rem;
+    border-bottom: .053333rem solid #74a1f5;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .8rem;
+    color: black;
+
+}
+.teacher .about-us .p2{
+    position: absolute;
+    top: 1.466667rem;
+    width:  1.866667rem;
+    height: .373333rem;
+    border: none;
+    font-size: .32rem;
+    text-align: center;
+    margin-top: .106667rem;
+}
+.teacher .swiper-container{
+    position: absolute;
+    left: 1rem;
+    top: 2.933333rem;
+    width: 8rem;
+    height: 8.293333rem;
+}
+.teacher .swiper-container img{
+    width: 100%;
+    height: 100%;
+}
+.advantage{
+    position: relative;
+    top: 41.066667rem;
+    left: .4rem;
+    height: 20rem;
+    width: 9.2rem;
+}
+.advantage .about-us{
+    position: relative;
+    width: 7.2rem;
+    height: .586667rem;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .586667rem;
+}
+.advantage .about-us p{
+    position: absolute;
+    left: 4.133333rem;
+    top: .773333rem;
+    width: 1.866667rem;
+    height: .8rem;
+    border-bottom: .053333rem solid #74a1f5;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .8rem;
+    color: black;
+
+}
+.advantage .about-us .p2{
+    position: absolute;
+    top: 1.466667rem;
+    width:  1.866667rem;
+    height: .373333rem;
+    border: none;
+    font-size: .32rem;
+    text-align: center;
+    margin-top: .106667rem;
+}
+.advantage ul{
+    position: absolute;
+    top: 2.666667rem;
+    height: 18.133333rem;
+    width: 100%;
+}
+.advantage ul>li{
+    position: relative;
+    width: 100%;
+    height: 2.8rem;
+    margin-top: .266667rem;
+}
+.advantage ul>li .advantage-pic{
+    display: block;
+    width: 2.133333rem;
+    height: 100%;
+}
+.advantage ul>li .advantage-text{
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 7.1rem;
+    height: 100%;
+    font-size: .346667rem;
+    background-color: #515151;
+}
+.advantage ul>li .advantage-text .p1{
+    width: 6.4rem;
+    font-size: .426667rem;
+    color: white;
+    margin-top: .533333rem;
+    text-indent: 2em;
+}
+.advantage ul>li .advantage-text span{
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 6.293333rem;
+    color: white;
+    line-height: .613333rem;
+}
+.advantage ul>li .advantage-pic .imgs{
+    width: 100%;
+    height: 100%;
+}
+.contact{
+    position: relative;
+    top: 42.666667rem;
+    width: 100%;
+    height: 11.466667rem;
+}
+.contact .about-us{
+    position: relative;
+    width: 7.2rem;
+    height: .586667rem;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .586667rem;
+}
+.contact .about-us p{
+    position: absolute;
+    left: 4.133333rem;
+    top: .773333rem;
+    width: 1.866667rem;
+    height: .8rem;
+    border-bottom: .053333rem solid #74a1f5;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .8rem;
+    color: black;
+
+}
+.contact .about-us .p2{
+    position: absolute;
+    top: 1.466667rem;
+    width:  1.866667rem;
+    height: .373333rem;
+    border: none;
+    font-size: .32rem;
+    text-align: center;
+    margin-top: .106667rem;
+}
+.contact ul{
+    position: absolute;
+    right: 0;
+    top: 2.666667rem;
+    width: 8.133333rem;
+    height: 6.666667rem;
+}
+.contact ul>li{
+    width: 100%;
+    height: 2.053333rem;
+    background-color: #fff;
+    margin-top: .133333rem;
+}
+.contact ul>li span{
+    font-size: .426667rem;
+    color: #3D3D3D ;
+    line-height: .586667rem;
+    font-weight: bolder;
+}
+.contact ul>li p{
+    font-size: .373333rem;
+    color: #3D3D3D ;
+    line-height: .533333rem;
+}
+.contact .dotts{
+    position: absolute;
+    left: 0;
+    top: 2.666667rem;
+    height: 6.666667rem;
+    width: 1.866667rem;
+}
+.contact .dotts li{
+    width: .8rem;
+    height: .8rem;
+    background-color: #fff;
+    margin-top: .533333rem;
+    margin-left: .8rem;
+}
+.contact .dotts li:nth-child(2){
+    margin-top: 1.333333rem;
+}
+.contact .dotts li:nth-child(3){
+    margin-top: 1.333333rem;
+}
+.contact .dotts li img{
+    width: 100%;
+    height: 100%;
+}
+.contact .consul{
+    position: absolute;
+    bottom: 1.173333rem;
+    right: .266667rem;
+    width: 1.066667rem;
+    height: 1.066667rem;
+    background-color: orange;
+    border-radius: 50%;
+    font-size: .32rem;
+    text-align: center;
+    line-height: 1.066667rem;
+    color: white;
+}
+.contact .go-up{
+    position: absolute;
+    bottom: 0;
+    right: .266667rem;
+   width: 1.093333rem;
+   height: .666667rem;
+   background-color: #6485ff; 
+   border-top-left-radius: .106667rem;
+   border-top-right-radius: .106667rem;
+   font-size: .48rem;
+    text-align: center;
+    line-height: 1.066667rem;
+    color: white;
+}

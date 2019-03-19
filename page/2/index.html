@@ -723,6 +723,195 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/笔记/dom笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/18/笔记/dom笔记/" itemprop="url">dom</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T15:53:30+08:00">
+                2019-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Dom"><a href="#Dom" class="headerlink" title="Dom"></a>Dom</h2><ul>
+<li>dom -document object model</li>
+<li>页面中所有的标签都是dom元素</li>
+<li>负责页面的增删改查 CURD</li>
+<li>事件的三要素： 事件源 事件 事件驱动程序<h2 id="node节点"><a href="#node节点" class="headerlink" title="node节点"></a>node节点</h2></li>
+<li>页面中所有的标签都是node节点，标签的文本内容也是node节点，标签的换行，回车也是节点，标签的属性也是节点，标签的注释也是节点</li>
+<li>DOM元素和节点的区别</li>
+<li>获取元素<pre><code>1. document.getElementById(&apos;&apos;);根据id获取，用的不是很多
+2. document.getElementByClassName(&apos;&apos;);根据class名称获取
+3. document..getElementByTagName(&apos;&apos;);根据标签名获取
+</code></pre><h2 id="calss选择器的问题"><a href="#calss选择器的问题" class="headerlink" title="calss选择器的问题"></a>calss选择器的问题</h2></li>
+<li>一般在ie-8中存在很多兼容问题，需要做兼容处理</li>
+<li>在ie-8不支持通过class名获取节点的方法：不支持getElementsByClassName();</li>
+<li>在ie-8不支持consoel这个对象<h2 id="节点之间的关系"><a href="#节点之间的关系" class="headerlink" title="节点之间的关系"></a>节点之间的关系</h2></li>
+<li>父类节点 ：获取父类节点的方法parentNode;他是一个属性，不是方法。</li>
+<li>调用父节点直接 .parentNode</li>
+<li>兄弟节点 :nextSibling在ie6,7,8中指下一个元素节点（标签，注释），在其他浏览器中指下一个节点（包括空文档和换行节点），在高级浏览器里下一个节点可以用nextElementSibling</li>
+<li>兄弟节点的上一个节点priviousSibling和priviousElementSibling</li>
+<li>兼容写法 var li5 = li4.nextElementSibling || li4.nextSibling;而且顺序不能颠倒。</li>
+<li>单个子节点 ：第一个子节点firstChild:在ie6,7,8中指第一个子元素节点，在火狐谷歌和ie-9以后的版本指第一个节点（也包括空文档和换行节点），同理可以用firstElementChild在该机浏览器里面指第一个元素节点</li>
+<li>兼容写法 var li1 = ulEl.firstElementChild || ulEl.firstChild;顺序不能颠倒</li>
+<li>单个子节点 ：最后一个子节点 lastElementChild || lastChild;</li>
+<li>所有的子节点 ：childNodes;</li>
+<li>判断节点的类型 ： nodeType;例如（console.log(lis[i].nodeType);）<ol>
+<li>nodeType ==1;元素节点</li>
+<li>nodeType == 3;文本节点/回车，换行</li>
+<li>nodeType == 8; 注释</li>
+</ol>
+</li>
+<li>childNodes是标准属性，嫡出，它返回指定元素的子元素集合，包括HTML节点，所有属性，文本节点</li>
+<li><p>children 非标准属性，它返回指定元素的子元素集合；在ie6,7,8中包含注释节点的，可以用包装好多的匿名函数筛选出来元素节点，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function myChildren (pNode) &#123;</span><br><span class="line">			var children = pNode.children;</span><br><span class="line">			var rs = [];</span><br><span class="line">			for(var i = 0 ; i &lt; children.length ; i++)&#123;</span><br><span class="line">				//过滤元素节点</span><br><span class="line">				if(children[i].nodeType == 1)&#123;</span><br><span class="line">					rs.push(children[i]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			return rs;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给节点绑定事件 ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pNode.onclick = function()&#123;</span><br><span class="line">    样式的操作 例如：</span><br><span class="line">    pNode.style.backgroundColor = &apos;red&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建子节点</p>
+<ol>
+<li>创建子节点： 使用的方法是document.creatElement();</li>
+<li>通过api创建一个元素，注意：元素创建后必须插入才能显示</li>
+</ol>
+<ul>
+<li>插入方式<ol>
+<li>父节点.appendChild();</li>
+<li>父节点.insertBefore(要插入的节点，参考节点);例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d1El.insertBefore(img, d1El.firstElementChild || d1El.firstChild);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>删除节点</p>
+</li>
+<li>删除操作必须通过父节点执行</li>
+<li>父节点.removeChild(子节点);</li>
+<li>复制节点</li>
+<li>用法： oldNode.cloneNode();</li>
+<li>默认是浅克隆，深克隆需要增加额外的参数<h2 id="属性的设置"><a href="#属性的设置" class="headerlink" title="属性的设置"></a>属性的设置</h2></li>
+<li>添加属性： setAttribute 是用于添加属性的不是用于操作class内容的</li>
+<li>getAttribute 获取属性</li>
+<li>removeAttribute 删除属性</li>
+<li>在body里面为空的时候，如果想让内容铺满，用html,body{</li>
+</ul>
+<p>}</p>
+<ul>
+<li>忽略边框的宽度，挤压内容属性：box-sizing：border-box;属于c3的属性</li>
+<li>如果希望a标签被当作按钮触发事件，用href=javascript:;<h2 id="内容处理"><a href="#内容处理" class="headerlink" title="内容处理"></a>内容处理</h2></li>
+<li>给p标签插入或者替换内容 用innerText=</li>
+<li>给input设置value 用xxxx.value=</li>
+<li>给ul动态添加xxx.innerHTML = </li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/笔记/对象笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -940,7 +1129,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

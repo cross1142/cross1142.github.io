@@ -229,6 +229,648 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/29/笔记/es6模块化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/29/笔记/es6模块化/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T12:59:17+08:00">
+                2019-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="es6新特性"><a href="#es6新特性" class="headerlink" title="es6新特性"></a>es6新特性</h2><ul>
+<li>函数参数默认值（存在0的问题）</li>
+<li><p>0  false  undefined  null  ‘’  在做逻辑判断时候都会被当做 false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function animate (speed) &#123;</span><br><span class="line">			// 之前实现默认值的方式</span><br><span class="line">			var speed = speed || 50;</span><br><span class="line">			console.log(speed);</span><br><span class="line">		&#125;</span><br><span class="line">		// 0  false  undefined  null  &apos;&apos;  在做逻辑判断时候都会被当做 false</span><br><span class="line">		animate(0);</span><br><span class="line">		// es6 中默认值可以写在形参的位置</span><br><span class="line">		function animate2 (speed=50,color=&apos;red&apos;) &#123;</span><br><span class="line">			console.log(speed,color);</span><br><span class="line">		&#125;</span><br><span class="line">		animate2(0);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模板字符串:  ${xx}es6 默认占位符 配合 <code></code>使用,可以自动替换作用域中的变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var url = `&lt;ul&gt;</span><br><span class="line">			&lt;li&gt;$&#123;name&#125;&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;$&#123;age&#125;&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;$&#123;sex&#125;&lt;/li&gt;</span><br><span class="line">		&lt;/ul&gt;`;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解构赋值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var user =&#123;</span><br><span class="line">		   name:&apos;张三&apos;,</span><br><span class="line">		   age:20</span><br><span class="line">		&#125;;</span><br><span class="line">		// 解构写法 直接给变量赋值</span><br><span class="line">		// var name = user.name;</span><br><span class="line">		// var age = user.age;</span><br><span class="line">		var &#123;name,age&#125; = user;</span><br><span class="line">		console.log(name);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对象属性的简写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var name = &apos;张三&apos;;</span><br><span class="line">		var age = 30;</span><br><span class="line">		var user = &#123;</span><br><span class="line">			name,</span><br><span class="line">			age</span><br><span class="line">		&#125;</span><br><span class="line">		console.log(user);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>箭头函数</p>
+<ol>
+<li>function可以省略不写</li>
+<li>多个形参用逗号隔开</li>
+<li>=&gt; 如果后面只有一行指令，意思是返回这个结果</li>
+<li>如果不需要返回直接写逻辑</li>
+<li>如果只有一个形参，（）可以省略不写</li>
+<li>如果没有性参，括号必须写<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var a = (x,y)=&gt;x+y;</span><br><span class="line">		var b = (x,y)=&gt;&#123;</span><br><span class="line">			x++;</span><br><span class="line">			console.log(x+y);</span><br><span class="line">		&#125;</span><br><span class="line">		var c = x =&gt;x+2;</span><br><span class="line">		var d = ()=&gt;&#123;</span><br><span class="line">			alert(&quot;hello,world!&quot;);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>箭头函数的this</p>
+<ol>
+<li>在箭头函数里，this将继承上下文对象</li>
+</ol>
+</li>
+<li>在严格模式（’use strict’;）下，对象的this不能指向window对象</li>
+<li><p>promise 为了避免出现回调js使用promise把回调转换为线性代码，更符合人的阅读习惯</p>
+<ol>
+<li>resolve 解决</li>
+<li>reject 拒绝<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var p1 = new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">       //模拟未来事件</span><br><span class="line">       setTimeout(function() &#123;</span><br><span class="line">           // 40以内随机数 判断奇数偶数</span><br><span class="line">           var flag = Math.floor(Math.random() * 20 + 20) % 2 == 0;</span><br><span class="line">           //如果随机了偶数 告诉结果成功了</span><br><span class="line">           if (flag) &#123;</span><br><span class="line">               resolve(&apos;ok&apos;);</span><br><span class="line">           &#125; else &#123;</span><br><span class="line">               reject(&apos;fail&apos;);</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">       &#125;, 2000)</span><br><span class="line">   &#125;);</span><br><span class="line"></span><br><span class="line">   //等待结果</span><br><span class="line">   // .then成功</span><br><span class="line">   p1.then((rs) =&gt; &#123;</span><br><span class="line">       alert(rs);</span><br><span class="line">   &#125;).catch((err) =&gt; &#123;</span><br><span class="line">       alert(err);</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>异步请求</p>
+<ol>
+<li>ajax也实现了promise的封装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  $(&apos;.btn1&apos;).click(()=&gt;&#123;</span><br><span class="line">	// $.ajax(&#123;</span><br><span class="line">	// 	url,</span><br><span class="line">	// 	success:function(res)&#123;</span><br><span class="line">	// 		console.log(res);</span><br><span class="line">	// 		$(&apos;.msg&apos;).text(res);</span><br><span class="line">	// 	&#125;</span><br><span class="line">	// &#125;)</span><br><span class="line">	$.ajax(&#123;</span><br><span class="line">		url</span><br><span class="line">	&#125;).then(res=&gt;&#123;</span><br><span class="line">		console.log(res);</span><br><span class="line">		$(&apos;.msg&apos;).text(res);</span><br><span class="line">	&#125;).catch(err=&gt;&#123;</span><br><span class="line">		console.log(err);</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>es6提供了两个声明变量的关键词</p>
+<ol>
+<li>let 局部变量 可以实现块状作用域</li>
+<li>const 用于声明常量 </li>
+</ol>
+</li>
+<li><p>继承</p>
+<ol>
+<li>class 类</li>
+<li>constructor 构造函数</li>
+<li>extends 继承<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  class Dog extends Aniamte&#123;</span><br><span class="line">	constructor(name,color,space)&#123;</span><br><span class="line">		//执行父类构造函数</span><br><span class="line">		super(space);</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.color = color;</span><br><span class="line">	&#125;</span><br><span class="line">	say()&#123;</span><br><span class="line">		alert(&apos;My name is &apos;+this.name+&apos;, I am saying...&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>自执行函数传参 在某种情况下可能会改变默认的执行环境，可以把执行环境传递进来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(function(w)&#123;</span><br><span class="line">			w.alert(&apos;fff&apos;);</span><br><span class="line">		&#125;)(window);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>放大模式</p>
+<ol>
+<li>不依赖文件的加载顺序</li>
+<li>无风险添加新的方法（甚至不用关心对象是否存在）</li>
+</ol>
+</li>
+<li>模块化规范<ol>
+<li>commonJS规范（同步）<br> node.js</li>
+<li>ADM规范（异步）<br>国外封装的为了解决异步问题</li>
+<li>CMD（异步）<br>国内的封装的解决异步问题</li>
+<li>ES6  模块化规范（官方）</li>
+</ol>
+<ul>
+<li>export与import关键词实现模块化</li>
+<li>浏览器不支持</li>
+<li>node环境也不支持</li>
+</ul>
+</li>
+<li>cli ： 命令行 通过 npm init 在当前文件夹创建 package.json文件 ，它是对当前项目的描述，保存了当前项目所有依赖文件的信息</li>
+<li><p>es6模块化常用语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  epxort </span><br><span class="line">	a)  export default  function()&#123;xxx&#125;</span><br><span class="line">	b) export var a=a;</span><br><span class="line">		export var b=b;</span><br><span class="line">		export var c=c;</span><br><span class="line">	c) export default &#123;</span><br><span class="line">			a:a,</span><br><span class="line">			b:b,</span><br><span class="line">			c:c</span><br><span class="line">		&#125;</span><br><span class="line">				</span><br><span class="line">import </span><br><span class="line">	a) import xx from &apos;./xx.js&apos;</span><br><span class="line">	b) import &#123;a,b&#125; from &apos;./xx.js&apos;</span><br><span class="line">	c) import XX from &apos;./xx.js&apos;</span><br><span class="line">		xx.a();</span><br><span class="line">		xx.b();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>filter 过滤 item 遍历每一个对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var rs = users.filter(item=&gt;&#123;</span><br><span class="line">			// 返回符合条件的对象即可</span><br><span class="line">			return item.age&gt;11;</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>map 遍历修改某一项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var rs2 = users.map(item=&gt;&#123;</span><br><span class="line">			item.name =&apos;bufan_&apos;+item.name;</span><br><span class="line">			return item;</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>forEach 遍历数组, 两个参数，第二个为下标</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">users.forEach((item,index)=&gt;&#123;</span><br><span class="line">			console.log(item,index);</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>es6通过export default 到处模块</p>
+</li>
+<li>es6 通过 import add … from .. 导入模块</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/笔记/convas/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/28/笔记/convas/" itemprop="url">convas</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T16:25:42+08:00">
+                2019-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h2><ul>
+<li>canvas 是html5提供的一种新标签，他是一个举行的画布区，可以用javascript在上面绘画，控制器每一个像素</li>
+<li>canvas可以控制宽高，但是不要用CSS控制宽高，会出现图片拉伸，可以设置行内样式，设置宽高<ul>
+<li>ie9以上的浏览器才支持canvas</li>
+<li>canvas上下文context是所有的绘制操作api的入口或者集合</li>
+<li>它支持2d和3d(webgl);<h2 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h2></li>
+<li>canvas坐标系： 从左上角0，0开始为原点</li>
+<li>设置绘制的起点（moveTo）<ol>
+<li>语法：ctx.moveTo(x,y)</li>
+<li>设置上下文绘制路径的起点，相当于移动画笔到某个位置</li>
+<li>参数x, y都是相当于canvas盒子的最左上角</li>
+<li>绘制线段前必须先设置起点，不然绘制无效</li>
+</ol>
+</li>
+<li>绘制直线（lineTo）<ol>
+<li>ctx.linTo(x,y);</li>
+</ol>
+</li>
+<li>路径开始和闭合<ol>
+<li>开始路径：ctx.beginPath();</li>
+<li>闭合路径<br>ctx.endPath();</li>
+<li>beginPath的核心作用是将不同绘制的形状进行隔离</li>
+</ol>
+</li>
+<li>描边（stroke）<ol>
+<li>语法： ctx.stroke();</li>
+<li>根据路径绘制线，路径只是草稿，真正的绘制必须执行stroke</li>
+</ol>
+</li>
+<li>canvas绘制的基本步骤<ul>
+<li>第一步：获得上下文 =&gt;canvasElem.getContext(‘2d’);</li>
+<li>第二步：开始路径规划 =&gt;ctx.beginPath()</li>
+<li>第三步：移动起始点 =&gt;ctx.moveTo(x, y)</li>
+<li>第四步：绘制线(矩形、圆形、图片…) =&gt;ctx.lineTo(x, y)</li>
+<li>第五步：闭合路径 =&gt;ctx.closePath();</li>
+<li>第六步：绘制描边 =&gt;ctx.stroke()；</li>
+</ul>
+</li>
+<li>填充（fill）<ol>
+<li>语法： ctx.fill();</li>
+<li>填充是将闭合路径的内容太南充具体的颜色，默认黑色</li>
+<li>注意，交叉路径的填充问题“非零环绕原则”</li>
+</ol>
+</li>
+<li>快速创建矩形的方法rect()<ol>
+<li>语法：ctx.rect(x,y,width,height);</li>
+</ol>
+<ul>
+<li>rect方法只是规划了路径，并没有填充和描边</li>
+</ul>
+</li>
+<li>快速创建描边举行和填充矩形<ol>
+<li>ctx.strokeRect(x,y,width,height)</li>
+<li>ctx.fillRect(x,y,width,height)</li>
+</ol>
+</li>
+<li>清除矩形)(clearRect)<ol>
+<li>语法：ctx.clearRect(x,y,width,height);</li>
+<li>清除某个矩形内的绘制的内容</li>
+</ol>
+</li>
+<li>绘制原型（arc）<ol>
+<li>arc()方法创建弧/曲线</li>
+<li>语法：ctx.arc(x,y,r,sAngle,eAngle,counterclockwise);<ul>
+<li>x,y圆心的坐标</li>
+<li>r 半径的长度</li>
+<li>sAngl绘制开始的角度，圆心角最右边的点是0度顺时针方向弧度增大</li>
+<li>eAngle结束的角度，注意弧度是Π</li>
+<li>counterclockwise：是否是逆时针。true是逆时针，false：顺时针</li>
+<li>弧度和角度的转换公式： rad = deg*Math.PI/180;</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>绘制文字<br><code>context.fillText(text,x,y,maxWidth);</code><ol>
+<li>font 设置或者返回文本内容的当前字体属性，使用方法与CSS font的使用方法形同</li>
+</ol>
+</li>
+<li>textAlign设置或者返回文本内容的当前对齐方式（start,end,center,left,right）</li>
+<li> ctx.fillText()      在画布上绘制“被填充的”文本</li>
+<li>ctx.strokeText()    在画布上绘制文本（无填充）</li>
+<li>绘制图片</li>
+<li><code>context.drawImage(img,x,y);</code><ul>
+<li>参数说明： x,y 绘制图片左上角的坐标， img是绘制图片的dom对象。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/笔记/面向对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/25/笔记/面向对象/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T15:52:19+08:00">
+                2019-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="面向对象的程序设计"><a href="#面向对象的程序设计" class="headerlink" title="面向对象的程序设计"></a>面向对象的程序设计</h2><ul>
+<li>基本数据类型<ol>
+<li>number </li>
+<li>boolean</li>
+<li>字符串</li>
+<li>null</li>
+<li>undefined</li>
+</ol>
+</li>
+<li>NON 什么数据类型都不属于</li>
+<li>复杂数据类型<ol>
+<li>对象</li>
+<li>数组</li>
+<li>函数</li>
+<li>json对象</li>
+</ol>
+<ul>
+<li>所有的应用类型都是对象</li>
+<li>所有的对象都是function</li>
+</ul>
+</li>
+<li>创建对象的方式<ol>
+<li>通过关键词 new 创建一个顶级对象object的一个实例对象</li>
+<li>通过字面量的形式创建对象</li>
+<li>通过构造函数创建对象</li>
+<li>工厂模式(相当于封装一个创建对象的函数)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  function createUser (name,age) &#123;</span><br><span class="line">	var obj = new Object();</span><br><span class="line">	obj.name = name;</span><br><span class="line">	obj.age = age;</span><br><span class="line">	return obj;</span><br><span class="line">&#125;</span><br><span class="line">var user = createUser(&apos;张三&apos;,30);</span><br><span class="line">var user2 = createUser(&apos;李四&apos;,20);</span><br><span class="line">var user3 = createUser(&apos;王五&apos;,11);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="属性类型"><a href="#属性类型" class="headerlink" title="属性类型"></a>属性类型</h2><ul>
+<li>数据属性<ol>
+<li>configurable 表示能否通过delete删除属性从而重新定义属性，他的默认值是：true</li>
+<li>enumerable 表示能否通过for in 循环遍历返回属性，默认：true</li>
+<li>writable 表示能否修改的属性默认值为： true</li>
+<li>value 包含这个属性的数据值，读取属性值的时候，从这个位置读；写入属性值的时候，<br>把新值保存在这个位置。这个特性的默认值为 undefined <h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2></li>
+</ol>
+</li>
+<li><code>&#39;use strict&#39;</code><h2 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h2></li>
+<li>get : 在读取的时候调用的函数， 默认值： undefined</li>
+<li>set : 在写入的时候调用的函数 ，默认值： undefined<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperty(book, &quot;newPrice&quot;, &#123;</span><br><span class="line">  get: function()&#123;</span><br><span class="line">    return this._price;</span><br><span class="line">  &#125;,</span><br><span class="line">  set: function(v)&#123;</span><br><span class="line">    this._price = v*this.sale;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="判断数据类型"><a href="#判断数据类型" class="headerlink" title="判断数据类型"></a>判断数据类型</h2><ul>
+<li>简单数据类型用typeof();</li>
+<li>复杂数据类型用： instanceof;<code>console.log(skills instanceof Array);</code><h2 id="new的作用"><a href="#new的作用" class="headerlink" title="new的作用"></a>new的作用</h2><ul>
+<li>需要创建新的实例对象，必须使用new操作符，以这种方式调用构造函数实际上会经历以下4个步骤：</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>创建一个新的对象</li>
+<li>将构造函数的作用域赋给新的对象（因此this就只想这个新对象）</li>
+<li>执行构造函数中的代码（为这个新对象添加属性）</li>
+<li>返回新对象<ul>
+<li>oninput 输入内容的时候触发事件</li>
+<li>prototype 找原型对象 无论什么时候只要创建一个新函数，js就会根据一组特定的规则为该函数创建一个prototype 属性，这个属性指向函数的原型对象</li>
+<li>constructor 原型对象寻找构造函数对象，在默认的情况下，虽有的原型对象都会自动获得一个 constructor 属性，这个属性包含一个指向prototype 属性所在的函数指针。也就是说该构造函数指向我们创建的构造函数本身</li>
+<li>创建了自定义函数之后，器原型对象主会取得constructor 属性，其他方法都是从object继承而来的。</li>
+<li><strong>proto</strong>, 当调用构造函数创建一个新实例对象后，该实例的内部将包含一个指针，指向构造函数的原型对象<br><img src="img/pic.png" alt="原型链"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	alert(&apos;Hi, &apos;+this.name);</span><br><span class="line">&#125;</span><br><span class="line">   //User.prototype 就是User的原型对象</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>如果在函数体内部 声明了某个变量 没有适用var  则该变量会被当做全局变量处理</li>
+<li>isPrototypeOf() 判断某个对象是否是一个实例对象的原型对象<br><code>console.log(User.isPrototypeOf(zs));</code></li>
+<li>getPrototypeOf() 属于object 方法，判断同上</li>
+<li>hasOwnProperty()   使用 hasOwnProperty() 方法可以检测一个属性是存在于实例中，还是存在于原型中。</li>
+<li>Object.keys()  可以列举对象所有可被枚举的对象  不包含原型对象</li>
+<li>重写属性： 属性访问会优先访问实例对象，如果存在就直接返回结果，如果不存在，找原型对象</li>
+<li>重写属性重写的是实例对象的属性值，而没有修改原型对象的值，不能通过实例对象修改原型对象</li>
+<li>即使原声对象也可以通过该对象的原型对象，追加方法，但是不可取<ol>
+<li>如果直接影响原生对象的原型对象，那么会使所有的实例对象都受到影响</li>
+<li>而且很容易覆盖原生对象的原型对象的某些方法</li>
+</ol>
+</li>
+<li>call() 更改对象的内部指针即改变对象的this指向的内容<ol>
+<li>传递this</li>
+<li>扩充对象能力</li>
+<li>语法<code>call([thisObj[,arg1[, arg2[,   [,.argN]]]]])</code></li>
+<li>调用一个对象的一个方法，用另一个对象替换当前对象</li>
+</ol>
+</li>
+<li>apply()和call()的作用基本相同，只是参数的个数不同<ol>
+<li>apply()语法<code>apply([thisObj[,argArray]])</code><h2 id="块状作用域"><a href="#块状作用域" class="headerlink" title="块状作用域"></a>块状作用域</h2></li>
+</ol>
+</li>
+<li>js没有块状作用域，在后台比如java中，for循环中i在循环结束后就回收了，外层无法访问到i<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2></li>
+<li>闭包就是能够读取其他函数内部变量的函数<ol>
+<li>增加变量的生存周期</li>
+<li>避免污染全局变量<h2 id="继承的实现"><a href="#继承的实现" class="headerlink" title="继承的实现"></a>继承的实现</h2></li>
+</ol>
+</li>
+</ul>
+<ol>
+<li>让原型对象等于另一个类型的实例</li>
+<li>让需要实现继承的对象的原型对象  == 被继承的对象的实例对象</li>
+<li>经典继承方案： 借用构造函数和原型继承实现的组合继承</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/笔记/replace/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -737,9 +1379,12 @@
         
           
             <h2 id="jquery笔记"><a href="#jquery笔记" class="headerlink" title="jquery笔记"></a>jquery笔记</h2><ul>
-<li>js函数跟jquery 入口函数的区别<ul>
+<li><p>js函数跟jquery 入口函数的区别</p>
+<ul>
 <li>window .onload 必须等到页面内包括图片的所有元素加载完毕后才能执行</li>
-<li>$(document).ready() 是DOM结构绘制完毕后就执行，不必等到加载完毕，只加载了dom 框架<h2 id="jquery-基本选择器"><a href="#jquery-基本选择器" class="headerlink" title="jquery 基本选择器"></a>jquery 基本选择器</h2></li>
+<li><p>$(document).ready(function(){</p>
+<p>}) 是DOM结构绘制完毕后就执行，不必等到加载完毕，只加载了dom 框架</p>
+<h2 id="jquery-基本选择器"><a href="#jquery-基本选择器" class="headerlink" title="jquery 基本选择器"></a>jquery 基本选择器</h2></li>
 </ul>
 </li>
 <li>$(“#demo”).css(“background”,”red”);选择id为demo的第一个元素</li>
@@ -1614,438 +2259,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/笔记/newfile/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/18/笔记/newfile/" itemprop="url">作品展示</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T15:53:30+08:00">
-                2019-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="/html/小猪佩琪/08-小猪佩琪.html">小猪佩奇</a><br><a href="/html/精品路线/精品路线.html">精品路线</a><br><a href="/html/摄影作品/摄影.html">摄影作品</a><br><a href="/html/缓动轮播/轮播优化.html">缓动轮播</a><br><a href="/html/跟随广告/跟随广告.html">跟随广告</a><br><a href="/html/鼠标跟随/鼠标跟随.html">鼠标跟随</a><br><a href="/html/鼠标拖拽/拖拽.html">鼠标拖拽</a><br><a href="/html/透明栏渐变/头部透明度渐变.html">透明度渐变</a><br><a href="/html/日历/日历动态.html">日历</a><br><a href="/html/相册/相册.html">相册</a><br><a href="/html/特效/鼠标移动旋转.html">特效</a><br><a href="/html/移动端/移动端.html">移动端</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/笔记/JS内置对象/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/18/笔记/JS内置对象/" itemprop="url">js内置对象</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T15:53:30+08:00">
-                2019-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Date-日期对象，用于获取年月日，程序获取的都是北京时间"><a href="#Date-日期对象，用于获取年月日，程序获取的都是北京时间" class="headerlink" title="Date 日期对象，用于获取年月日，程序获取的都是北京时间"></a>Date 日期对象，用于获取年月日，程序获取的都是北京时间</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var day = date.getDate();</span><br><span class="line">var hour = date.get.Hours();</span><br><span class="line">var min = date.getMinutes();</span><br><span class="line">var sec = date.getSeconds();</span><br></pre></td></tr></table></figure>
-<ul>
-<li>月的范围是0~11</li>
-<li>获取年份用gteFullYear</li>
-</ul>
-<h2 id="Math对象-是静态的，不需要New"><a href="#Math对象-是静态的，不需要New" class="headerlink" title="Math对象 - 是静态的，不需要New"></a>Math对象 - 是静态的，不需要New</h2><ul>
-<li>Math.random ()区间是[0~1) 随机数</li>
-<li>任意区间求随机数Mtath.floor(Math.random()*区间个数+最小数)    </li>
-<li>天花板函数 Math.ceil();</li>
-<li>地板函数 Math.floor();</li>
-<li>求最大值 Math.max();</li>
-<li>x值的y次方 Math.pow(x ,y);</li>
-</ul>
-<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><ul>
-<li>&amp;&amp; 与</li>
-<li>||或</li>
-<li>！ 非</li>
-</ul>
-<h2 id="基本逻辑判断语句"><a href="#基本逻辑判断语句" class="headerlink" title="基本逻辑判断语句"></a>基本逻辑判断语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> if(满足的条件)&#123;</span><br><span class="line"> alert();</span><br><span class="line">&#125;</span><br><span class="line"> else(满足的条件）&#123;</span><br><span class="line"> alert();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>如果if后面只有一条语句，那么可以省略大括号，但是不推荐<br>-三元表达式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> if(3&gt;2)&#123;</span><br><span class="line"> consol.log(&apos;ok!&apos;);</span><br><span class="line">&#125;</span><br><span class="line"> else&#123;</span><br><span class="line">	consol.log(&apos;not oh&apos;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 他的三元表达式是： --&gt;</span><br><span class="line"> var rs =3&gt;2?&apos;ok&apos;:&apos;not ok!&apos;;</span><br><span class="line"> consol.log(rs);</span><br><span class="line"> 1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>parseInt 把字符串转为整数number类型 </p>
-</li>
-<li>parseFloat 把字符串转换为小数number类型</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/笔记/js补充/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/18/笔记/js补充/" itemprop="url">js补充</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T15:53:30+08:00">
-                2019-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="arguments对象"><a href="#arguments对象" class="headerlink" title="arguments对象"></a>arguments对象</h2><ul>
-<li>arguments对象是伪数组</li>
-<li>可以实现n个值的累加<h2 id="callee"><a href="#callee" class="headerlink" title="callee"></a>callee</h2></li>
-<li>arguments.callee指的就是函数本身</li>
-<li>例如递归函数可以写作<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   function fb(n)&#123;</span><br><span class="line">	if(n==1 || n==2)&#123;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125;</span><br><span class="line">	return arguments.callee(n-1)+arguments.callee(n-2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="立即执行函数的应用"><a href="#立即执行函数的应用" class="headerlink" title="立即执行函数的应用"></a>立即执行函数的应用</h2><p>;(function(){<br>    console.log(‘hellow!’);<br>})();</p>
-<ul>
-<li>好处无需声明变量污染全局</li>
-<li>解决问题比如给li标签循环绑定事件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for(var i = 0 ; i &lt; lis.length ; i ++)&#123;</span><br><span class="line">			lis[i].onclick = (function(a)&#123;</span><br><span class="line">				return function()&#123;</span><br><span class="line">					console.log(&apos;立即执行函数形式: &apos;,a);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;)(i); //实参</span><br><span class="line">		&#125;</span><br><span class="line">		alert(i);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="script如果写在头部，想让body里面的元素执行完之后再执行script部分"><a href="#script如果写在头部，想让body里面的元素执行完之后再执行script部分" class="headerlink" title="script如果写在头部，想让body里面的元素执行完之后再执行script部分"></a>script如果写在头部，想让body里面的元素执行完之后再执行script部分</h2><ul>
-<li>window.onload = function(){里面是script事件部分}<h2 id="绑定监听"><a href="#绑定监听" class="headerlink" title="绑定监听"></a>绑定监听</h2></li>
-<li>一个对象只能通过 onclick绑定一个事件</li>
-<li>addEventListener可以同时绑定多个事件</li>
-<li>格式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">btn1.addEventListener(&apos;click&apos;,function()&#123;</span><br><span class="line">		alert(&apos;hello!&apos;);</span><br><span class="line">	&#125;);</span><br><span class="line">btn1.addEventListener(&apos;click&apos;,function()&#123;</span><br><span class="line">		alert(&apos;hello2!&apos;);</span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="冒泡与捕获"><a href="#冒泡与捕获" class="headerlink" title="冒泡与捕获"></a>冒泡与捕获</h2><ul>
-<li>默认onclick绑定事件是从里往外，称之为冒泡执行</li>
-<li>addEventListener可以实现冒泡执行还是捕获执行</li>
-<li>第三个参数为：是否捕获执行 默认是false(冒泡执行)例如<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  box1.addEventListener(&apos;click&apos;, function()&#123;</span><br><span class="line">	alert(&apos;this is box1&apos;);</span><br><span class="line">&#125;,true)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="事件的注销"><a href="#事件的注销" class="headerlink" title="事件的注销"></a>事件的注销</h2><ul>
-<li>removeEventListener(移除事件)</li>
-<li>删除的时间类型必须一模一样；</li>
-<li>如果通过监听添加的某个事件需要被取消，则该事件不能是匿名函数<h2 id="兼容问题"><a href="#兼容问题" class="headerlink" title="兼容问题"></a>兼容问题</h2></li>
-<li>ie8没有addEventListener属性，只有attachEvent</li>
-<li><p>兼容写法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if(d1.attachEvent)&#123;</span><br><span class="line">				d1.attachEvent(&apos;onclick&apos;,say);</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				d1.addEventListener(&apos;click&apos;,say,false);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>取消事件的兼容写法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  btn2.onclick = function()&#123;</span><br><span class="line">	if(d1.detachEvent)&#123;</span><br><span class="line">		d1.detachEvent(&apos;onclick&apos;,say); </span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		d1.removeEventListener(&apos;click&apos;,say,false);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><ul>
-<li>setTimeout延时执行</li>
-<li>clearTimeout清除定时器</li>
-<li><p>clearInterval();停止计数器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">timer2 = setTimeout(function()&#123;</span><br><span class="line">		//显示</span><br><span class="line">		adsEl.style.display = &apos;block&apos;;</span><br><span class="line">		timer = setTimeout(function()&#123;</span><br><span class="line">			// 隐藏</span><br><span class="line">			adsEl.style.display = &apos;none&apos;;</span><br><span class="line">		&#125;,5000)</span><br><span class="line">	&#125;,3000);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>获取时间差 getTime</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2096,7 +2309,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

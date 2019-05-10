@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="面向对象的程序设计 基本数据类型 number  boolean 字符串 null undefined   NON 什么数据类型都不属于 复杂数据类型 对象 数组 函数 json对象   所有的应用类型都是对象 所有的对象都是function   创建对象的方式 通过关键词 new 创建一个顶级对象object的一个实例对象 通过字面量的形式创建对象 通过构造函数创建对象 工厂模式(相当于封装一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/03/25/笔记/面向对象/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="面向对象的程序设计 基本数据类型 number  boolean 字符串 null undefined   NON 什么数据类型都不属于 复杂数据类型 对象 数组 函数 json对象   所有的应用类型都是对象 所有的对象都是function   创建对象的方式 通过关键词 new 创建一个顶级对象object的一个实例对象 通过字面量的形式创建对象 通过构造函数创建对象 工厂模式(相当于封装一个">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/03/25/笔记/面向对象/img/pic.png">
+<meta property="og:updated_time" content="2019-03-27T08:36:31.885Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="面向对象的程序设计 基本数据类型 number  boolean 字符串 null undefined   NON 什么数据类型都不属于 复杂数据类型 对象 数组 函数 json对象   所有的应用类型都是对象 所有的对象都是function   创建对象的方式 通过关键词 new 创建一个顶级对象object的一个实例对象 通过字面量的形式创建对象 通过构造函数创建对象 工厂模式(相当于封装一个">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/25/笔记/面向对象/img/pic.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/25/笔记/面向对象/">
+
+
+
+
+
+  <title> | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/笔记/面向对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T15:52:19+08:00">
+                2019-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="面向对象的程序设计"><a href="#面向对象的程序设计" class="headerlink" title="面向对象的程序设计"></a>面向对象的程序设计</h2><ul>
+<li>基本数据类型<ol>
+<li>number </li>
+<li>boolean</li>
+<li>字符串</li>
+<li>null</li>
+<li>undefined</li>
+</ol>
+</li>
+<li>NON 什么数据类型都不属于</li>
+<li>复杂数据类型<ol>
+<li>对象</li>
+<li>数组</li>
+<li>函数</li>
+<li>json对象</li>
+</ol>
+<ul>
+<li>所有的应用类型都是对象</li>
+<li>所有的对象都是function</li>
+</ul>
+</li>
+<li>创建对象的方式<ol>
+<li>通过关键词 new 创建一个顶级对象object的一个实例对象</li>
+<li>通过字面量的形式创建对象</li>
+<li>通过构造函数创建对象</li>
+<li>工厂模式(相当于封装一个创建对象的函数)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  function createUser (name,age) &#123;</span><br><span class="line">	var obj = new Object();</span><br><span class="line">	obj.name = name;</span><br><span class="line">	obj.age = age;</span><br><span class="line">	return obj;</span><br><span class="line">&#125;</span><br><span class="line">var user = createUser(&apos;张三&apos;,30);</span><br><span class="line">var user2 = createUser(&apos;李四&apos;,20);</span><br><span class="line">var user3 = createUser(&apos;王五&apos;,11);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="属性类型"><a href="#属性类型" class="headerlink" title="属性类型"></a>属性类型</h2><ul>
+<li>数据属性<ol>
+<li>configurable 表示能否通过delete删除属性从而重新定义属性，他的默认值是：true</li>
+<li>enumerable 表示能否通过for in 循环遍历返回属性，默认：true</li>
+<li>writable 表示能否修改的属性默认值为： true</li>
+<li>value 包含这个属性的数据值，读取属性值的时候，从这个位置读；写入属性值的时候，<br>把新值保存在这个位置。这个特性的默认值为 undefined <h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2></li>
+</ol>
+</li>
+<li><code>&#39;use strict&#39;</code><h2 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h2></li>
+<li>get : 在读取的时候调用的函数， 默认值： undefined</li>
+<li>set : 在写入的时候调用的函数 ，默认值： undefined<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperty(book, &quot;newPrice&quot;, &#123;</span><br><span class="line">  get: function()&#123;</span><br><span class="line">    return this._price;</span><br><span class="line">  &#125;,</span><br><span class="line">  set: function(v)&#123;</span><br><span class="line">    this._price = v*this.sale;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="判断数据类型"><a href="#判断数据类型" class="headerlink" title="判断数据类型"></a>判断数据类型</h2><ul>
+<li>简单数据类型用typeof();</li>
+<li>复杂数据类型用： instanceof;<code>console.log(skills instanceof Array);</code><h2 id="new的作用"><a href="#new的作用" class="headerlink" title="new的作用"></a>new的作用</h2><ul>
+<li>需要创建新的实例对象，必须使用new操作符，以这种方式调用构造函数实际上会经历以下4个步骤：</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>创建一个新的对象</li>
+<li>将构造函数的作用域赋给新的对象（因此this就只想这个新对象）</li>
+<li>执行构造函数中的代码（为这个新对象添加属性）</li>
+<li>返回新对象<ul>
+<li>oninput 输入内容的时候触发事件</li>
+<li>prototype 找原型对象 无论什么时候只要创建一个新函数，js就会根据一组特定的规则为该函数创建一个prototype 属性，这个属性指向函数的原型对象</li>
+<li>constructor 原型对象寻找构造函数对象，在默认的情况下，虽有的原型对象都会自动获得一个 constructor 属性，这个属性包含一个指向prototype 属性所在的函数指针。也就是说该构造函数指向我们创建的构造函数本身</li>
+<li>创建了自定义函数之后，器原型对象主会取得constructor 属性，其他方法都是从object继承而来的。</li>
+<li><strong>proto</strong>, 当调用构造函数创建一个新实例对象后，该实例的内部将包含一个指针，指向构造函数的原型对象<br><img src="img/pic.png" alt="原型链"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	alert(&apos;Hi, &apos;+this.name);</span><br><span class="line">&#125;</span><br><span class="line">   //User.prototype 就是User的原型对象</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>如果在函数体内部 声明了某个变量 没有适用var  则该变量会被当做全局变量处理</li>
+<li>isPrototypeOf() 判断某个对象是否是一个实例对象的原型对象<br><code>console.log(User.isPrototypeOf(zs));</code></li>
+<li>getPrototypeOf() 属于object 方法，判断同上</li>
+<li>hasOwnProperty()   使用 hasOwnProperty() 方法可以检测一个属性是存在于实例中，还是存在于原型中。</li>
+<li>Object.keys()  可以列举对象所有可被枚举的对象  不包含原型对象</li>
+<li>重写属性： 属性访问会优先访问实例对象，如果存在就直接返回结果，如果不存在，找原型对象</li>
+<li>重写属性重写的是实例对象的属性值，而没有修改原型对象的值，不能通过实例对象修改原型对象</li>
+<li>即使原声对象也可以通过该对象的原型对象，追加方法，但是不可取<ol>
+<li>如果直接影响原生对象的原型对象，那么会使所有的实例对象都受到影响</li>
+<li>而且很容易覆盖原生对象的原型对象的某些方法</li>
+</ol>
+</li>
+<li>call() 更改对象的内部指针即改变对象的this指向的内容<ol>
+<li>传递this</li>
+<li>扩充对象能力</li>
+<li>语法<code>call([thisObj[,arg1[, arg2[,   [,.argN]]]]])</code></li>
+<li>调用一个对象的一个方法，用另一个对象替换当前对象</li>
+</ol>
+</li>
+<li>apply()和call()的作用基本相同，只是参数的个数不同<ol>
+<li>apply()语法<code>apply([thisObj[,argArray]])</code><h2 id="块状作用域"><a href="#块状作用域" class="headerlink" title="块状作用域"></a>块状作用域</h2></li>
+</ol>
+</li>
+<li>js没有块状作用域，在后台比如java中，for循环中i在循环结束后就回收了，外层无法访问到i<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2></li>
+<li>闭包就是能够读取其他函数内部变量的函数<ol>
+<li>增加变量的生存周期</li>
+<li>避免污染全局变量<h2 id="继承的实现"><a href="#继承的实现" class="headerlink" title="继承的实现"></a>继承的实现</h2></li>
+</ol>
+</li>
+</ul>
+<ol>
+<li>让原型对象等于另一个类型的实例</li>
+<li>让需要实现继承的对象的原型对象  == 被继承的对象的实例对象</li>
+<li>经典继承方案： 借用构造函数和原型继承实现的组合继承</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/22/笔记/replace/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/28/笔记/convas/" rel="prev" title="convas">
+                convas <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象的程序设计"><span class="nav-number">1.</span> <span class="nav-text">面向对象的程序设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性类型"><span class="nav-number">2.</span> <span class="nav-text">属性类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#严格模式"><span class="nav-number">3.</span> <span class="nav-text">严格模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问器属性"><span class="nav-number">4.</span> <span class="nav-text">访问器属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断数据类型"><span class="nav-number">5.</span> <span class="nav-text">判断数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#new的作用"><span class="nav-number">6.</span> <span class="nav-text">new的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块状作用域"><span class="nav-number">7.</span> <span class="nav-text">块状作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">8.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承的实现"><span class="nav-number">9.</span> <span class="nav-text">继承的实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

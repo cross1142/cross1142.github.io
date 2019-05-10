@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="es6新特性 函数参数默认值（存在0的问题） 0  false  undefined  null  ‘’  在做逻辑判断时候都会被当做 false 123456789101112function animate (speed) &amp;#123;			// 之前实现默认值的方式			var speed = speed || 50;			console.log(speed);		&amp;#125;		// 0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/03/29/笔记/es6模块化/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="es6新特性 函数参数默认值（存在0的问题） 0  false  undefined  null  ‘’  在做逻辑判断时候都会被当做 false 123456789101112function animate (speed) &amp;#123;			// 之前实现默认值的方式			var speed = speed || 50;			console.log(speed);		&amp;#125;		// 0">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-29T11:45:29.443Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="es6新特性 函数参数默认值（存在0的问题） 0  false  undefined  null  ‘’  在做逻辑判断时候都会被当做 false 123456789101112function animate (speed) &amp;#123;			// 之前实现默认值的方式			var speed = speed || 50;			console.log(speed);		&amp;#125;		// 0">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/29/笔记/es6模块化/">
+
+
+
+
+
+  <title> | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/29/笔记/es6模块化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T12:59:17+08:00">
+                2019-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="es6新特性"><a href="#es6新特性" class="headerlink" title="es6新特性"></a>es6新特性</h2><ul>
+<li>函数参数默认值（存在0的问题）</li>
+<li><p>0  false  undefined  null  ‘’  在做逻辑判断时候都会被当做 false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function animate (speed) &#123;</span><br><span class="line">			// 之前实现默认值的方式</span><br><span class="line">			var speed = speed || 50;</span><br><span class="line">			console.log(speed);</span><br><span class="line">		&#125;</span><br><span class="line">		// 0  false  undefined  null  &apos;&apos;  在做逻辑判断时候都会被当做 false</span><br><span class="line">		animate(0);</span><br><span class="line">		// es6 中默认值可以写在形参的位置</span><br><span class="line">		function animate2 (speed=50,color=&apos;red&apos;) &#123;</span><br><span class="line">			console.log(speed,color);</span><br><span class="line">		&#125;</span><br><span class="line">		animate2(0);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模板字符串:  ${xx}es6 默认占位符 配合 <code></code>使用,可以自动替换作用域中的变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var url = `&lt;ul&gt;</span><br><span class="line">			&lt;li&gt;$&#123;name&#125;&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;$&#123;age&#125;&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;$&#123;sex&#125;&lt;/li&gt;</span><br><span class="line">		&lt;/ul&gt;`;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解构赋值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var user =&#123;</span><br><span class="line">		   name:&apos;张三&apos;,</span><br><span class="line">		   age:20</span><br><span class="line">		&#125;;</span><br><span class="line">		// 解构写法 直接给变量赋值</span><br><span class="line">		// var name = user.name;</span><br><span class="line">		// var age = user.age;</span><br><span class="line">		var &#123;name,age&#125; = user;</span><br><span class="line">		console.log(name);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对象属性的简写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var name = &apos;张三&apos;;</span><br><span class="line">		var age = 30;</span><br><span class="line">		var user = &#123;</span><br><span class="line">			name,</span><br><span class="line">			age</span><br><span class="line">		&#125;</span><br><span class="line">		console.log(user);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>箭头函数</p>
+<ol>
+<li>function可以省略不写</li>
+<li>多个形参用逗号隔开</li>
+<li>=&gt; 如果后面只有一行指令，意思是返回这个结果</li>
+<li>如果不需要返回直接写逻辑</li>
+<li>如果只有一个形参，（）可以省略不写</li>
+<li>如果没有性参，括号必须写<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var a = (x,y)=&gt;x+y;</span><br><span class="line">		var b = (x,y)=&gt;&#123;</span><br><span class="line">			x++;</span><br><span class="line">			console.log(x+y);</span><br><span class="line">		&#125;</span><br><span class="line">		var c = x =&gt;x+2;</span><br><span class="line">		var d = ()=&gt;&#123;</span><br><span class="line">			alert(&quot;hello,world!&quot;);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>箭头函数的this</p>
+<ol>
+<li>在箭头函数里，this将继承上下文对象</li>
+</ol>
+</li>
+<li>在严格模式（’use strict’;）下，对象的this不能指向window对象</li>
+<li><p>promise 为了避免出现回调js使用promise把回调转换为线性代码，更符合人的阅读习惯</p>
+<ol>
+<li>resolve 解决</li>
+<li>reject 拒绝<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var p1 = new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">       //模拟未来事件</span><br><span class="line">       setTimeout(function() &#123;</span><br><span class="line">           // 40以内随机数 判断奇数偶数</span><br><span class="line">           var flag = Math.floor(Math.random() * 20 + 20) % 2 == 0;</span><br><span class="line">           //如果随机了偶数 告诉结果成功了</span><br><span class="line">           if (flag) &#123;</span><br><span class="line">               resolve(&apos;ok&apos;);</span><br><span class="line">           &#125; else &#123;</span><br><span class="line">               reject(&apos;fail&apos;);</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">       &#125;, 2000)</span><br><span class="line">   &#125;);</span><br><span class="line"></span><br><span class="line">   //等待结果</span><br><span class="line">   // .then成功</span><br><span class="line">   p1.then((rs) =&gt; &#123;</span><br><span class="line">       alert(rs);</span><br><span class="line">   &#125;).catch((err) =&gt; &#123;</span><br><span class="line">       alert(err);</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>异步请求</p>
+<ol>
+<li>ajax也实现了promise的封装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  $(&apos;.btn1&apos;).click(()=&gt;&#123;</span><br><span class="line">	// $.ajax(&#123;</span><br><span class="line">	// 	url,</span><br><span class="line">	// 	success:function(res)&#123;</span><br><span class="line">	// 		console.log(res);</span><br><span class="line">	// 		$(&apos;.msg&apos;).text(res);</span><br><span class="line">	// 	&#125;</span><br><span class="line">	// &#125;)</span><br><span class="line">	$.ajax(&#123;</span><br><span class="line">		url</span><br><span class="line">	&#125;).then(res=&gt;&#123;</span><br><span class="line">		console.log(res);</span><br><span class="line">		$(&apos;.msg&apos;).text(res);</span><br><span class="line">	&#125;).catch(err=&gt;&#123;</span><br><span class="line">		console.log(err);</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>es6提供了两个声明变量的关键词</p>
+<ol>
+<li>let 局部变量 可以实现块状作用域</li>
+<li>const 用于声明常量 </li>
+</ol>
+</li>
+<li><p>继承</p>
+<ol>
+<li>class 类</li>
+<li>constructor 构造函数</li>
+<li>extends 继承<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  class Dog extends Aniamte&#123;</span><br><span class="line">	constructor(name,color,space)&#123;</span><br><span class="line">		//执行父类构造函数</span><br><span class="line">		super(space);</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.color = color;</span><br><span class="line">	&#125;</span><br><span class="line">	say()&#123;</span><br><span class="line">		alert(&apos;My name is &apos;+this.name+&apos;, I am saying...&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>自执行函数传参 在某种情况下可能会改变默认的执行环境，可以把执行环境传递进来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(function(w)&#123;</span><br><span class="line">			w.alert(&apos;fff&apos;);</span><br><span class="line">		&#125;)(window);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>放大模式</p>
+<ol>
+<li>不依赖文件的加载顺序</li>
+<li>无风险添加新的方法（甚至不用关心对象是否存在）</li>
+</ol>
+</li>
+<li>模块化规范<ol>
+<li>commonJS规范（同步）<br> node.js</li>
+<li>ADM规范（异步）<br>国外封装的为了解决异步问题</li>
+<li>CMD（异步）<br>国内的封装的解决异步问题</li>
+<li>ES6  模块化规范（官方）</li>
+</ol>
+<ul>
+<li>export与import关键词实现模块化</li>
+<li>浏览器不支持</li>
+<li>node环境也不支持</li>
+</ul>
+</li>
+<li>cli ： 命令行 通过 npm init 在当前文件夹创建 package.json文件 ，它是对当前项目的描述，保存了当前项目所有依赖文件的信息</li>
+<li><p>es6模块化常用语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  epxort </span><br><span class="line">	a)  export default  function()&#123;xxx&#125;</span><br><span class="line">	b) export var a=a;</span><br><span class="line">		export var b=b;</span><br><span class="line">		export var c=c;</span><br><span class="line">	c) export default &#123;</span><br><span class="line">			a:a,</span><br><span class="line">			b:b,</span><br><span class="line">			c:c</span><br><span class="line">		&#125;</span><br><span class="line">				</span><br><span class="line">import </span><br><span class="line">	a) import xx from &apos;./xx.js&apos;</span><br><span class="line">	b) import &#123;a,b&#125; from &apos;./xx.js&apos;</span><br><span class="line">	c) import XX from &apos;./xx.js&apos;</span><br><span class="line">		xx.a();</span><br><span class="line">		xx.b();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>filter 过滤 item 遍历每一个对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var rs = users.filter(item=&gt;&#123;</span><br><span class="line">			// 返回符合条件的对象即可</span><br><span class="line">			return item.age&gt;11;</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>map 遍历修改某一项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var rs2 = users.map(item=&gt;&#123;</span><br><span class="line">			item.name =&apos;bufan_&apos;+item.name;</span><br><span class="line">			return item;</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>forEach 遍历数组, 两个参数，第二个为下标</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">users.forEach((item,index)=&gt;&#123;</span><br><span class="line">			console.log(item,index);</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>es6通过export default 到处模块</p>
+</li>
+<li>es6 通过 import add … from .. 导入模块</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/28/笔记/convas/" rel="next" title="convas">
+                <i class="fa fa-chevron-left"></i> convas
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#es6新特性"><span class="nav-number">1.</span> <span class="nav-text">es6新特性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

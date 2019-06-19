@@ -619,233 +619,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/02/笔记/ES6新语法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/02/笔记/ES6新语法/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-02T09:36:55+08:00">
-                2019-06-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
-<li>Babel 是一个广泛使用的 ES6 转码器，可以将 ES6 代码转为 ES5 代码<h2 id="set结构"><a href="#set结构" class="headerlink" title="set结构"></a>set结构</h2></li>
-<li>Es6提供了新的数据结构set,它类似于数组但是成员的值都是唯一的,没有重复的值,(不包括空对象),Set本身是一个构造函数,用来生成Set数据结构</li>
-<li>Set函数可以接受一个数组作为参数,用来初始化</li>
-<li>在set内部任为两个NAN是相等的</li>
-<li>两个对象总是不相等的,所有set里两个空对象被视为两个值</li>
-<li>Set 结构的实例有以下属性。<ul>
-<li>Set.prototype.constructor：构造函数，默认就是Set函数。</li>
-<li>Set.prototype.size：返回Set实例的成员总数。</li>
-</ul>
-</li>
-<li>set实例方法<ul>
-<li>add(value)：添加某个值，返回 Set 结构本身。</li>
-<li>delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。</li>
-<li>has(value)：返回一个布尔值，表示该值是否为Set的成员。</li>
-<li>clear()：清除所有成员，没有返回值。</li>
-</ul>
-</li>
-<li>set的遍历方法<ul>
-<li>keys()返回键名的遍历器</li>
-<li>values()返回键值的遍历器</li>
-<li>entries()返回键值对的遍历器</li>
-<li>forEach()使用回调函数遍历每个成员</li>
-</ul>
-</li>
-<li>需要特别指出的是，Set的遍历顺序就是插入顺序。这个特性有时非常有用，比如使用 Set 保存一个回调函数列表，调用时就能保证按照添加顺序调用。</li>
-<li>可以省略values方法，直接用for…of循环遍历 Set。</li>
-<li>Array.from方法可以将 Set 结构转为数组<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let set = new Set([&apos;red&apos;, &apos;green&apos;, &apos;blue&apos;]);</span><br><span class="line">for (let x of set) &#123;</span><br><span class="line">  console.log(x);</span><br><span class="line">&#125;</span><br><span class="line">// red</span><br><span class="line">// green</span><br><span class="line">// blue</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let set = new Set([&apos;red&apos;, &apos;green&apos;, &apos;blue&apos;]);</span><br><span class="line">for (let item of set.keys()) &#123;</span><br><span class="line">  console.log(item);</span><br><span class="line">&#125;</span><br><span class="line">// red</span><br><span class="line">// green</span><br><span class="line">// blue</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (let item of set.entries()) &#123;</span><br><span class="line">  console.log(item);</span><br><span class="line">&#125;</span><br><span class="line">// [&quot;red&quot;, &quot;red&quot;]</span><br><span class="line">// [&quot;green&quot;, &quot;green&quot;]</span><br><span class="line">// [&quot;blue&quot;, &quot;blue&quot;]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set = new Set([1, 4, 9]);</span><br><span class="line">set.forEach((value, key) =&gt; console.log(key + &apos; : &apos; + value))</span><br><span class="line">// 1 : 1</span><br><span class="line">// 4 : 4</span><br><span class="line">// 9 : 9</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>扩展运算符和 Set 结构相结合，就可以去除数组的重复成员。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let arr = [3, 5, 2, 2, 5, 5];</span><br><span class="line">let unique = [...new Set(arr)];</span><br><span class="line">// [3, 5, 2]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>数组的map和filter方法也可以间接用于 Set 了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let set = new Set([1, 2, 3]);</span><br><span class="line">set = new Set([...set].map(x =&gt; x * 2));</span><br><span class="line">// 返回Set结构：&#123;2, 4, 6&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用 Set 可以很容易地实现并集（Union）、交集（Intersect）和差集（Difference）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let a = new Set([1, 2, 3]);</span><br><span class="line">let b = new Set([4, 3, 2]);</span><br><span class="line"></span><br><span class="line">// 并集</span><br><span class="line">let union = new Set([...a, ...b]);</span><br><span class="line">// Set &#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 交集</span><br><span class="line">let intersect = new Set([...a].filter(x =&gt; b.has(x)));</span><br><span class="line">// set &#123;2, 3&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 差集</span><br><span class="line">let difference = new Set([...a].filter(x =&gt; !b.has(x)));</span><br><span class="line">// Set &#123;1&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在遍历操作中，同步改变原来的 Set 结构<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 方法一</span><br><span class="line">let set = new Set([1, 2, 3]);</span><br><span class="line">set = new Set([...set].map(val =&gt; val * 2));</span><br><span class="line">// set的值是2, 4, 6</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 方法二</span><br><span class="line">let set = new Set([1, 2, 3]);</span><br><span class="line">set = new Set(Array.from(set, val =&gt; val * 2));</span><br><span class="line">// set的值是2, 4, 6</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="扩展运算符-…"><a href="#扩展运算符-…" class="headerlink" title="扩展运算符(…)"></a>扩展运算符(…)</h2><ul>
-<li>对象中的扩展运算符(…)用于取出参数对象中的所有可遍历属性，拷贝到当前对象之中,等价于<code>let baz = Object.assign({}, bar);</code></li>
-<li>这里有点需要注意的是扩展运算符对对象实例的拷贝属于一种浅拷贝<h2 id="数组的扩展运算符"><a href="#数组的扩展运算符" class="headerlink" title="数组的扩展运算符"></a>数组的扩展运算符</h2></li>
-<li><p>可以将数组转换为参数序列</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function add(x, y) &#123;</span><br><span class="line">  return x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const numbers = [4, 38];</span><br><span class="line">add(...numbers) // 42</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>可以复制数组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const arr1 = [1, 2];</span><br><span class="line">const arr2 = [...arr1];</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>扩展运算符可以和解构赋值结合起来,用于生成新的数组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const [first, ...rest] = [1, 2, 3, 4, 5];</span><br><span class="line">first // 1</span><br><span class="line">rest  // [2, 3, 4, 5]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果将扩展运算符用于数组赋值,只能放在参数的最后一位,否则会报错.</p>
-</li>
-<li><p>扩展运算符还可以将字符串转换为真正的数组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[...&apos;hello&apos;]</span><br><span class="line">// [ &quot;h&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot; ]</span><br></pre></td></tr></table></figure>
-</li>
-<li><h2 id="变量的声明"><a href="#变量的声明" class="headerlink" title="变量的声明"></a>变量的声明</h2></li>
-<li>let提供了块状作用域,不再具备变量提升,暂时性死区,只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。</li>
-<li>const声明常量<h2 id="箭头函数的使用"><a href="#箭头函数的使用" class="headerlink" title="箭头函数的使用"></a>箭头函数的使用</h2></li>
-<li><p>箭头函数,当箭头直接被return时,可以省略函数体的括号</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var fn = function(a, b) &#123;</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;</span><br><span class="line">//可以简写为 </span><br><span class="line">const fn = (a, b) =&gt; a + b;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>箭头函数可以替代函数表达式,但是不能替代函数声明.</p>
-</li>
-<li>箭头函数中没有this,在箭头函数中使用this,那么this一定指的是外层的this</li>
-<li>在ES6中，会默认采用严格模式，因此this也不会自动指向window对象了，而箭头函数本身并没有this，因此this就只能是undefined，这一点，在使用的时候，一定要慎重慎重再慎重，不然踩了坑你都不知道自己错在哪！这种情况，如果你还想用this，就不要用使用箭头函数的写法。<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2></li>
-<li>使用 <code></code> 将整个字符串包裹起来，而在其中使用 ${} 来包裹一个变量或者一个表达式。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const a = 20;</span><br><span class="line">const b = 30;</span><br><span class="line">const string = `$&#123;a&#125;+$&#123;b&#125;=$&#123;a+b&#125;`;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><ul>
-<li><p>对象的解构和赋值<br>  1.</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    // 首先有这么一个对象</span><br><span class="line">const props = &#123;</span><br><span class="line">    className: &apos;tiger-button&apos;,</span><br><span class="line">    loading: false,</span><br><span class="line">    clicked: true,</span><br><span class="line">    disabled: &apos;disabled&apos;</span><br><span class="line">    &#125;</span><br><span class="line">    //当我们想要取其中的两个值时</span><br><span class="line">    const &#123; loading, clicked &#125; = props;</span><br><span class="line">    // 给一个默认值，当props对象中找不到loading时，loading就等于该默认值</span><br><span class="line">    const &#123; loading = false, clicked &#125; = props;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对象根据属性名对应,这是一个无序的对应关系.</p>
-</li>
-<li>数组的结构赋值<br>  1.  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">    const arr = [1, 2, 3];</span><br><span class="line">    const [a, b, c] = arr;</span><br><span class="line">-   数组以序列号对应,是一个有序的对应关系.</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="函数的默认参数"><a href="#函数的默认参数" class="headerlink" title="函数的默认参数"></a>函数的默认参数</h2><ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function add(x = 20, y = 30) &#123;</span><br><span class="line">    return x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(add());</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="展开运算符"><a href="#展开运算符" class="headerlink" title="展开运算符"></a>展开运算符</h2><ul>
-<li>在ES6中用…来表示展开运算符，它可以将数组方法或者对象进行展开</li>
-<li><p>数组的展开运算</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const arr1 = [1, 2, 3];</span><br><span class="line">const arr2 = [...arr1, 10, 20, 30];</span><br><span class="line"></span><br><span class="line">// 这样，arr2 就变成了[1, 2, 3, 10, 20, 30];</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对象的展开运算</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const obj1 = &#123;</span><br><span class="line">  a: 1,</span><br><span class="line">  b: 2, </span><br><span class="line">  c: 3</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const obj2 = &#123;</span><br><span class="line">  ...obj1,</span><br><span class="line">  d: 4,</span><br><span class="line">  e: 5,</span><br><span class="line">  f: 6</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 结果类似于 const obj2 = Object.assign(&#123;&#125;, obj1, &#123;d: 4&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="js中的reduce-方法"><a href="#js中的reduce-方法" class="headerlink" title="js中的reduce()方法"></a>js中的reduce()方法</h2><ul>
-<li><p>reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。</p>
-</li>
-<li><p>reduce() 可以作为一个高阶函数，用于函数的 compose。</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/29/笔记/consoleProject/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1857,6 +1630,147 @@
 <li><p>ajax封装改进</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">// &#123;</span><br><span class="line">// 	url:&apos;xxx&apos;,</span><br><span class="line">// 	type:&apos;GET&apos;,</span><br><span class="line">// 	data:&#123;</span><br><span class="line">// 		username:&apos;zhagns&apos;,</span><br><span class="line">// 		age:20</span><br><span class="line">// 	&#125;</span><br><span class="line">// &#125;</span><br><span class="line"></span><br><span class="line">function  myAjax(options,fn) &#123;</span><br><span class="line">	//发送ajax请求</span><br><span class="line">  //  创建一个实例对象</span><br><span class="line">  var xhr = new XMLHttpRequest();</span><br><span class="line">  //获取方法 get/post  变为小写</span><br><span class="line">  var type =  options.type.toLowerCase();</span><br><span class="line">  var url = options.url;</span><br><span class="line">  var params = &apos;&apos;;</span><br><span class="line">	if(options.data)&#123;</span><br><span class="line">		for(var key in options.data)&#123;</span><br><span class="line">			params += &apos;&amp;&apos;+key+&apos;=&apos;+options.data[key];</span><br><span class="line">		&#125;</span><br><span class="line">		// &amp;username=zhangsan&amp;password=1234</span><br><span class="line">		params = params.substr(1);</span><br><span class="line">	&#125;</span><br><span class="line">  // 2. 设置请求方式 以及请求的url   abc?usernmae=asdf&amp;paw=asdf</span><br><span class="line">  if(type==&apos;post&apos;)&#123;</span><br><span class="line">  	xhr.open(type,url);</span><br><span class="line">  	 xhr.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);</span><br><span class="line">  	// 3. 执行发送 ...  username=zhangsan&amp;password=1234</span><br><span class="line">  	if(params)&#123;</span><br><span class="line">  		xhr.send(params);</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">  	if(params)&#123;</span><br><span class="line">  		url += &apos;?&apos;+params;</span><br><span class="line">  	&#125;</span><br><span class="line">  	xhr.open(type,url);</span><br><span class="line">  	xhr.send(null);</span><br><span class="line">  &#125;</span><br><span class="line">  // 4. 监听状态 </span><br><span class="line">  xhr.onreadystatechange = function()&#123;</span><br><span class="line">      // xhr.readyState 发送成功 等待结果</span><br><span class="line">      // xhr.status == 200  请求成功 返回结果</span><br><span class="line">        if (xhr.readyState == 4 &amp;&amp; xhr.status == 200) &#123;</span><br><span class="line">          // 5. 获取结果</span><br><span class="line">           console.log(xhr.responseText);</span><br><span class="line">           // $(&apos;.msg&apos;).text(xhr.responseText);</span><br><span class="line">           // 字符串</span><br><span class="line">           var rs = xhr.responseText;</span><br><span class="line">           fn(rs);	</span><br><span class="line">       &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/15/笔记/移动端/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/15/笔记/移动端/" itemprop="url">移动端</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-15T16:21:58+08:00">
+                2019-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="视口"><a href="#视口" class="headerlink" title="视口"></a>视口</h2><ul>
+<li>设置视口<ul>
+<li>width=device-width 视口宽度=设备宽度</li>
+<li>initial-scale</li>
+<li>maximum-scale</li>
+<li>user-scalable=no  不允许用户缩放</li>
+</ul>
+</li>
+<li>比例<ul>
+<li>rem 基于当前HTML页面的字体的倍数。<br>-头部引入浏览器解析文件<br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no&quot;&gt;</code></li>
+</ul>
+</li>
+<li>touch事件监听<ul>
+<li>ontouchstart触摸开始监听</li>
+<li>ontouchmove触摸移动监听</li>
+<li>ontouchend触摸结束监听<h2 id="zepto"><a href="#zepto" class="headerlink" title="zepto"></a>zepto</h2></li>
+</ul>
+</li>
+<li>首先zepto 体积非常小,适合移动端 ; zepto实现了fastClick; zepto实现了 - 移动端各种touch操作事件.</li>
+<li>浏览器的点击事件 由于监听双击 会有300ms延迟 </li>
+<li>所以在移动端 希望嫩实现”fastClick”</li>
 </ul>
 
           

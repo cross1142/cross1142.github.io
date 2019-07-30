@@ -5,11 +5,11 @@
   
 
 
-<html class="theme-next muse use-motion" lang="">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,9 +48,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -115,7 +115,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/">
 
 
 
@@ -150,7 +150,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Hexo</span>
         <span class="logo-line-after"><i></i></span>
@@ -180,7 +180,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             Home
           </a>
@@ -190,7 +190,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             Archives
           </a>
@@ -229,11 +229,460 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/笔记/react/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/26/笔记/react/" itemprop="url">react</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-26T11:19:59+08:00">
+                2019-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="react"><a href="#react" class="headerlink" title="react"></a>react</h2><ul>
+<li>React 是一个用于构建用户界面的声明性,高效且灵活的 javascript 库,使用 React 可以将一些简短、独立的代码片段组合成复杂的 UI 界面，这些代码片段被称作“组件”</li>
+<li>React 中有多种不同类型的组件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class ShoppingList extends React.Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div className=&quot;shopping-list&quot;&gt;</span><br><span class="line">        &lt;h1&gt;Shopping List for &#123;this.props.name&#125;&lt;/h1&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &lt;li&gt;Instagram&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;WhatsApp&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;Oculus&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 用法示例: &lt;ShoppingList name=&quot;Mark&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>其中 ShoppingList 是一个 React 组件类,或者说是一个 React 组件类型,一个组件接收一些参数,我们把这些参数叫做 props,然后通过 render 方法返回需要展示在屏幕上的视图层次结构.</li>
+<li>render 方法返回值描述了你希望在屏幕上看到的内容,react 根据描述,然后把结果展示出来,更具体的说,render 返回了一个 react 元素,这是一种对渲染内容轻量级的描述,大多数的 React 开发者使用一种名为”JSX”的特殊语法,JSX 可以让你更轻松的书写这些结构,语法<div>会被编译成 React.createElement(‘div’),上述的代码等同于</div></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">return React.createElement(&apos;div&apos;, &#123;className: &apos;shopping-list&apos;&#125;,</span><br><span class="line">  React.createElement(&apos;h1&apos;, /* ... h1 children ... */),</span><br><span class="line">  React.createElement(&apos;ul&apos;, /* ... ul children ... */)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在 JSX 中你可以任意使用 JAVASCRIPT 表达式,只需要用一个大括号把表达式括起来每一个 React 元素事实上都是一个 JavaScript 对象,你可以在你的程序中把它当保存在变量中,或者当作参数传递</li>
+<li>在 javascript class 中,每次你定义子类组件时都需要调用 super 方法,因此,在所有含有构造函数的 React 组件中,构造函数必须以 super(props)开头</li>
+<li>当你遇到需要同时获得多个子组件数据时,或者两个组件之间需要相互通讯的情况时,需要把子组件的 statr 数据提升至其共同的父组件当中保存,之后父组件可以通过 props 将状态数据传递到子组件当中,这样应用当中所有组件的状态数据就能更方便的同步共享了</li>
+</ul>
+<h2 id="JSX-简介"><a href="#JSX-简介" class="headerlink" title="JSX 简介"></a>JSX 简介</h2><ul>
+<li><code>const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;</code><ul>
+<li>这个标签语法是 JavaScript 的语法拓展,JSX 可以很好的描述 UI 应该呈现出它应有交互的本质形式,JSX 可能会使人联想到模板语言,但他具有 javascript 的全部功能</li>
+</ul>
+</li>
+<li>React 认为渲染逻辑本质上与其他 UI 逻辑内在耦合,比如,在 UI 中需要绑定处理事件,在某些时刻状态发生变化时需要通知到 UI,以及需要在 UI 中展示准备好的数据</li>
+<li>在 JSX 中嵌入表达式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function formatName(user) &#123;</span><br><span class="line">  return user.firstName + &apos; &apos; + user.lastName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const user = &#123;</span><br><span class="line">  firstName: &apos;Harper&apos;,</span><br><span class="line">  lastName: &apos;Perez&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const element = (</span><br><span class="line">  &lt;h1&gt;</span><br><span class="line">    Hello, &#123;formatName(user)&#125;!</span><br><span class="line">  &lt;/h1&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  element,</span><br><span class="line">  document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>JSX 也是一个表达式,在编译之后,JSX 表达式会被转化为普通的 JavaScript 函数调用,并且对其取值后得到 JavaScript 对象,也就是说,你可以在 if 语句和 for 循环的代码块中使用 JSX,将 JSX 赋值给变量,把 JSX 当作参数传入,以及从函数中返回 JSX</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function getGreeting(user) &#123;</span><br><span class="line">  if (user) &#123;</span><br><span class="line">    return &lt;h1&gt;Hello, &#123;formatName(user)&#125;!&lt;/h1&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">  return &lt;h1&gt;Hello, Stranger.&lt;/h1&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>JSX 特定属性 1.你可以通过使用引号,来将属性值指定为字符串字面量:<code>const element = &lt;div tabIndex=&quot;0&quot;&gt;&lt;/div&gt;;</code><ol start="2">
+<li>也可以使用大括号,来在属性值中插入一个 JavaScript 表达式:<code>const element = &lt;img src={user.avatarUrl}&gt;&lt;/img&gt;;</code></li>
+<li>在属性中嵌入 JavaScript 表达式时,不要在大括号外面加上引号,应该仅使用大括号或者引号其中的一个,对于同一属性不能同时使用这两种符号</li>
+</ol>
+</li>
+<li>因为 JSX 语法上更接近 JavaScript 而不是 HTML,所以 React DOM 使用 camelCase(小驼峰命名)来定义属性的名称,而不使用 HTML 属性名称的命名约定</li>
+<li>使用 JSX 指定子元素<ol>
+<li>假如一个标签里面没有内容,你可以使用/&gt;来闭合标签,就像 XML 语法一样<br><code>const element = &lt;img src={user.avatarUrl} /&gt;;</code></li>
+<li>JSX 标签里能够包含很多子元素</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/笔记/vizceral/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/19/笔记/vizceral/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-19T13:57:32+08:00">
+                2019-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Vizceral"><a href="#Vizceral" class="headerlink" title="Vizceral"></a>Vizceral</h2><h3 id="vizceral是如何工作的"><a href="#vizceral是如何工作的" class="headerlink" title="vizceral是如何工作的"></a>vizceral是如何工作的</h3><ul>
+<li>vizceral实际上只是Json数据结构的渲染器</li>
+<li>$nextTick, vue中的nextTick设计到vue中dom的异步更新<ul>
+<li>应用场景:在数据变化后要执行的某个操作,而这个操作需要使用随数据改变而改变的DOM结构的时候,这个操作都应该放进Vue.nextTick()的回调函数中</li>
+</ul>
+<ol>
+<li>Vue.nextTick(callback)，当数据发生变化，更新后执行回调。</li>
+<li>Vue.$nextTick(callback)，当dom发生变化，更新后执行的回调。</li>
+</ol>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/24/笔记/promise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/24/笔记/promise/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-24T14:09:54+08:00">
+                2019-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="promise-对象"><a href="#promise-对象" class="headerlink" title="promise 对象"></a>promise 对象</h2><ul>
+<li>promise 是异步编程的一种解决方案,比传统解决方案回调函数和事件更合理更强大,所谓 promise,简单说就是一个容器,里面保存着某个未来才会结束的事件(通常是一个异步操作)的结果,从语法上说 Promise 是一个对象,从他可以获取异步操作的消息,Promise 提供统一的 API,各种异步操作都可以用同样的方法进行处理.</li>
+<li>Promise 对象有以下两个特点<ol>
+<li>对象的状态不受外界影响,Promise 对象代表一个异步操作,有三种状态:pending(进行中),fulfilled(已成功)和 rejected(已失败).只有异步操作的结果,可以决定当前是哪一种状态,任何其他操作都无法改变这个状态.</li>
+<li>一旦状态改变,就不会再变,任何时候都可以得到这个结果.Promise 对象的状态改变,只有两种可能:从 pending 变为 fulfilled 和从 pending 变为 rejected,只要这两种情况发生,状态就凝固了,不会再变了,会一直保持这个结果,这时就称为 resolved(已定型),如果改变已经发生了,你再对 Promise 对象添加回调函数,也会立即得到这个结果,这与事件(Event)完全不同,事件的特点就是,如果你错过了它,再去监听,是得不到结果的.</li>
+</ol>
+</li>
+<li>promise 对象也有一些缺点,首先,无法取消 Promise,一旦新建他就会立即执行,无法中途取消,其次,如果不设置回调函数,,Promise 内部抛出的错误,不会抛出到外部,第三,当处于 pending 状态时,无法得知目前进行到哪一个阶段.</li>
+<li>如果某些事件不断地反复发生,一般来说,使用 Stream 模式是比部署 Promise 更好的选择</li>
+</ul>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><ul>
+<li>Promise 对象是一个构造函数,用来生成 Promise 实例</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const promise = new Promise(function(resolve, reject) &#123;</span><br><span class="line">  // ... some code</span><br><span class="line"></span><br><span class="line">  if (/* 异步操作成功 */)&#123;</span><br><span class="line">    resolve(value);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    reject(error);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Promise 构造函数接受一个函数作为参数,该函数的两个参数分别是 resolve 和 reject,他们是两个函数,由 JavaScript 引擎提供,不用自己部署.</li>
+<li>resolve 函数的作用是，将 Promise 对象的状态从“未完成”变为“成功”（即从 pending 变为 resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；reject 函数的作用是，将 Promise 对象的状态从“未完成”变为“失败”（即从 pending 变为 rejected），在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。</li>
+<li>Promise 实例生成以后,可以用 then 方法分别指定 resolved 状态和 rejected 状态的回调函数.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">promise.then(function(value) &#123;</span><br><span class="line">  // success</span><br><span class="line">&#125;, function(error) &#123;</span><br><span class="line">  // failure</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>then 方法可以接收两个回调函数作为参数,第一个回调函数是 Promise 对象的状态变化为 resolved 时调用,第二个回调函数是 Promise 的状态变为 rejected 时调用,第二个函数是可选的,不一定要提供,这两个函数都接受 Promise 对象传出的值作为参数.</li>
+<li>Promise 新建后立即执行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let promise = new Promise(function(resolve, reject) &#123;</span><br><span class="line">  console.log(&apos;Promise&apos;);</span><br><span class="line">  resolve();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">promise.then(function() &#123;</span><br><span class="line">  console.log(&apos;resolved.&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(&apos;Hi!&apos;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>上面代码中,Promise 新建之后立即执行,所以首先输出的是 Promise,然后 then 指定的回调函数将在当前脚本所有同步任务完成后才会执行,所以 resolved 最后输出</li>
+<li>Promise 对象实现 Ajax 请求</li>
+<li>Promise 实例具有 then 方法,也就是说 then 方法是定义在原型对象上 Promise.prototype 上的,它的作用是为 Promise 实例添加状态改变时的回调函数,then<br>方法的第一个参数是 resolved 状态的回调函数,第二个参数是 rejected 状态的回调函数</li>
+<li>如果调用 resolve 函数和 reject 函数时带有参数,那么他们的参数会被传给回调函数,reject 函数的参数通常是 Error 对象的实例,表示抛出的错误,resolve 函数的参数除了正常的值意外,还可能另一个 Promise 实例</li>
+<li>采用链式的 then,可以指定一组按照次序调用的回调函数,这时前一个回调函数有可能返回的还是一个 promise 对象,这时后一个回调函数就会等待该 promise 对象的状态发生变化,才会被调用<h3 id="promise-prototype-catch"><a href="#promise-prototype-catch" class="headerlink" title="promise.prototype.catch()"></a>promise.prototype.catch()</h3></li>
+<li><p>通常用于指定发生错误时的回调函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">getJSON(&apos;/posts.json&apos;).then(function(posts) &#123;</span><br><span class="line">  // ...</span><br><span class="line">&#125;).catch(function(error) &#123;</span><br><span class="line">  // 处理 getJSON 和 前一个回调函数运行时发生的错误</span><br><span class="line">  console.log(&apos;发生错误！&apos;, error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上面的代码中getJson方法返回一个promise对象,如果该对象状态变为resolved则会调用then方法指定的回调函数,如果异步操作抛出错误,状态就会变为rejected,就会调用catch指定的回调函数,处理这个错误,另外then方法指定的回调函数,如果运行中抛出错误,也会被catch方法捕获.</p>
+</li>
+<li>函数的length属性,函数的参数指定了默认值以后,函数的length属性将失真</li>
+<li></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/笔记/前端分页/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -353,7 +802,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -425,6 +874,67 @@
 <li>npm install –save-dev jest</li>
 </ul>
 </li>
+<li><p>使用匹配器</p>
+<ul>
+<li>最简单的测试值的方法就是看是否精准匹配,首先是toBe()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">test(&apos;two plus two is four&apos;, () =&gt; &#123;</span><br><span class="line">  expect(2 + 2).toBe(4);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>toBe用的是JavaScript中的Obiect.is(),属于Es6中的特性,所以不能检测对象,如果需要检测对象的值的话,需要用到toEqual,toEqual递归检查对象或者数组中的每个字段.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">test(&apos;object assignment&apos;, () =&gt; &#123;</span><br><span class="line">  const data = &#123;one: 1&#125;;</span><br><span class="line">  data[&apos;two&apos;] = 2;</span><br><span class="line">  expect(data).toEqual(&#123;one: 1, two: 2&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在实际测试中,我们有时候需要区分undefined,null,false,以下的一些规则有助于我们进行</p>
+<ol>
+<li>toBeNull只匹配null</li>
+<li>toBeUndefined只匹配undefined</li>
+<li>toBeDefine与toBeUndefined 相反</li>
+<li>toBeTruthy匹配任何if语句为真</li>
+<li>toBeFalsy匹配任何if语句为假</li>
+</ol>
+</li>
+<li>大多数的比较数字有等价的匹配器<ol>
+<li>大于toBeGreaterThan()</li>
+<li>大于或者等于toBeGreaterThanOrEqual()</li>
+<li>小于 toBeLessThan()</li>
+<li>小于或者等于 toBeLessThanOrEqual()<br>5.toBe和toEqual同样适用于数字<br>注意: 对比两个浮点数是否相等的时候,使用toBeCloseTo而不是toEqual</li>
+</ol>
+</li>
+<li><p>字符串</p>
+<ul>
+<li>使用toMatch()测试字符串,传递的参数是正则表达式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">test(&apos;there is no I in team&apos;, () =&gt; &#123;</span><br><span class="line">  expect(&apos;team&apos;).not.toMatch(/I/);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(&apos;but there is a &quot;stop&quot; in Christoph&apos;, () =&gt; &#123;</span><br><span class="line">  expect(&apos;Christoph&apos;).toMatch(/stop/);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>toContain()可以检测数组中是否包含某一特定项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const shoppingList = [</span><br><span class="line">  &apos;diapers&apos;,</span><br><span class="line">  &apos;kleenex&apos;,</span><br><span class="line">  &apos;trash bags&apos;,</span><br><span class="line">  &apos;paper towels&apos;,</span><br><span class="line">  &apos;beer&apos;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">test(&apos;购物清单（shopping list）里面有啤酒（beer）&apos;, () =&gt; &#123;</span><br><span class="line">  expect(shoppingList).toContain(&apos;beer&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>另外 如果你想在测试特定函数的时候抛出一个错误,在它调用的时候可以使用toThrow</p>
+<h3 id="测试异步代码"><a href="#测试异步代码" class="headerlink" title="测试异步代码"></a>测试异步代码</h3></li>
+<li><p>注意:回调函数和异步没有什么必然联系,回调只是异步的一种调用方式而已,不要异步和回调两个概念结合起来.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 这里是同步执行的，完全没有异步</span><br><span class="line">function fun1(callback) &#123;</span><br><span class="line">  callback();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>默认情况下一旦到达运行上下文的底部,jest测试就会立即结束,这意味着这个测试将不能按照预期的进行,使用单个的参数调用done,而不是将测试放在一个空参数的函数中,jest会等done回调函数执行结束后,结束测试.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function fetchData(call) &#123;</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    call(&apos;peanut butter1&apos;)</span><br><span class="line">  &#125;,1000);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test(&apos;the data is peanut butter&apos;, (done) =&gt; &#123;</span><br><span class="line">  function callback(data) &#123;</span><br><span class="line">    expect(data).toBe(&apos;peanut butter&apos;);</span><br><span class="line">    done()</span><br><span class="line">  &#125;</span><br><span class="line">  fetchData(callback);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果done()永远不会被调用,则说明这个测试将失败,这也正是我们所希望看到的.</p>
+<h3 id="peomise"><a href="#peomise" class="headerlink" title="peomise"></a>peomise</h3></li>
+<li>如果代码中使用到了promise,只需要从你的测试中返回一个promise,jest就会等待这个promise来解决,如果承诺被拒绝,则测试将会自动失败</li>
+<li><p>举例 如果fetchData,使用Promise代替回调的话,返回值是应该解析为一个字符串’peanut butter’的Promise,那么可以用以下方式测试代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">test(&apos;the data is peanut butter&apos;, () =&gt; &#123;</span><br><span class="line">  expect.assertions(1);</span><br><span class="line">  return fetchData().then(data =&gt; &#123;</span><br><span class="line">    expect(data).toBe(&apos;peanut butter&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>另一种情况就是,想要Promise被拒绝,我们可以使用.catch方法.另外，要确保添加了expect.assertions来验证一定数量的断言被调用。否则一个fulfilled态的Promise不会让测试失败。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">test(&apos;the fetch fails with an error&apos;, () =&gt; &#123;</span><br><span class="line">  expect.assertions(1);</span><br><span class="line">  return fetchData().catch(e =&gt; expect(e).toMatch(&apos;error&apos;));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="resolves-rejects"><a href="#resolves-rejects" class="headerlink" title=".resolves/.rejects"></a>.resolves/.rejects</h3><ul>
+<li>可以使用.resolves匹配器匹配你的期望的声明,如果想要被拒绝,可以使用rejects<h3 id="jest-mock"><a href="#jest-mock" class="headerlink" title="jest.mock()"></a>jest.mock()</h3></li>
+<li>mock函数提供的以下三种特性<ol>
+<li>捕获函数调用情况</li>
+<li>设置函数返回值</li>
+<li>改变函数的内部实现</li>
+</ol>
+</li>
+<li>jest.fn()<br>1.jest.fn()是创建Mock函数最简单的方式,如果没有定义函数内部的实现,jest.fn()会返回undefined作为返回值</li>
 </ul>
 
           
@@ -478,7 +988,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -623,7 +1133,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -746,7 +1256,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -961,7 +1471,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1169,7 +1679,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1371,442 +1881,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/笔记/replace/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/22/笔记/replace/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-22T22:05:47+08:00">
-                2019-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <!DOCTYPE html>
-<html lang="en">
-
-<head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
-    <!-- <script src="lib/jquery"></script> -->
-    <script>
-        var str = 'a1dc3123c1d13ccc';
-        var reg = /[a-z]{2,}/gi;
-        // var s1 = str.replace(reg,'*'); // replace第一个参数可以是正则 第二个参数可以是一个回调函数 该函数的形参为匹配到的某个值 
-        var s1 = str.replace(reg, function($1) {
-            console.log('$1', $1.length);
-            var stars = '';
-            for (var i = 0; i < $1.length; i++) {
-                stars += '*';
-            }
-            return stars;
-        })
-        console.log(str);
-        console.log(s1);
-    </script>
-</body>
-
-</html>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/笔记/ajax/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/19/笔记/ajax/" itemprop="url">ajax</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-19T20:08:02+08:00">
-                2019-03-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h2><ul>
-<li>Client/Server这两个单词的首字母,指的是客户端,服务器架构的意思,很多常见的软件都是这种架构</li>
-<li>Browser/Server的这两个单词的首字母,指的是浏览器,服务器,是WEB兴起之后的一种架构</li>
-<li>服务器 <ul>
-<li>目前比较火的 php node.js<h2 id="express-框加使用步骤"><a href="#express-框加使用步骤" class="headerlink" title="express 框加使用步骤"></a>express 框加使用步骤</h2></li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>全局安装express生成器 <code>npm install express-generator -g</code></li>
-<li>创建文件夹</li>
-<li>通过修改配置使express支持 <code>express -e</code></li>
-<li>在文件夹执行命令安装package.json中配置的依赖库<code>npm install</code></li>
-<li>开启服务 <code>npm start</code></li>
-<li>最后通过访问localhost:3000可以看到页面的内容<h2 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h2></li>
-</ol>
-<ul>
-<li>200 成功</li>
-<li>404 没有找到文件</li>
-<li>500 服务器错误<h2 id="常见的端口"><a href="#常见的端口" class="headerlink" title="常见的端口"></a>常见的端口</h2></li>
-<li>8080 80（可以省略不写） 8090 443<h2 id="服务器的原理"><a href="#服务器的原理" class="headerlink" title="服务器的原理"></a>服务器的原理</h2></li>
-<li>session 在服务器端会有一个session 他是一个对象的集合，该对象由key 和 value session 可以在整个会话期间存在，具体的销毁时间由服务器程序控制，默认一般30分钟，session一般判断用户是否登陆，用于控制用户的权限，session的数据可以在整个会话期间共享<h2 id="ajax封装"><a href="#ajax封装" class="headerlink" title="ajax封装"></a>ajax封装</h2></li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">//四个参数 路径 发送方式 发送内容 回调函数</span><br><span class="line">function  myAjax(url,type,params,fn) &#123;</span><br><span class="line">	//发送ajax请求</span><br><span class="line">  //  创建一个实例对象</span><br><span class="line">  var xhr = new XMLHttpRequest();</span><br><span class="line">  // 2. 设置请求方式 以及请求的url   abc?usernmae=asdf&amp;paw=asdf</span><br><span class="line">  xhr.open(type,url);</span><br><span class="line">  if(type==&apos;post&apos;)&#123;</span><br><span class="line">  	 xhr.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);</span><br><span class="line">  	// 3. 执行发送 ...  username=zhangsan&amp;password=1234</span><br><span class="line"> 	 xhr.send(params);</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">  	xhr.send(null);</span><br><span class="line">  &#125;</span><br><span class="line">  // 4. 监听状态 </span><br><span class="line">  xhr.onreadystatechange = function()&#123;</span><br><span class="line">      // xhr.readyState 发送成功 等待结果</span><br><span class="line">      // xhr.status == 200  请求成功 返回结果</span><br><span class="line">        if (xhr.readyState == 4 &amp;&amp; xhr.status == 200) &#123;</span><br><span class="line">          // 5. 获取结果</span><br><span class="line">           console.log(xhr.responseText);</span><br><span class="line">           // $(&apos;.msg&apos;).text(xhr.responseText);</span><br><span class="line">           // 字符串</span><br><span class="line">           var rs = xhr.responseText;</span><br><span class="line">           fn(rs);	</span><br><span class="line">       &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>ajax封装改进</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">// &#123;</span><br><span class="line">// 	url:&apos;xxx&apos;,</span><br><span class="line">// 	type:&apos;GET&apos;,</span><br><span class="line">// 	data:&#123;</span><br><span class="line">// 		username:&apos;zhagns&apos;,</span><br><span class="line">// 		age:20</span><br><span class="line">// 	&#125;</span><br><span class="line">// &#125;</span><br><span class="line"></span><br><span class="line">function  myAjax(options,fn) &#123;</span><br><span class="line">	//发送ajax请求</span><br><span class="line">  //  创建一个实例对象</span><br><span class="line">  var xhr = new XMLHttpRequest();</span><br><span class="line">  //获取方法 get/post  变为小写</span><br><span class="line">  var type =  options.type.toLowerCase();</span><br><span class="line">  var url = options.url;</span><br><span class="line">  var params = &apos;&apos;;</span><br><span class="line">	if(options.data)&#123;</span><br><span class="line">		for(var key in options.data)&#123;</span><br><span class="line">			params += &apos;&amp;&apos;+key+&apos;=&apos;+options.data[key];</span><br><span class="line">		&#125;</span><br><span class="line">		// &amp;username=zhangsan&amp;password=1234</span><br><span class="line">		params = params.substr(1);</span><br><span class="line">	&#125;</span><br><span class="line">  // 2. 设置请求方式 以及请求的url   abc?usernmae=asdf&amp;paw=asdf</span><br><span class="line">  if(type==&apos;post&apos;)&#123;</span><br><span class="line">  	xhr.open(type,url);</span><br><span class="line">  	 xhr.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);</span><br><span class="line">  	// 3. 执行发送 ...  username=zhangsan&amp;password=1234</span><br><span class="line">  	if(params)&#123;</span><br><span class="line">  		xhr.send(params);</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">  	if(params)&#123;</span><br><span class="line">  		url += &apos;?&apos;+params;</span><br><span class="line">  	&#125;</span><br><span class="line">  	xhr.open(type,url);</span><br><span class="line">  	xhr.send(null);</span><br><span class="line">  &#125;</span><br><span class="line">  // 4. 监听状态 </span><br><span class="line">  xhr.onreadystatechange = function()&#123;</span><br><span class="line">      // xhr.readyState 发送成功 等待结果</span><br><span class="line">      // xhr.status == 200  请求成功 返回结果</span><br><span class="line">        if (xhr.readyState == 4 &amp;&amp; xhr.status == 200) &#123;</span><br><span class="line">          // 5. 获取结果</span><br><span class="line">           console.log(xhr.responseText);</span><br><span class="line">           // $(&apos;.msg&apos;).text(xhr.responseText);</span><br><span class="line">           // 字符串</span><br><span class="line">           var rs = xhr.responseText;</span><br><span class="line">           fn(rs);	</span><br><span class="line">       &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/15/笔记/移动端/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/15/笔记/移动端/" itemprop="url">移动端</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-15T16:21:58+08:00">
-                2019-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="视口"><a href="#视口" class="headerlink" title="视口"></a>视口</h2><ul>
-<li>设置视口<ul>
-<li>width=device-width 视口宽度=设备宽度</li>
-<li>initial-scale</li>
-<li>maximum-scale</li>
-<li>user-scalable=no  不允许用户缩放</li>
-</ul>
-</li>
-<li>比例<ul>
-<li>rem 基于当前HTML页面的字体的倍数。<br>-头部引入浏览器解析文件<br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no&quot;&gt;</code></li>
-</ul>
-</li>
-<li>touch事件监听<ul>
-<li>ontouchstart触摸开始监听</li>
-<li>ontouchmove触摸移动监听</li>
-<li>ontouchend触摸结束监听<h2 id="zepto"><a href="#zepto" class="headerlink" title="zepto"></a>zepto</h2></li>
-</ul>
-</li>
-<li>首先zepto 体积非常小,适合移动端 ; zepto实现了fastClick; zepto实现了 - 移动端各种touch操作事件.</li>
-<li>浏览器的点击事件 由于监听双击 会有300ms延迟 </li>
-<li>所以在移动端 希望嫩实现”fastClick”</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1857,7 +1931,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

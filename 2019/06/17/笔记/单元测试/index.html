@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="单元测试 jest安装 npm install –save-dev jest">
+<meta name="description" content="单元测试 jest安装 npm install –save-dev jest   使用匹配器  最简单的测试值的方法就是看是否精准匹配,首先是toBe()123test(&amp;apos;two plus two is four&amp;apos;, () =&amp;gt; &amp;#123;  expect(2 + 2).toBe(4);&amp;#125;);    toBe用的是JavaScript中的Obiect.is()">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2019/06/17/笔记/单元测试/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="单元测试 jest安装 npm install –save-dev jest">
+<meta property="og:description" content="单元测试 jest安装 npm install –save-dev jest   使用匹配器  最简单的测试值的方法就是看是否精准匹配,首先是toBe()123test(&amp;apos;two plus two is four&amp;apos;, () =&amp;gt; &amp;#123;  expect(2 + 2).toBe(4);&amp;#125;);    toBe用的是JavaScript中的Obiect.is()">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-17T08:26:50.124Z">
+<meta property="og:updated_time" content="2019-07-01T02:47:40.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="单元测试 jest安装 npm install –save-dev jest">
+<meta name="twitter:description" content="单元测试 jest安装 npm install –save-dev jest   使用匹配器  最简单的测试值的方法就是看是否精准匹配,首先是toBe()123test(&amp;apos;two plus two is four&amp;apos;, () =&amp;gt; &amp;#123;  expect(2 + 2).toBe(4);&amp;#125;);    toBe用的是JavaScript中的Obiect.is()">
 
 
 
@@ -304,6 +304,67 @@
 <li>npm install –save-dev jest</li>
 </ul>
 </li>
+<li><p>使用匹配器</p>
+<ul>
+<li>最简单的测试值的方法就是看是否精准匹配,首先是toBe()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">test(&apos;two plus two is four&apos;, () =&gt; &#123;</span><br><span class="line">  expect(2 + 2).toBe(4);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>toBe用的是JavaScript中的Obiect.is(),属于Es6中的特性,所以不能检测对象,如果需要检测对象的值的话,需要用到toEqual,toEqual递归检查对象或者数组中的每个字段.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">test(&apos;object assignment&apos;, () =&gt; &#123;</span><br><span class="line">  const data = &#123;one: 1&#125;;</span><br><span class="line">  data[&apos;two&apos;] = 2;</span><br><span class="line">  expect(data).toEqual(&#123;one: 1, two: 2&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在实际测试中,我们有时候需要区分undefined,null,false,以下的一些规则有助于我们进行</p>
+<ol>
+<li>toBeNull只匹配null</li>
+<li>toBeUndefined只匹配undefined</li>
+<li>toBeDefine与toBeUndefined 相反</li>
+<li>toBeTruthy匹配任何if语句为真</li>
+<li>toBeFalsy匹配任何if语句为假</li>
+</ol>
+</li>
+<li>大多数的比较数字有等价的匹配器<ol>
+<li>大于toBeGreaterThan()</li>
+<li>大于或者等于toBeGreaterThanOrEqual()</li>
+<li>小于 toBeLessThan()</li>
+<li>小于或者等于 toBeLessThanOrEqual()<br>5.toBe和toEqual同样适用于数字<br>注意: 对比两个浮点数是否相等的时候,使用toBeCloseTo而不是toEqual</li>
+</ol>
+</li>
+<li><p>字符串</p>
+<ul>
+<li>使用toMatch()测试字符串,传递的参数是正则表达式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">test(&apos;there is no I in team&apos;, () =&gt; &#123;</span><br><span class="line">  expect(&apos;team&apos;).not.toMatch(/I/);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(&apos;but there is a &quot;stop&quot; in Christoph&apos;, () =&gt; &#123;</span><br><span class="line">  expect(&apos;Christoph&apos;).toMatch(/stop/);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>toContain()可以检测数组中是否包含某一特定项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const shoppingList = [</span><br><span class="line">  &apos;diapers&apos;,</span><br><span class="line">  &apos;kleenex&apos;,</span><br><span class="line">  &apos;trash bags&apos;,</span><br><span class="line">  &apos;paper towels&apos;,</span><br><span class="line">  &apos;beer&apos;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">test(&apos;购物清单（shopping list）里面有啤酒（beer）&apos;, () =&gt; &#123;</span><br><span class="line">  expect(shoppingList).toContain(&apos;beer&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>另外 如果你想在测试特定函数的时候抛出一个错误,在它调用的时候可以使用toThrow</p>
+<h3 id="测试异步代码"><a href="#测试异步代码" class="headerlink" title="测试异步代码"></a>测试异步代码</h3></li>
+<li><p>注意:回调函数和异步没有什么必然联系,回调只是异步的一种调用方式而已,不要异步和回调两个概念结合起来.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 这里是同步执行的，完全没有异步</span><br><span class="line">function fun1(callback) &#123;</span><br><span class="line">  callback();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>默认情况下一旦到达运行上下文的底部,jest测试就会立即结束,这意味着这个测试将不能按照预期的进行,使用单个的参数调用done,而不是将测试放在一个空参数的函数中,jest会等done回调函数执行结束后,结束测试.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function fetchData(call) &#123;</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    call(&apos;peanut butter1&apos;)</span><br><span class="line">  &#125;,1000);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test(&apos;the data is peanut butter&apos;, (done) =&gt; &#123;</span><br><span class="line">  function callback(data) &#123;</span><br><span class="line">    expect(data).toBe(&apos;peanut butter&apos;);</span><br><span class="line">    done()</span><br><span class="line">  &#125;</span><br><span class="line">  fetchData(callback);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果done()永远不会被调用,则说明这个测试将失败,这也正是我们所希望看到的.</p>
+<h3 id="peomise"><a href="#peomise" class="headerlink" title="peomise"></a>peomise</h3></li>
+<li>如果代码中使用到了promise,只需要从你的测试中返回一个promise,jest就会等待这个promise来解决,如果承诺被拒绝,则测试将会自动失败</li>
+<li><p>举例 如果fetchData,使用Promise代替回调的话,返回值是应该解析为一个字符串’peanut butter’的Promise,那么可以用以下方式测试代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">test(&apos;the data is peanut butter&apos;, () =&gt; &#123;</span><br><span class="line">  expect.assertions(1);</span><br><span class="line">  return fetchData().then(data =&gt; &#123;</span><br><span class="line">    expect(data).toBe(&apos;peanut butter&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>另一种情况就是,想要Promise被拒绝,我们可以使用.catch方法.另外，要确保添加了expect.assertions来验证一定数量的断言被调用。否则一个fulfilled态的Promise不会让测试失败。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">test(&apos;the fetch fails with an error&apos;, () =&gt; &#123;</span><br><span class="line">  expect.assertions(1);</span><br><span class="line">  return fetchData().catch(e =&gt; expect(e).toMatch(&apos;error&apos;));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="resolves-rejects"><a href="#resolves-rejects" class="headerlink" title=".resolves/.rejects"></a>.resolves/.rejects</h3><ul>
+<li>可以使用.resolves匹配器匹配你的期望的声明,如果想要被拒绝,可以使用rejects<h3 id="jest-mock"><a href="#jest-mock" class="headerlink" title="jest.mock()"></a>jest.mock()</h3></li>
+<li>mock函数提供的以下三种特性<ol>
+<li>捕获函数调用情况</li>
+<li>设置函数返回值</li>
+<li>改变函数的内部实现</li>
+</ol>
+</li>
+<li>jest.fn()<br>1.jest.fn()是创建Mock函数最简单的方式,如果没有定义函数内部的实现,jest.fn()会返回undefined作为返回值</li>
 </ul>
 
       
@@ -418,7 +479,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -464,7 +525,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单元测试"><span class="nav-number">1.</span> <span class="nav-text">单元测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单元测试"><span class="nav-number">1.</span> <span class="nav-text">单元测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试异步代码"><span class="nav-number">1.1.</span> <span class="nav-text">测试异步代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#peomise"><span class="nav-number">1.2.</span> <span class="nav-text">peomise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#resolves-rejects"><span class="nav-number">1.3.</span> <span class="nav-text">.resolves/.rejects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jest-mock"><span class="nav-number">1.4.</span> <span class="nav-text">jest.mock()</span></a></li></ol></li></ol></div>
             
 
           </div>
